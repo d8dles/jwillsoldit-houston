@@ -179,7 +179,8 @@ const title = 'Houston metro — schematic region map';
 
   /* ── Water ── */
   .water {
-    fill: rgba(28, 59, 46, 0.05);
+    fill: var(--forest);
+    fill-opacity: 0.05;
   }
   .coast {
     fill: none;
@@ -282,7 +283,8 @@ const title = 'Houston metro — schematic region map';
   .regions a:hover .region-shape,
   .regions a:focus-visible .region-shape,
   .region.active .region-shape {
-    fill: rgba(28, 59, 46, 0.08);
+    fill: var(--forest);
+    fill-opacity: 0.08;
     stroke: var(--red);
     stroke-width: 1.1;
   }
@@ -295,7 +297,7 @@ const title = 'Houston metro — schematic region map';
   .regions a:focus-visible {
     outline: 2px solid var(--red);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: var(--radius);
   }
   .regions a:focus-visible .region-shape {
     stroke-dasharray: 2 1.4;
