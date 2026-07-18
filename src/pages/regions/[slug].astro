@@ -1,0 +1,206 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import HoustonRegionMap from '../../components/HoustonRegionMap.astro';
+
+export async function getStaticPaths() {
+  const regions = await getCollection('regions');
+  return regions.map((region) => ({
+    params: { slug: region.data.slug },
+    props: { region, allRegions: regions },
+  }));
+}
+
+interface Props {
+  region: Awaited<ReturnType<typeof getCollection<'regions'>>>[number];
+  allRegions: Awaited<ReturnType<typeof getCollection<'regions'>>>;
+}
+
+const { region, allRegions } = Astro.props;
+const { data } = region;
+const { Content } = await render(region);
+
+const siblings = allRegions
+  .filter((r) => r.data.slug !== data.slug)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Base
+  title={`${data.name} — Houston, Handled.`}
+  description={`Counties, corridors, anchors, and example communities in ${data.name}, part of Greater Houston.`}
+>
+  <main class="container region-page">
+    <header class="page-header">
+      <p class="mono-label">{data.counties.join(' · ')}</p>
+      <h1>{data.name}</h1>
+    </header>
+
+    <HoustonRegionMap activeRegion={data.mapId} />
+
+    <section class="block overview">
+      <Content />
+    </section>
+
+    <section class="block">
+      <h2 class="mono-label">Housing mix</h2>
+      <ul class="fact-list">
+        {data.housingMix.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="mono-label">Corridors</h2>
+      <ul class="fact-list">
+        {data.corridors.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="mono-label">Anchors</h2>
+      <ul class="fact-list">
+        {data.anchors.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="mono-label">Example communities</h2>
+      <ul class="fact-list fact-list--inline">
+        {data.exampleCommunities.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <nav class="block sibling-nav" aria-label="Other Greater Houston regions">
+      <h2 class="mono-label">Other regions</h2>
+      <ul class="sibling-list">
+        {siblings.map((sibling) => (
+          <li>
+            <a href={`${base}/regions/${sibling.data.slug}`}>{sibling.data.name}</a>
+          </li>
+        ))}
+      </ul>
+      <p class="back-link">
+        <a href={`${base}`}>Back to Houston, Handled.</a>
+      </p>
+    </nav>
+
+    <footer class="block source-note">
+      <p class="updated-line mono-label">Updated {data.updatedAt}</p>
+      <p class="methodology-line">
+        Sources and methodology: see <a href={`${base}/methodology`}>/houston/methodology</a>.
+      </p>
+    </footer>
+  </main>
+</Base>
+
+<style>
+  .region-page {
+    padding-top: var(--space-block);
+    padding-bottom: var(--space-section);
+    max-width: 760px;
+  }
+
+  .page-header {
+    margin-bottom: var(--space-block);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: var(--fs-h2);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .block {
+    margin-top: var(--space-block);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .overview :global(p) {
+    font-size: var(--fs-body);
+    color: var(--ink);
+    line-height: 1.7;
+    max-width: 65ch;
+  }
+
+  h2.mono-label {
+    margin-bottom: 4px;
+  }
+
+  .fact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 1.25em;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .fact-list--inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .sibling-nav {
+    border-top: 1px solid var(--trace);
+    padding-top: var(--space-block);
+  }
+
+  .sibling-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sibling-list a {
+    color: var(--red-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .back-link {
+    margin-top: 12px;
+  }
+
+  .back-link a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .source-note {
+    border-top: 1px solid var(--trace);
+    padding-top: 20px;
+  }
+
+  .updated-line {
+    margin-bottom: 4px;
+  }
+
+  .methodology-line {
+    font-size: var(--fs-small);
+    color: var(--mid);
+  }
+
+  .methodology-line a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--trace);
+    text-underline-offset: 3px;
+  }
+
+  .methodology-line a:hover {
+    color: var(--red-text);
+  }
+</style>
