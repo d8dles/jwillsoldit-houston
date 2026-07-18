@@ -1,5 +1,9 @@
 # Astro Starter Kit: Minimal
 
+## Note on this repo's build scripts
+
+The npm scripts invoke Astro via `node node_modules/astro/bin/astro.mjs` instead of the bare `astro` command. The parent directory path contains a colon (`App:Web Work`), which breaks npm's PATH-based `node_modules/.bin` resolution (PATH entries are colon-delimited), so `astro` is never found on PATH. Calling the bin entry point through `node` directly sidesteps PATH entirely.
+
 ```sh
 npm create astro@latest -- --template minimal
 ```
