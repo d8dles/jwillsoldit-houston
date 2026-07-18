@@ -16,5 +16,6 @@ test('passes clean neutral copy', () => {
 });
 
 test('allows banned words inside the lint config itself', () => {
-  assert.strictEqual(findViolations('anything', 'scripts/lint-language.mjs').length, 0);
+  const v = findViolations('this is a family-friendly area with good schools', 'scripts/lint-language.mjs');
+  assert.strictEqual(v.length, 0);
 });
