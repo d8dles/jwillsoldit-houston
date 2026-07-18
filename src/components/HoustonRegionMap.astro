@@ -1,0 +1,325 @@
+---
+import { REGION_SHAPES, RINGS, SPOKES, MARKS, WATER } from '../data/houston-map';
+
+interface Props {
+  activeRegion?: string;
+  interactive?: boolean;
+}
+
+const { activeRegion, interactive = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Two-line label so long region names stay legible inside their sector.
+function splitLabel(name: string): string[] {
+  if (name.includes(' & ')) return name.split(' & ');
+  const words = name.split(' ');
+  if (words.length <= 1) return words;
+  const mid = Math.ceil(words.length / 2);
+  return [words.slice(0, mid).join(' '), words.slice(mid).join(' ')];
+}
+
+// Freeway label anchors — placed beside each spoke's outer end.
+const SPOKE_LABELS: Record<string, { x: number; y: number; anchor: 'start' | 'middle' | 'end' }> = {
+  'i-10-west': { x: 13, y: 41, anchor: 'start' },
+  'i-10-east': { x: 111, y: 58, anchor: 'end' },
+  'i-45-north': { x: 40, y: 12, anchor: 'end' },
+  'i-45-south': { x: 88, y: 90, anchor: 'start' },
+  'us-290': { x: 20, y: 13, anchor: 'start' },
+  'us-59-north': { x: 96, y: 12, anchor: 'end' },
+  'us-59-south': { x: 20, y: 74, anchor: 'start' },
+  'tx-288': { x: 58, y: 92, anchor: 'start' },
+};
+
+const RING_LABELS: Record<string, { text: string; x: number; y: number }> = {
+  'loop-610': { text: 'LOOP 610', x: 56, y: 40 },
+  'beltway-8': { text: 'BELTWAY 8', x: 56, y: 30 },
+  'grand-parkway': { text: 'GRAND PKWY', x: 56, y: 11 },
+};
+
+const title = 'Houston metro — schematic region map';
+---
+
+<figure class="map-figure">
+  {interactive ? (
+    <nav aria-label="Houston regions — schematic map">
+      <svg class="map" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Bay water, lower-right -->
+        <path class="water" d={WATER} />
+        <path class="coast" d={WATER} />
+
+        <!-- Freeway network -->
+        <g class="network" aria-hidden="true">
+          {RINGS.map((ring) => (
+            <path class:list={['ring', ring.id]} d={ring.path} />
+          ))}
+          {SPOKES.map((spoke) => (
+            <path class="spoke" d={spoke.path} />
+          ))}
+        </g>
+
+        <!-- Reference marks -->
+        <g class="marks" aria-hidden="true">
+          {MARKS.map((mark) => (
+            <g class:list={['mark', { downtown: mark.id === 'downtown', bay: mark.id === 'bay' }]}>
+              {mark.id !== 'bay' && <circle class="mark-dot" cx={mark.x} cy={mark.y} r={mark.id === 'downtown' ? 1.1 : 0.8} />}
+              <text class="mark-label detail" x={mark.x} y={mark.id === 'bay' ? mark.y : mark.y - 2} text-anchor="middle">{mark.label}</text>
+            </g>
+          ))}
+        </g>
+
+        <!-- Freeway + ring micro-labels -->
+        <g class="net-labels detail" aria-hidden="true">
+          {SPOKES.map((spoke) => {
+            const p = SPOKE_LABELS[spoke.id];
+            return <text class="spoke-label" x={p.x} y={p.y} text-anchor={p.anchor}>{spoke.label}</text>;
+          })}
+          {RINGS.map((ring) => {
+            const r = RING_LABELS[ring.id];
+            return <text class="ring-label" x={r.x} y={r.y} text-anchor="middle">{r.text}</text>;
+          })}
+        </g>
+
+        <!-- Interactive region sectors + names on top -->
+        <g class="regions">
+          {REGION_SHAPES.map((region) => {
+            const lines = splitLabel(region.name);
+            const firstDy = lines.length > 1 ? '-0.35em' : '0';
+            return (
+              <a
+                class:list={['region', { active: region.id === activeRegion }]}
+                href={`${base}/regions/${region.id}`}
+              >
+                <path class="region-shape" d={region.path} />
+                <text class="region-label" x={region.labelX} y={region.labelY} text-anchor="middle">
+                  {lines.map((line, i) => (
+                    <tspan x={region.labelX} dy={i === 0 ? firstDy : '1.05em'}>{line}</tspan>
+                  ))}
+                </text>
+              </a>
+            );
+          })}
+        </g>
+      </svg>
+    </nav>
+  ) : (
+    <svg class="map" viewBox="0 0 120 100" role="img" aria-label={title} xmlns="http://www.w3.org/2000/svg">
+      <title>{title}</title>
+
+      <path class="water" d={WATER} />
+      <path class="coast" d={WATER} />
+
+      <g class="network">
+        {RINGS.map((ring) => (
+          <path class:list={['ring', ring.id]} d={ring.path} />
+        ))}
+        {SPOKES.map((spoke) => (
+          <path class="spoke" d={spoke.path} />
+        ))}
+      </g>
+
+      <g class="marks">
+        {MARKS.map((mark) => (
+          <g class:list={['mark', { downtown: mark.id === 'downtown', bay: mark.id === 'bay' }]}>
+            {mark.id !== 'bay' && <circle class="mark-dot" cx={mark.x} cy={mark.y} r={mark.id === 'downtown' ? 1.1 : 0.8} />}
+            <text class="mark-label detail" x={mark.x} y={mark.id === 'bay' ? mark.y : mark.y - 2} text-anchor="middle">{mark.label}</text>
+          </g>
+        ))}
+      </g>
+
+      <g class="net-labels detail">
+        {SPOKES.map((spoke) => {
+          const p = SPOKE_LABELS[spoke.id];
+          return <text class="spoke-label" x={p.x} y={p.y} text-anchor={p.anchor}>{spoke.label}</text>;
+        })}
+        {RINGS.map((ring) => {
+          const r = RING_LABELS[ring.id];
+          return <text class="ring-label" x={r.x} y={r.y} text-anchor="middle">{r.text}</text>;
+        })}
+      </g>
+
+      <g class="regions">
+        {REGION_SHAPES.map((region) => {
+          const lines = splitLabel(region.name);
+          const firstDy = lines.length > 1 ? '-0.35em' : '0';
+          return (
+            <g class:list={['region', { active: region.id === activeRegion }]}>
+              <path class="region-shape" d={region.path} />
+              <text class="region-label" x={region.labelX} y={region.labelY} text-anchor="middle">
+                {lines.map((line, i) => (
+                  <tspan x={region.labelX} dy={i === 0 ? firstDy : '1.05em'}>{line}</tspan>
+                ))}
+              </text>
+            </g>
+          );
+        })}
+      </g>
+    </svg>
+  )}
+
+  <figcaption class="map-caption">Schematic map — simplified for orientation, not survey-accurate.</figcaption>
+</figure>
+
+<style>
+  .map-figure {
+    margin: 0;
+    width: 100%;
+    container-type: inline-size;
+  }
+
+  .map {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  nav {
+    display: block;
+  }
+
+  /* ── Water ── */
+  .water {
+    fill: rgba(28, 59, 46, 0.05);
+  }
+  .coast {
+    fill: none;
+    stroke: var(--trace);
+    stroke-width: 0.5;
+  }
+
+  /* ── Freeway network — forest hairlines ── */
+  .ring,
+  .spoke {
+    fill: none;
+    stroke: var(--forest);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .ring {
+    stroke-width: 1.1;
+    opacity: 0.5;
+  }
+  .ring.loop-610 {
+    opacity: 0.62;
+  }
+  .spoke {
+    stroke-width: 0.9;
+    opacity: 0.34;
+  }
+
+  /* ── Marks ── */
+  .mark-dot {
+    fill: var(--forest);
+    opacity: 0.5;
+  }
+  .mark.downtown .mark-dot {
+    fill: var(--red);
+    opacity: 1;
+  }
+  .mark-label,
+  .spoke-label,
+  .ring-label {
+    font-family: var(--mono);
+    fill: var(--mid);
+  }
+  .mark-label {
+    font-size: 2.4px;
+    letter-spacing: 0.02em;
+  }
+  .mark.downtown .mark-label {
+    fill: var(--red-text);
+    font-weight: 700;
+  }
+  .mark.bay .mark-label {
+    fill: var(--forest);
+    opacity: 0.5;
+    letter-spacing: 0.08em;
+  }
+  .spoke-label {
+    font-size: 2.3px;
+    letter-spacing: 0.01em;
+  }
+  .ring-label {
+    font-size: 2.2px;
+    letter-spacing: 0.14em;
+    fill: var(--forest);
+    opacity: 0.45;
+  }
+
+  /* ── Region sectors ── */
+  .region-shape {
+    fill: transparent;
+    stroke: var(--trace);
+    stroke-width: 0.6;
+    vector-effect: non-scaling-stroke;
+    pointer-events: all;
+    transition: fill var(--dur-fast) var(--ease-out), stroke var(--dur-fast) var(--ease-out);
+  }
+  .region-label {
+    font-family: var(--mono);
+    font-size: 3.1px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    fill: var(--forest);
+    paint-order: stroke;
+    stroke: var(--off-white);
+    stroke-width: 0.7px;
+    stroke-linejoin: round;
+    pointer-events: none;
+    transition: fill var(--dur-fast) var(--ease-out);
+  }
+
+  /* Anchors: reset link chrome, keep the sector as the hit target */
+  .regions a {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Hover / focus / active emphasis — forest wash + signal-red border */
+  .regions a:hover .region-shape,
+  .regions a:focus-visible .region-shape,
+  .region.active .region-shape {
+    fill: rgba(28, 59, 46, 0.08);
+    stroke: var(--red);
+    stroke-width: 1.1;
+  }
+  .regions a:hover .region-label,
+  .regions a:focus-visible .region-label,
+  .region.active .region-label {
+    fill: var(--red-text);
+  }
+
+  .regions a:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .regions a:focus-visible .region-shape {
+    stroke-dasharray: 2 1.4;
+  }
+
+  /* Hide the dense micro-labels when the map is rendered small */
+  @container (max-width: 460px) {
+    .detail {
+      display: none;
+    }
+  }
+
+  .map-caption {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    color: var(--mid);
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .region-shape,
+    .region-label {
+      transition: none;
+    }
+  }
+</style>
