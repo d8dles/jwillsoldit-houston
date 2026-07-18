@@ -1,0 +1,52 @@
+/* ── JWILLSOLDIT design tokens ─────────────────────────────────────────────
+   Continuity with Smart Move (move.jwillsoldit.com). Change here, not inline. */
+
+:root {
+  /* Color — warm off-white paper base ("Texas, handled." editorial pass) */
+  --off-white: #FAF7F2;
+  --pure: #FFFFFF;
+  --forest: #1C3B2E;
+  --forest-deep: #142B21;
+  --red: #E03A1F;
+  /* Darkened red for small (<18.66px) text on --off-white paper. #E03A1F
+     is only 4.1:1 there (fails AA); this hits ~4.95:1. Same hue family (~9°).
+     Use for text-sized red only — fills, borders, large display glyphs, and
+     reds on dark panels keep --red. */
+  --red-text: #C93318;
+  --ember: #E85D2A;
+  --copper: #B05C2E;
+  --ink: #0D0D0D;
+  --mid: #6B6B6B;
+  --trace: #E7E1D8;
+  --trace-dark: rgba(250, 250, 250, 0.16);
+  --mid-on-dark: rgba(250, 250, 250, 0.62);
+
+  /* Type */
+  --display: 'Instrument Sans', system-ui, sans-serif;
+  --body: 'Libre Franklin', system-ui, sans-serif;
+  --mono: 'Space Mono', monospace;
+
+  /* Type scale (fluid) */
+  --fs-hero: clamp(2.75rem, 8.5vw, 6.5rem);
+  --fs-h2: clamp(2rem, 4.5vw, 3.25rem);
+  --fs-h3: clamp(1.25rem, 2.2vw, 1.625rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.75rem;
+
+  /* Space */
+  --space-section: clamp(84px, 12vw, 160px);
+  --space-block: clamp(40px, 6vw, 72px);
+  --gutter: clamp(20px, 4.5vw, 56px);
+  --content-max: 1280px;
+
+  /* Motion — restrained. ≤600ms everywhere. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 0.22s;
+  --dur-reveal: 0.55s;
+
+  /* Chrome */
+  --masthead-h: 60px;
+  --actionbar-h: 62px;
+  --radius: 2px;
+}
