@@ -1,0 +1,138 @@
+---
+import { DISCLAIMERS } from '../data/disclaimers';
+
+const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+---
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="compliance-row">
+      <div class="identity">
+        <span class="wordmark">
+          JWILLSOLDIT<span class="dot">.</span>
+        </span>
+        <span class="id-line">
+          Joey Williams &middot; REALTOR&reg; &middot; Christin Rachelle Group &middot; Houston, TX
+        </span>
+      </div>
+
+      <nav class="legal-links" aria-label="Compliance and legal">
+        <a href="https://www.jwillsoldit.com/assets/iabs.pdf" rel="noopener">IABS</a>
+        <a href="https://www.jwillsoldit.com/assets/cpn.pdf" rel="noopener">
+          Consumer Protection Notice
+        </a>
+        <a href={`${base}/methodology`}>Methodology</a>
+      </nav>
+    </div>
+
+    <div class="bottom-row">
+      <img
+        class="crg-logo"
+        src={`${base}/assets/crg-logo-transparent.png`}
+        alt="Christin Rachelle Group"
+        loading="lazy"
+      />
+      <p class="fineprint">
+        Equal Housing Opportunity. Texas Real Estate Commission notices linked
+        above: Information About Brokerage Services &amp; Consumer Protection
+        Notice. {DISCLAIMERS.general.text} &copy; {year} JWILLSOLDIT.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--ink);
+    color: var(--off-white);
+    padding: var(--space-block) 0 48px;
+    margin-top: var(--space-section);
+  }
+
+  .compliance-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--trace-dark);
+    margin-bottom: 32px;
+  }
+
+  .identity {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+  }
+
+  .dot {
+    color: var(--red);
+  }
+
+  /* TREC sizing rule: broker name text must be >= 50% of the largest
+     contact text in this footer. Both the identity line and the legal
+     nav links share --fs-small, so the ratio is always 1:1. */
+  .id-line {
+    font-family: var(--mono);
+    font-size: var(--fs-small);
+    letter-spacing: 0.02em;
+    color: var(--mid-on-dark);
+    line-height: 1.7;
+  }
+
+  .legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .legal-links a {
+    font-family: var(--mono);
+    font-size: var(--fs-small);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--trace-dark);
+    padding-bottom: 2px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+  }
+
+  .legal-links a:hover {
+    color: var(--red);
+    border-color: var(--red);
+  }
+
+  .bottom-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .crg-logo {
+    height: 56px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+
+  .fineprint {
+    font-size: var(--fs-micro);
+    line-height: 1.7;
+    color: var(--mid-on-dark);
+    max-width: 720px;
+  }
+</style>

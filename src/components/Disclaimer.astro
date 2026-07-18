@@ -1,0 +1,31 @@
+---
+import { DISCLAIMERS, type DisclaimerId } from '../data/disclaimers';
+
+interface Props {
+  id: DisclaimerId;
+}
+
+const { id } = Astro.props;
+const disclaimer = DISCLAIMERS[id];
+---
+
+<aside class="disclaimer">
+  <p class="mono-label">{disclaimer.label}</p>
+  <p class="disclaimer-text">{disclaimer.text}</p>
+</aside>
+
+<style>
+  .disclaimer {
+    padding: 16px 20px;
+    border-left: 2px solid var(--trace);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .disclaimer-text {
+    font-size: var(--fs-small);
+    color: var(--mid);
+    line-height: 1.6;
+  }
+</style>

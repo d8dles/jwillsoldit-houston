@@ -1,0 +1,76 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a class="wordmark" href="https://www.jwillsoldit.com">
+      JWILLSOLDIT<span class="dot">.</span>
+    </a>
+
+    <nav class="masthead-nav" aria-label="Houston, Handled.">
+      <a class="mono-label site-label" href={`${base}`}>Houston, Handled.</a>
+      <a class="mono-label nav-link" href={`${base}/guides`}>Guides</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    height: var(--masthead-h);
+    background: var(--off-white);
+    border-bottom: 1px solid var(--trace);
+  }
+
+  .masthead-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: var(--gutter);
+  }
+
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .dot {
+    color: var(--red-text);
+  }
+
+  .masthead-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 32px);
+  }
+
+  .mono-label {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .site-label {
+    white-space: nowrap;
+  }
+
+  .nav-link {
+    transition: color var(--dur-fast) ease;
+  }
+
+  .nav-link:hover {
+    color: var(--red-text);
+  }
+</style>

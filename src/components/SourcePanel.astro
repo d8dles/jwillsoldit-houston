@@ -1,0 +1,96 @@
+---
+interface Source {
+  label: string;
+  url?: string;
+  accessed: string;
+}
+
+interface Props {
+  sources: Source[];
+  updatedAt: string;
+}
+
+const { sources, updatedAt } = Astro.props;
+---
+
+<details class="source-panel">
+  <summary class="mono-label">Data and methodology</summary>
+  <div class="source-panel-body">
+    <p class="updated-line">Updated {updatedAt}</p>
+    <ul class="source-list">
+      {sources.map((source) => (
+        <li>
+          {source.url ? (
+            <a href={source.url} rel="noopener" target="_blank">{source.label}</a>
+          ) : (
+            <span>{source.label}</span>
+          )}
+          <span class="accessed">accessed {source.accessed}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</details>
+
+<style>
+  .source-panel {
+    border-top: 1px solid var(--trace);
+    border-bottom: 1px solid var(--trace);
+    padding: 20px 0;
+    margin: var(--space-block) 0;
+  }
+
+  summary {
+    cursor: pointer;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  summary::marker {
+    color: var(--mid);
+  }
+
+  .source-panel-body {
+    padding-top: 16px;
+  }
+
+  .updated-line {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    color: var(--mid);
+    margin-bottom: 12px;
+  }
+
+  .source-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .source-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    font-size: var(--fs-small);
+  }
+
+  .source-list a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--trace);
+    text-underline-offset: 3px;
+  }
+
+  .source-list a:hover {
+    color: var(--red-text);
+  }
+
+  .accessed {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    color: var(--mid);
+  }
+</style>
