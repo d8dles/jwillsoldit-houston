@@ -1,0 +1,313 @@
+---
+export interface LocationFinderEntry {
+  label: string;
+  type: 'zip' | 'school' | 'neighborhood';
+  aliases?: string[];
+  regionName: string;
+  regionHref: string;
+  detailHref?: string;
+  detailLabel?: string;
+}
+
+interface Props {
+  entries: LocationFinderEntry[];
+}
+
+const { entries } = Astro.props;
+const featured = entries.filter((entry) =>
+  ['77007', 'Katy ISD school-zone lookup', 'Montrose'].includes(entry.label),
+);
+---
+
+<section class="finder" data-location-finder>
+  <div class="finder-copy">
+    <p class="mono-label mono-label--red">Find your starting point</p>
+    <h2>Search by ZIP, school district, or neighborhood.</h2>
+    <p>
+      Use a place you already know to find the closest Houston guide region.
+      School assignments still need to be checked by street address with the district.
+    </p>
+  </div>
+
+  <div class="finder-tool">
+    <label for="houston-location-search">ZIP code, school district, or neighborhood</label>
+    <div class="search-row">
+      <input
+        id="houston-location-search"
+        type="search"
+        placeholder="Try 77007, Katy ISD, or Montrose"
+        autocomplete="off"
+        inputmode="search"
+        data-location-input
+      />
+      <button type="button" data-location-clear hidden>Clear</button>
+    </div>
+
+    <div class="finder-examples" data-location-examples>
+      <span>Try:</span>
+      {featured.map((entry) => (
+        <button type="button" data-location-example={entry.label.replace(' school-zone lookup', '')}>
+          {entry.label.replace(' school-zone lookup', '')}
+        </button>
+      ))}
+    </div>
+
+    <p class="result-summary" role="status" aria-live="polite" data-location-summary>
+      Enter a ZIP, district, or neighborhood to begin.
+    </p>
+
+    <ul class="result-list" data-location-results hidden>
+      {entries.map((entry) => (
+        <li
+          class="result-card"
+          data-location-result
+          data-search={[entry.label, ...(entry.aliases ?? [])].join(' ').toLowerCase()}
+          data-label={entry.label}
+          hidden
+        >
+          <div class="result-heading">
+            <span class="result-type mono-label">
+              {entry.type === 'zip' ? 'ZIP code' : entry.type === 'school' ? 'School zone' : 'Neighborhood'}
+            </span>
+            <strong>{entry.label}</strong>
+          </div>
+          <p>Start with <a href={entry.regionHref}>{entry.regionName}</a>.</p>
+          {entry.detailHref && (
+            <a
+              class="detail-link"
+              href={entry.detailHref}
+              target={entry.detailHref.startsWith('http') ? '_blank' : undefined}
+              rel={entry.detailHref.startsWith('http') ? 'noopener' : undefined}
+            >
+              {entry.detailLabel} <span aria-hidden="true">→</span>
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <p class="no-results" data-location-empty hidden>
+      No guide match yet. Try a broader neighborhood, district name, or ZIP code.
+    </p>
+
+    <p class="finder-note">
+      ZIP codes can cross local boundaries, and school attendance zones can change.
+      Use this search to get oriented, then verify the exact address with the public agency.
+    </p>
+  </div>
+</section>
+
+<script>
+  const finder = document.querySelector<HTMLElement>('[data-location-finder]');
+
+  if (finder) {
+    const input = finder.querySelector<HTMLInputElement>('[data-location-input]');
+    const clear = finder.querySelector<HTMLButtonElement>('[data-location-clear]');
+    const summary = finder.querySelector<HTMLElement>('[data-location-summary]');
+    const list = finder.querySelector<HTMLElement>('[data-location-results]');
+    const empty = finder.querySelector<HTMLElement>('[data-location-empty]');
+    const examples = Array.from(finder.querySelectorAll<HTMLButtonElement>('[data-location-example]'));
+    const results = Array.from(finder.querySelectorAll<HTMLElement>('[data-location-result]'));
+
+    const normalize = (value: string) => value.trim().toLowerCase().replace(/[.,]/g, '');
+
+    const update = () => {
+      if (!input || !summary || !list || !empty || !clear) return;
+      const query = normalize(input.value);
+      clear.hidden = query.length === 0;
+
+      if (!query) {
+        results.forEach((result) => { result.hidden = true; });
+        list.hidden = true;
+        empty.hidden = true;
+        summary.textContent = 'Enter a ZIP, district, or neighborhood to begin.';
+        return;
+      }
+
+      const matches = results.filter((result) => normalize(result.dataset.search ?? '').includes(query));
+      results.forEach((result) => { result.hidden = !matches.includes(result); });
+      list.hidden = matches.length === 0;
+      empty.hidden = matches.length > 0;
+      summary.textContent = matches.length === 1
+        ? '1 match found.'
+        : `${matches.length} matches found.`;
+    };
+
+    input?.addEventListener('input', update);
+    clear?.addEventListener('click', () => {
+      if (!input) return;
+      input.value = '';
+      update();
+      input.focus();
+    });
+    examples.forEach((example) => {
+      example.addEventListener('click', () => {
+        if (!input) return;
+        input.value = example.dataset.locationExample ?? '';
+        update();
+        input.focus();
+      });
+    });
+  }
+</script>
+
+<style>
+  .finder {
+    display: grid;
+    gap: var(--space-block);
+  }
+
+  .finder-copy {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+
+  .finder-copy h2 {
+    font-family: var(--display);
+    font-size: var(--fs-h2);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    max-width: 15ch;
+  }
+
+  .finder-copy > p:last-child {
+    color: var(--mid);
+    max-width: 56ch;
+  }
+
+  .finder-tool {
+    padding: clamp(24px, 4vw, 42px);
+    border: 1px solid var(--trace);
+    background: var(--pure);
+  }
+
+  .finder-tool > label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .search-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  input,
+  .search-row button {
+    min-height: 54px;
+    border: 1px solid var(--forest);
+    border-radius: 0;
+    background: var(--pure);
+    color: var(--ink);
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    font: inherit;
+  }
+
+  .search-row button {
+    padding: 0 18px;
+    border-left: 0;
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    text-transform: uppercase;
+  }
+
+  .finder-examples {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: var(--mid);
+    font-size: var(--fs-small);
+  }
+
+  .finder-examples button {
+    padding: 4px 8px;
+    border: 1px solid var(--trace);
+    background: transparent;
+    color: var(--red-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .result-summary {
+    margin-top: 28px;
+    color: var(--mid);
+    font-size: var(--fs-small);
+  }
+
+  .result-list {
+    list-style: none;
+    display: grid;
+    gap: 1px;
+    margin-top: 12px;
+    border: 1px solid var(--trace);
+    background: var(--trace);
+  }
+
+  .result-card {
+    display: grid;
+    gap: 12px;
+    padding: 20px;
+    background: var(--off-white);
+  }
+
+  .result-heading {
+    display: grid;
+    gap: 4px;
+  }
+
+  .result-heading strong {
+    font-family: var(--display);
+    font-size: 1.15rem;
+  }
+
+  .result-card p {
+    color: var(--mid);
+  }
+
+  .result-card a,
+  .detail-link {
+    color: var(--red-text);
+    text-underline-offset: 3px;
+  }
+
+  .detail-link {
+    width: fit-content;
+    font-weight: 600;
+  }
+
+  .no-results {
+    margin-top: 12px;
+    padding: 20px;
+    border: 1px solid var(--trace);
+  }
+
+  .finder-note {
+    margin-top: 24px;
+    padding-left: 14px;
+    border-left: 2px solid var(--trace);
+    color: var(--mid);
+    font-size: var(--fs-small);
+    line-height: 1.65;
+  }
+
+  @media (min-width: 860px) {
+    .finder {
+      grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    }
+
+    .result-card {
+      grid-template-columns: minmax(190px, 0.8fr) minmax(190px, 1fr) auto;
+      align-items: center;
+    }
+  }
+</style>

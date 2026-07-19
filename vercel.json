@@ -2,6 +2,18 @@
   "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/houston/methodology",
+      "destination": "/houston",
+      "permanent": true
+    },
+    {
+      "source": "/methodology",
+      "destination": "/houston",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/houston",
