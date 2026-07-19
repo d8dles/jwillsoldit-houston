@@ -9,9 +9,9 @@ const year = new Date().getFullYear();
   <div class="container">
     <div class="compliance-row">
       <div class="identity">
-        <span class="wordmark">
+        <a class="wordmark" href="https://www.jwillsoldit.com/" aria-label="JWILLSOLDIT home">
           JWILLSOLDIT<span class="dot">.</span>
-        </span>
+        </a>
         <span class="id-line">
           Joey Williams &middot; REALTOR&reg; &middot; Christin Rachelle Group &middot; Houston, TX
         </span>
@@ -22,7 +22,10 @@ const year = new Date().getFullYear();
         <a href="https://www.jwillsoldit.com/assets/cpn.pdf" rel="noopener">
           Consumer Protection Notice
         </a>
+        <a href="https://www.jwillsoldit.com/privacy.html">Privacy</a>
+        <a href={`${base}`}>Houston Guides</a>
         <a href={`${base}/methodology`}>Methodology</a>
+        <a href="https://move.jwillsoldit.com" rel="noopener">Smart Move</a>
       </nav>
     </div>
 
@@ -70,10 +73,12 @@ const year = new Date().getFullYear();
   }
 
   .wordmark {
+    color: var(--off-white);
     font-family: var(--display);
     font-weight: 700;
     font-size: 1.25rem;
     letter-spacing: 0.06em;
+    text-decoration: none;
   }
 
   .dot {
