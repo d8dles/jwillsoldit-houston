@@ -30,7 +30,6 @@ const indexSources = [{
     <section class="container guide-grid" aria-label="Houston moving guides">
       {guides.map((guide) => (
         <article class="guide-card">
-          <p class="mono-label">Updated {guide.data.updatedAt}</p>
           <h2><a href={`${base}/guides/${guide.data.slug}`}>{guide.data.title}</a></h2>
           <p>{guide.data.description}</p>
           <a class="card-link" href={`${base}/guides/${guide.data.slug}`} aria-label={`Read ${guide.data.title}`}>
