@@ -27,12 +27,14 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="bottom-row">
-      <img
-        class="crg-logo"
-        src={`${base}/assets/crg-logo-transparent.png`}
-        alt="Christin Rachelle Group"
-        loading="lazy"
-      />
+      <div class="crg-logo-frame">
+        <img
+          class="crg-logo"
+          src={`${base}/assets/crg-logo-transparent.png`}
+          alt="Christin Rachelle Group"
+          loading="lazy"
+        />
+      </div>
       <p class="fineprint">
         Equal Housing Opportunity. Texas Real Estate Commission notices linked
         above: Information About Brokerage Services &amp; Consumer Protection
@@ -122,9 +124,24 @@ const year = new Date().getFullYear();
     gap: 24px;
   }
 
+  /* The supplied PNG has a wide transparent border. Crop that border in the
+     presentation layer so the official lettering, not the empty canvas,
+     determines the visible logo size. */
+  .crg-logo-frame {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(220px, 28vw, 300px);
+    aspect-ratio: 1.59;
+    overflow: hidden;
+  }
+
   .crg-logo {
-    height: 56px;
-    width: auto;
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 249.8%;
+    max-width: none;
+    height: auto;
+    transform: translate(-28.3%, -28.6%);
     filter: brightness(0) invert(1);
     opacity: 0.85;
   }
