@@ -2,10 +2,8 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import HoustonRegionMap from '../components/HoustonRegionMap.astro';
-import HoustonLocationFinder, { type LocationFinderEntry } from '../components/HoustonLocationFinder.astro';
 import SourcePanel from '../components/SourcePanel.astro';
 import { REGION_SHAPES } from '../data/houston-map';
-import { STATIC_LOCATION_ENTRIES } from '../data/location-finder';
 
 const [regionEntries, guideEntries, areaEntries] = await Promise.all([
   getCollection('regions'),
@@ -39,29 +37,6 @@ const areaPosition = new Map(areaOrder.map((slug, index) => [slug, index]));
 const areas = areaEntries.sort((a, b) =>
   (areaPosition.get(a.data.slug) ?? 99) - (areaPosition.get(b.data.slug) ?? 99));
 const isExternal = (href: string) => href.startsWith('http');
-
-const neighborhoodEntries: LocationFinderEntry[] = regions.flatMap((region) =>
-  region.data.exampleCommunities.map((community) => ({
-    label: community.name,
-    type: 'neighborhood' as const,
-    regionName: region.data.name,
-    regionHref: `${base}/regions/${region.data.slug}`,
-    detailHref: community.href,
-    detailLabel: community.href.startsWith(`${base}/areas/`) || community.href.startsWith('/houston/areas/')
-      ? `Read ${community.name} area guide`
-      : `Open the ${community.name} source`,
-  })),
-);
-
-const locationEntries: LocationFinderEntry[] = [
-  ...STATIC_LOCATION_ENTRIES.map((entry) => ({
-    ...entry,
-    regionHref: `${base}/regions/${entry.regionSlug}`,
-    detailHref: entry.officialUrl,
-    detailLabel: entry.type === 'school' ? 'Check the address with the district' : undefined,
-  })),
-  ...neighborhoodEntries,
-];
 
 const updatedAt = [...regions, ...guides, ...areas]
   .map((entry) => entry.data.updatedAt)
@@ -107,10 +82,6 @@ const landingSources = [
         <HoustonRegionMap interactive />
       </div>
     </section>
-
-    <div class="section container finder-wrap">
-      <HoustonLocationFinder entries={locationEntries} />
-    </div>
 
     <section class="section orientation">
       <div class="container split">
@@ -298,11 +269,6 @@ const landingSources = [
   .orientation {
     border-top: 1px solid var(--trace);
     border-bottom: 1px solid var(--trace);
-  }
-
-  .finder-wrap {
-    padding-top: clamp(52px, 8vw, 96px);
-    padding-bottom: clamp(52px, 8vw, 96px);
   }
 
   .split {
