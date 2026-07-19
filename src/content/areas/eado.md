@@ -26,10 +26,12 @@ schoolDistricts:
 thingsNearby:
   - category: "Transit"
     items:
-      - "EaDo/Stadium METRORail station"
+      - name: "EaDo/Stadium METRORail station"
+        officialUrl: "https://www.ridemetro.org/riding-metro/houston-attractions/shell-energy-stadium"
   - category: "Sports and events"
     items:
-      - "Shell Energy Stadium"
+      - name: "Shell Energy Stadium"
+        officialUrl: "https://www.houstondynamofc.com/shell-energy-stadium/about"
 thingsToUnderstand:
   - "Stadium and convention-district events can change street access, curb use, noise, and parking demand; check current event and closure notices for the dates that matter to you."
   - "I-69/US-59, freight-rail tracks, and large venue blocks interrupt parts of the street grid, so walking and driving routes can differ substantially from one block to another."
@@ -70,4 +72,4 @@ updatedAt: "2026-07-18"
 status: "published"
 ---
 
-EaDo is the City of Houston district immediately east of Downtown, largely organized through the East Downtown Management District and TIRZ 15. Its compact street grid sits between major freeways, rail corridors, the convention district, and the East End. City mobility studies describe a transitional building pattern: one- and two-story warehouses and light-industrial buildings alongside townhouses, converted spaces, apartments, and newer mixed-use development. METRORail's Green and Purple lines share the EaDo/Stadium station, providing a direct Downtown connection and transfers to the Red Line. Shell Energy Stadium adds a major event use within the district. The same mix that creates short connections also makes block conditions variable. Rail crossings, event closures, parking supply, loading activity, and nearby commercial operations should be checked at the specific address and at the times a resident expects to travel.
+EaDo sits directly east of Downtown, between major freeways, rail lines, the convention district, and the East End. You will see older warehouses and light-industrial buildings next to townhouses, loft conversions, apartments, and newer mixed-use projects. The Green and Purple METRORail lines stop at EaDo/Stadium, with connections into Downtown and the Red Line. Shell Energy Stadium brings games and events into the middle of the district. That makes the exact block more important than the neighborhood label. A route that looks short on a map can change around rail crossings, event closures, loading areas, or limited parking. If you are considering a home here, visit the block at the hours you would normally leave, return, and sleep, then confirm parking and any building rules.

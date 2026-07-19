@@ -83,9 +83,6 @@ export function validateContent(text, filePath) {
     if (count < 700 || count > 1200) {
       errors.push(`${filePath}: guide is ${count} words; expected 700–1,200`);
     }
-    if (!/^## What this means when you're choosing a place\s*$/m.test(body)) {
-      errors.push(`${filePath}: missing required closing heading`);
-    }
     if (body.includes('!')) {
       errors.push(`${filePath}: guide body contains an exclamation mark`);
     }

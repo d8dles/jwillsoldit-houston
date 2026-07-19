@@ -4,7 +4,7 @@ slug: "sugar-land"
 regionSlug: "southwest-fort-bend"
 counties:
   - "Fort Bend County"
-jurisdiction: "Full-purpose City of Sugar Land limits in Fort Bend County; this page does not cover the City's extraterritorial jurisdiction or every property with a Sugar Land mailing address"
+jurisdiction: "Full-purpose City of Sugar Land limits in Fort Bend County, not the City's extraterritorial jurisdiction or every property with a Sugar Land mailing address"
 areaType: "city"
 housingTypes:
   - "detached houses"
@@ -26,9 +26,12 @@ schoolDistricts:
 thingsNearby:
   - category: "City parks and trails"
     items:
-      - "Brazos River Park"
-      - "Cullinan Park"
-      - "Sugar Land Memorial Park"
+      - name: "Brazos River Park"
+        officialUrl: "https://www.sugarlandtx.gov/facilities/facility/details/brazosriverpark-65"
+      - name: "Cullinan Park"
+        officialUrl: "https://www.sugarlandtx.gov/facilities/facility/details/cullinanpark-64"
+      - name: "Sugar Land Memorial Park"
+        officialUrl: "https://www.sugarlandtx.gov/Facilities/Facility/Details/Memorial-Park-6"
 thingsToUnderstand:
   - "A Sugar Land mailing address does not establish that a property is inside the City's corporate limits; confirm jurisdiction through the City's address lookup before relying on City services or regulations."
   - "Municipal utility district and levee improvement district boundaries vary by parcel and can add separate taxes, services, and flood-protection responsibilities to the City tax and service structure."
@@ -70,4 +73,4 @@ updatedAt: "2026-07-18"
 status: "published"
 ---
 
-This profile covers full-purpose City of Sugar Land limits in eastern Fort Bend County, not every property with a Sugar Land mailing address or land in the City's extraterritorial jurisdiction. Incorporated in 1959, Sugar Land now combines older neighborhoods, large late-20th-century master-planned communities, annexed areas, and newer mixed-use and infill districts. Detached houses remain a major housing form, with townhouses, condominiums, and multifamily buildings in selected areas. US-59/I-69 is the main regional connection toward Houston; SH 6 and US 90A handle many cross-city trips. Property obligations vary materially by address. Some homes are within a municipal utility or levee improvement district with separate taxes and services, and the City reports nine LIDs operating over much of its limits. Fort Bend ISD and Lamar CISD both serve city addresses. Confirm city limits, zoning, HOA or deed restrictions, school assignment, LID or MUD, floodplain, and current roadway conditions for the parcel.
+A Sugar Land mailing address does not always mean the property is inside the City of Sugar Land. Inside the city limits, you will find older neighborhoods, large master-planned communities, annexed areas, apartments, townhouses, condos, and newer mixed-use development. US-59/I-69 is the main route toward Houston, while SH 6 and US 90A carry many local trips. The details still come down to the address. Some homes sit in a municipal utility district or levee improvement district with separate taxes and services. City addresses can also fall within Fort Bend ISD or Lamar CISD. Before choosing a property, confirm the city limit, zoning, HOA or deed restrictions, school assignment, LID or MUD, floodplain, and roadway access. Those answers can differ even when two listings both say “Sugar Land.”

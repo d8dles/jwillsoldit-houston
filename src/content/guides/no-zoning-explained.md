@@ -80,7 +80,7 @@ Then direct each question to the responsible source. Planning staff can explain 
 
 This is not a one-time citywide answer. It is a parcel-level check tied to a proposed use.
 
-## What this means when you're choosing a place
+## What to check at the property level
 
 Treat “no zoning” as the beginning of due diligence, not the end. Confirm whether the address is inside Houston, in its extraterritorial jurisdiction, in another municipality, or unincorporated. Review the public development rules and the private recorded restrictions separately.
 

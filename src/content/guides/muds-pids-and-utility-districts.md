@@ -94,8 +94,8 @@ For a property inside a district, request the latest tax bill, appraisal record,
 
 Names and figures should match across the documents. If they do not, stop and ask which source is current. A title company can explain what it will rely on for closing, while the district or local government can answer questions about its own records.
 
-## What this means when you're choosing a place
+## What I would verify for one address
 
 Do not treat the presence of a district as a conclusion by itself. Identify the exact boundary, services, taxes, assessments, charges, and current documents for the address. Then compare those items with the same categories for the other properties you are considering.
 
-The key question is, "Which entity is responsible for what, and how does this parcel pay for it?" When that answer is documented, the district structure becomes something you can compare instead of a line of unexplained initials.
+Ask one question first: "Which entity is responsible for what, and how does this parcel pay for it?" Once that answer is documented, you can compare the district structure instead of staring at a line of unexplained initials.

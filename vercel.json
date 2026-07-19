@@ -8,6 +8,10 @@
       "destination": "/"
     },
     {
+      "source": "/houston/",
+      "destination": "/"
+    },
+    {
       "source": "/houston/:path*",
       "destination": "/:path*"
     }
