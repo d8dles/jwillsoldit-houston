@@ -1,0 +1,293 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import AreaLocatorMap from '../../components/AreaLocatorMap.astro';
+import Disclaimer from '../../components/Disclaimer.astro';
+import SourcePanel from '../../components/SourcePanel.astro';
+import { AREA_PINS } from '../../data/area-pins';
+
+export async function getStaticPaths() {
+  const areas = await getCollection('areas', ({ data }) => data.status === 'published');
+  return areas.map((area) => ({
+    params: { slug: area.data.slug },
+    props: { area },
+  }));
+}
+
+interface Props {
+  area: Awaited<ReturnType<typeof getCollection<'areas'>>>[number];
+}
+
+const { area } = Astro.props;
+const { data } = area;
+const { Content } = await render(area);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const pin = AREA_PINS[data.slug];
+if (!pin) throw new Error(`Missing schematic locator pin for area: ${data.slug}`);
+const areaType = data.areaType.replaceAll('-', ' ');
+---
+
+<Base
+  title={`${data.name} — Houston, Handled.`}
+  description={`A structural guide to ${data.name}: jurisdiction, housing character, connections, schools, and practical details to verify.`}
+>
+  <main class="container area-page" data-track-view="houston_area_view" data-track-slug={data.slug}>
+    <header class="page-header">
+      <p class="mono-label mono-label--red">{areaType} · {data.counties.join(' · ')}</p>
+      <h1>{data.name}</h1>
+      <p class="jurisdiction">{data.jurisdiction}</p>
+      <p class="mono-label">Updated {data.updatedAt}</p>
+    </header>
+
+    <AreaLocatorMap
+      regionId={data.regionSlug}
+      areaName={data.name}
+      dotX={pin.x}
+      dotY={pin.y}
+    />
+
+    <section class="block overview">
+      <Content />
+    </section>
+
+    <section class="block">
+      <h2>Location and connections</h2>
+      <dl class="connection-list">
+        {data.connections.map((connection) => (
+          <div>
+            <dt>{connection.destination}</dt>
+            <dd>{connection.note}</dd>
+          </div>
+        ))}
+      </dl>
+      <Disclaimer id="travel-times" />
+      <nav class="parent-link" aria-label="Parent Houston region">
+        <a href={`${base}/regions/${data.regionSlug}`}>View the surrounding Houston region</a>
+      </nav>
+    </section>
+
+    <section class="block">
+      <h2>Housing character</h2>
+      <dl class="fact-grid">
+        <div><dt>Housing types</dt><dd>{data.housingTypes.join('; ')}</dd></div>
+        <div><dt>Typical era</dt><dd>{data.typicalEra}</dd></div>
+        <div><dt>Lot character</dt><dd>{data.lotCharacter}</dd></div>
+        <div><dt>HOA prevalence</dt><dd>{data.hoaPrevalence.replace('-', ' ')}</dd></div>
+      </dl>
+    </section>
+
+    {data.thingsNearby.length > 0 && (
+      <section class="block">
+        <h2>Things nearby</h2>
+        <div class="nearby-grid">
+          {data.thingsNearby.map((group) => (
+            <section>
+              <h3 class="mono-label">{group.category}</h3>
+              <ul>{group.items.map((item) => <li>{item}</li>)}</ul>
+            </section>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="block">
+      <h2>Things to understand</h2>
+      <ul class="understand-list">
+        {data.thingsToUnderstand.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    {data.localNotes && (
+      <aside class="block local-note">
+        <p>{data.localNotes}</p>
+        <p class="mono-label">— Joey</p>
+      </aside>
+    )}
+
+    <section class="block">
+      <h2>Schools</h2>
+      <ul class="school-list">
+        {data.schoolDistricts.map((district) => (
+          <li><a href={district.officialUrl} target="_blank" rel="noopener">{district.name}</a></li>
+        ))}
+      </ul>
+      <Disclaimer id="schools" />
+    </section>
+
+    <section class="block relocation-cta">
+      <p class="mono-label mono-label--red">Planning a Houston move</p>
+      <h2>Connect the address to the rest of the decision.</h2>
+      <p>Tell me what you are balancing, and I’ll help you work through the pieces around the property.</p>
+      <div class="cta-links">
+        <a
+          class="button button--primary"
+          href="https://move.jwillsoldit.com/?intent=houston-relocation"
+          data-track="houston_cta_smartmove_click"
+        >Start Smart Move</a>
+        <a class="button" href="sms:+15616856566" data-track="houston_cta_contact_click">Text Joey</a>
+        <a class="button" href="tel:+15616856566" data-track="houston_cta_contact_click">Call Joey</a>
+      </div>
+    </section>
+
+    <SourcePanel sources={data.sources} updatedAt={data.updatedAt} />
+  </main>
+</Base>
+
+<style>
+  .area-page {
+    max-width: 980px;
+    padding-top: var(--space-block);
+    padding-bottom: var(--space-section);
+  }
+
+  .page-header {
+    display: grid;
+    gap: 14px;
+    margin-bottom: var(--space-block);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: var(--fs-hero);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+  }
+
+  .jurisdiction {
+    color: var(--mid);
+    font-size: 1.05rem;
+  }
+
+  .block {
+    margin-top: var(--space-block);
+    max-width: 72ch;
+  }
+
+  .block > h2 {
+    font-family: var(--display);
+    font-size: var(--fs-h3);
+    margin-bottom: 20px;
+  }
+
+  .overview :global(p) {
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+
+  .connection-list,
+  .fact-grid {
+    display: grid;
+    gap: 1px;
+    background: var(--trace);
+    border: 1px solid var(--trace);
+    margin-bottom: 24px;
+  }
+
+  .connection-list > div,
+  .fact-grid > div {
+    padding: 20px;
+    background: var(--off-white);
+  }
+
+  dt {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 6px;
+  }
+
+  dd,
+  li {
+    line-height: 1.65;
+  }
+
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 28px;
+  }
+
+  .nearby-grid h3 {
+    margin-bottom: 10px;
+  }
+
+  .nearby-grid ul,
+  .school-list,
+  .understand-list {
+    padding-left: 1.25em;
+    display: grid;
+    gap: 8px;
+  }
+
+  .school-list {
+    margin-bottom: 24px;
+  }
+
+  .school-list a,
+  .parent-link a {
+    color: var(--red-text);
+    text-underline-offset: 3px;
+  }
+
+  .parent-link {
+    margin-top: 20px;
+  }
+
+  .local-note {
+    border-left: 3px solid var(--red);
+    padding: 24px;
+    background: var(--pure);
+    display: grid;
+    gap: 12px;
+  }
+
+  .relocation-cta {
+    max-width: none;
+    background: var(--forest);
+    color: var(--off-white);
+    padding: clamp(28px, 5vw, 56px);
+  }
+
+  .relocation-cta h2 {
+    max-width: 18ch;
+    font-size: var(--fs-h2);
+  }
+
+  .relocation-cta > p:not(.mono-label) {
+    max-width: 58ch;
+    color: var(--mid-on-dark);
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .button {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border: 1px solid var(--trace-dark);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: var(--fs-small);
+  }
+
+  .button--primary {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--pure);
+  }
+
+  @media (min-width: 700px) {
+    .fact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

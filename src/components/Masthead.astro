@@ -1,5 +1,5 @@
 ---
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <header class="masthead">
@@ -9,7 +9,10 @@ const base = import.meta.env.BASE_URL;
     </a>
 
     <nav class="masthead-nav" aria-label="Houston, Handled.">
-      <a class="mono-label site-label" href={`${base}`}>Houston, Handled.</a>
+      <a class="mono-label site-label" href={`${base}/`}>
+        <span class="site-label-full">Houston, Handled.</span>
+        <span class="site-label-short">Houston</span>
+      </a>
       <a class="mono-label nav-link" href={`${base}/guides`}>Guides</a>
     </nav>
   </div>
@@ -66,11 +69,33 @@ const base = import.meta.env.BASE_URL;
     white-space: nowrap;
   }
 
+  .site-label-short {
+    display: none;
+  }
+
   .nav-link {
     transition: color var(--dur-fast) ease;
   }
 
   .nav-link:hover {
     color: var(--red-text);
+  }
+
+  @media (max-width: 560px) {
+    .masthead-inner {
+      gap: 12px;
+    }
+
+    .masthead-nav {
+      gap: 16px;
+    }
+
+    .site-label-full {
+      display: none;
+    }
+
+    .site-label-short {
+      display: inline;
+    }
   }
 </style>

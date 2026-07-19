@@ -1,0 +1,116 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SourcePanel from '../../components/SourcePanel.astro';
+
+const guides = (await getCollection('guides', ({ data }) => data.status === 'published'))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const updatedAt = guides.map((guide) => guide.data.updatedAt).sort().at(-1) ?? '2026-07-18';
+const indexSources = [{
+  label: 'Each guide page carries its own primary-source record',
+  accessed: updatedAt,
+}];
+---
+
+<Base
+  title="Houston in Real Life — Houston, Handled."
+  description="Plain-language guides to the systems and practical details that shape a move across Greater Houston."
+  updatedAt={updatedAt}
+>
+  <main>
+    <header class="container guide-header">
+      <p class="mono-label mono-label--red">Houston in real life</p>
+      <h1>The stuff people wish someone had told them</h1>
+      <p class="lede">
+        Taxes, utilities, flood review, toll roads, commutes, and the rules that change from one address to the next.
+      </p>
+    </header>
+
+    <section class="container guide-grid" aria-label="Houston moving guides">
+      {guides.map((guide) => (
+        <article class="guide-card">
+          <p class="mono-label">Updated {guide.data.updatedAt}</p>
+          <h2><a href={`${base}/guides/${guide.data.slug}`}>{guide.data.title}</a></h2>
+          <p>{guide.data.description}</p>
+          <a class="card-link" href={`${base}/guides/${guide.data.slug}`} aria-label={`Read ${guide.data.title}`}>
+            Read the guide <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      ))}
+    </section>
+    <div class="container index-sources">
+      <SourcePanel sources={indexSources} updatedAt={updatedAt} />
+    </div>
+  </main>
+</Base>
+
+<style>
+  .guide-header {
+    padding-top: var(--space-block);
+    padding-bottom: var(--space-block);
+    max-width: 920px;
+    display: grid;
+    gap: 20px;
+  }
+
+  h1 {
+    max-width: 16ch;
+    font-family: var(--display);
+    font-size: var(--fs-hero);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+  }
+
+  .lede {
+    max-width: 62ch;
+    color: var(--mid);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+  }
+
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+    gap: 1px;
+    background: var(--trace);
+    border: 1px solid var(--trace);
+  }
+
+  .guide-card {
+    min-height: 300px;
+    padding: clamp(24px, 4vw, 40px);
+    background: var(--off-white);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .guide-card h2 {
+    font-family: var(--display);
+    font-size: var(--fs-h3);
+    line-height: 1.15;
+  }
+
+  .guide-card h2 a {
+    text-decoration: none;
+  }
+
+  .guide-card > p:not(.mono-label) {
+    color: var(--mid);
+  }
+
+  .card-link {
+    margin-top: auto;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--red-text);
+    font-weight: 600;
+    text-underline-offset: 4px;
+  }
+
+  .index-sources {
+    padding-top: var(--space-block);
+  }
+</style>

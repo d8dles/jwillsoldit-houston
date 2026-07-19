@@ -9,11 +9,85 @@ interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  pageType?: 'website' | 'article' | 'real-estate-agent';
+  updatedAt?: string;
+  breadcrumbs?: { name: string; path: string }[];
 }
 
-const { title, description, noindex = false } = Astro.props;
+const {
+  title,
+  description,
+  noindex = false,
+  pageType = 'website',
+  updatedAt,
+  breadcrumbs = [],
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const homeURL = new URL(`${base}/`, Astro.site).toString();
+const ogImage = new URL('/assets/og-hub-v1.png', Astro.site).toString();
+const normalizedPath = Astro.url.pathname.replace(/\/$/, '');
+const breadcrumbItems = breadcrumbs.length > 0
+  ? breadcrumbs
+  : normalizedPath === base
+    ? [{ name: 'Houston, Handled.', path: `${base}/` }]
+    : [
+      { name: 'Houston, Handled.', path: `${base}/` },
+      { name: title.split(' — ')[0], path: Astro.url.pathname },
+      ];
+
+const jsonLd: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Houston, Handled. — JWILLSOLDIT',
+    url: homeURL,
+    publisher: {
+      '@type': 'Organization',
+      name: 'JWILLSOLDIT',
+      url: 'https://www.jwillsoldit.com/',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: new URL(item.path, Astro.site).toString(),
+    })),
+  },
+];
+
+if (pageType === 'article') {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title.split(' — ')[0],
+    description,
+    url: canonicalURL.toString(),
+    image: ogImage,
+    ...(updatedAt ? { dateModified: updatedAt } : {}),
+    author: { '@type': 'Person', name: 'Joey Williams' },
+    publisher: { '@type': 'Organization', name: 'JWILLSOLDIT' },
+  });
+}
+
+if (pageType === 'real-estate-agent') {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    name: 'Joey Williams — JWILLSOLDIT',
+    url: canonicalURL.toString(),
+    telephone: '+1-561-685-6566',
+    areaServed: 'Greater Houston, Texas',
+    parentOrganization: { '@type': 'Organization', name: 'Christin Rachelle Group' },
+  });
+}
+
+const jsonLdText = JSON.stringify(jsonLd).replaceAll('<', '\\u003c');
 ---
 
 <html lang="en">
@@ -25,8 +99,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalURL} />
     {noindex && <meta name="robots" content="noindex" />}
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <meta property="og:type" content={pageType === 'article' ? 'article' : 'website'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Houston, Handled. — JWILLSOLDIT" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" is:inline set:html={jsonLdText} />
+
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <link rel="icon" href={`${base}/favicon.ico`} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Fonts: same system as the hub, for brand continuity -->
@@ -42,5 +128,48 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <slot />
     <ComplianceFooter />
     <Analytics />
+    <script>
+      import { track } from '@vercel/analytics';
+
+      function trackElement(element: HTMLElement) {
+        const eventName = element.dataset.track;
+        if (!eventName) return;
+        const properties: Record<string, string> = {};
+        if (element.dataset.trackSlug) properties.slug = element.dataset.trackSlug;
+        if (element.dataset.trackLabel) properties.label = element.dataset.trackLabel;
+        track(eventName, properties);
+      }
+
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        const tracked = target.closest<HTMLElement>('[data-track]');
+        if (tracked) trackElement(tracked);
+      });
+
+      const viewTarget = document.querySelector<HTMLElement>('[data-track-view]');
+      if (viewTarget?.dataset.trackView) {
+        track(viewTarget.dataset.trackView, viewTarget.dataset.trackSlug
+          ? { slug: viewTarget.dataset.trackSlug }
+          : {});
+      }
+
+      const landing = document.querySelector('[data-track-page="houston_landing"]');
+      if (landing) {
+        const reported = new Set<number>();
+        const reportDepth = () => {
+          const available = document.documentElement.scrollHeight - window.innerHeight;
+          if (available <= 0) return;
+          const depth = Math.round((window.scrollY / available) * 100);
+          for (const threshold of [50, 90]) {
+            if (depth >= threshold && !reported.has(threshold)) {
+              reported.add(threshold);
+              track('houston_landing_scroll_depth', { depth: String(threshold) });
+            }
+          }
+        };
+        window.addEventListener('scroll', reportDepth, { passive: true });
+      }
+    </script>
   </body>
 </html>

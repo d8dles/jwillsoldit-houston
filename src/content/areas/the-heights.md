@@ -1,0 +1,67 @@
+---
+name: "The Heights"
+slug: "the-heights"
+regionSlug: "central-houston"
+counties:
+  - "Harris County"
+jurisdiction: "City of Houston, Harris County; this page focuses on Houston Heights within Greater Heights Super Neighborhood 15"
+areaType: "neighborhood"
+housingTypes:
+  - "one- and two-story detached houses"
+  - "bungalows and cottages"
+  - "townhouses and other infill housing"
+  - "apartments and condominiums"
+typicalEra: "1890s-1940s historic core, with later development and ongoing infill"
+lotCharacter: "Traditional street grid; many historic residential blocks use roughly 50-foot lots, with smaller, combined, and redeveloped parcels also present"
+hoaPrevalence: "some"
+connections:
+  - destination: "Downtown Houston"
+    note: "Common road routes are roughly 3–6 miles; Houston Heights is directly north of I-10 and inside Loop 610, and conditions vary by block and time of day."
+  - destination: "Uptown/Galleria"
+    note: "Common road routes are roughly 7–11 miles; Loop 610 is the main regional connection, and conditions vary by route and time of day."
+schoolDistricts:
+  - name: "Houston Independent School District"
+    officialUrl: "https://www.houstonisd.org/"
+thingsNearby:
+  - category: "City parks"
+    items:
+      - "Heights Boulevard Park"
+      - "Milroy Park"
+      - "Stude Park"
+thingsToUnderstand:
+  - "Houston Heights contains three City-designated historic districts, but those districts do not cover the entire neighborhood; alteration and new-construction review depends on the parcel."
+  - "Deed restrictions, special minimum-lot-size protections, and minimum building lines vary by block or property; verify the recorded documents and City maps for a specific address."
+  - "Older houses, later apartments, and newer infill share the same broader area, so setbacks, driveway arrangements, parking, and lot coverage can change from one block to the next."
+sources:
+  - label: "City of Houston - Greater Heights Super Neighborhood 15"
+    url: "https://www.houstontx.gov/superneighborhoods/15.html"
+    accessed: "2026-07-18"
+  - label: "City of Houston - Houston Heights Historic District overview"
+    url: "https://www.houstontx.gov/planning/HistoricPres/HistoricPreservationManual/historic_districts/heights.html"
+    accessed: "2026-07-18"
+  - label: "City of Houston - Houston Heights historic-district boundaries"
+    url: "https://www.houstontx.gov/planning/HistoricPres/HistoricPreservationManual/historic_districts/heights_boundaries.html"
+    accessed: "2026-07-18"
+  - label: "City of Houston - Houston Heights setting, setbacks, and deed restrictions"
+    url: "https://www.houstontx.gov/planning/HistoricPres/HistoricPreservationManual/historic_districts/heights_setting.html"
+    accessed: "2026-07-18"
+  - label: "City of Houston - Special Minimum Lot Size and Minimum Building Line program"
+    url: "https://www.houstontx.gov/planning/Min-Lot_Size-Min_Bldg_Line.html"
+    accessed: "2026-07-18"
+  - label: "Houston Parks and Recreation Department - park sites"
+    url: "https://www.houstontx.gov/parks/parksitesG-N.html"
+    accessed: "2026-07-18"
+  - label: "Houston Parks and Recreation Department - park sites O-Z"
+    url: "https://www.houstontx.gov/parks/parksitesO-Z.html"
+    accessed: "2026-07-18"
+  - label: "Houston ISD - Demographics, zoning maps, and school locator"
+    url: "https://www.houstonisd.org/our-district/demographics-strategic-planning"
+    accessed: "2026-07-18"
+  - label: "Google Maps - road-distance checks for listed connections"
+    url: "https://www.google.com/maps"
+    accessed: "2026-07-18"
+updatedAt: "2026-07-18"
+status: "published"
+---
+
+The Heights page focuses on Houston Heights, the historic core within the City of Houston's Greater Heights Super Neighborhood 15. The neighborhood sits north of I-10 and inside Loop 610 on a street grid established around the turn of the twentieth century. City preservation records describe one- and two-story houses in styles including Queen Anne, Craftsman, Folk National, and Folk Victorian, while the broader super neighborhood also contains apartments, condominiums, townhouses, and newer infill. Three City-designated historic districts cover only portions of Houston Heights, not the whole neighborhood. Lot dimensions, setbacks, deed restrictions, and minimum-lot or building-line protections can therefore change from one block or parcel to the next. That variation makes address-level review more useful than broad assumptions about the area.

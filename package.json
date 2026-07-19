@@ -7,11 +7,13 @@
   },
   "scripts": {
     "dev": "node node_modules/astro/bin/astro.mjs dev",
-    "build": "node scripts/lint-language.mjs && node node_modules/astro/bin/astro.mjs check && node node_modules/astro/bin/astro.mjs build",
+    "build": "node scripts/lint-language.mjs && node scripts/lint-content.mjs && node node_modules/astro/bin/astro.mjs check && node node_modules/astro/bin/astro.mjs build",
+    "test": "node --test scripts/*.test.mjs",
     "preview": "node node_modules/astro/bin/astro.mjs preview",
     "astro": "node node_modules/astro/bin/astro.mjs"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@vercel/analytics": "^2.0.1",
     "astro": "^7.1.1"
   },

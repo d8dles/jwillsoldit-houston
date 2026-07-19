@@ -23,6 +23,16 @@ exampleCommunities:
   - "Energy Corridor"
   - "Katy"
 mapId: "west-houston-energy-corridor"
+sources:
+  - label: "Energy Corridor District — official district boundaries"
+    url: "https://energycorridor.org/getting-to-the-energy-corridor/"
+    accessed: "2026-07-18"
+  - label: "Texas Department of Transportation — SH 99 segment E between I-10 and US 290"
+    url: "https://www.txdot.gov/projects/projects-studies/houston/sh99-grand-parkway/overview/segment-e.html"
+    accessed: "2026-07-18"
+  - label: "Harris County Toll Road Authority — Westpark Tollway facility description"
+    url: "https://www.hctra.org/-/media/e6f15b125dcb4d58a405cd9528d2cd00.ashx"
+    accessed: "2026-07-18"
 updatedAt: "2026-07-18"
 ---
 

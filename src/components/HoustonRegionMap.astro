@@ -88,6 +88,8 @@ const title = 'Houston metro — schematic region map';
               <a
                 class:list={['region', { active: region.id === activeRegion }]}
                 href={`${base}/regions/${region.id}`}
+                data-track="houston_map_region_click"
+                data-track-slug={region.id}
               >
                 <path class="region-shape" d={region.path} />
                 <text class="region-label" x={region.labelX} y={region.labelY} text-anchor="middle">

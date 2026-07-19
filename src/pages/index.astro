@@ -1,17 +1,492 @@
 ---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import HoustonRegionMap from '../components/HoustonRegionMap.astro';
+import SourcePanel from '../components/SourcePanel.astro';
+import { REGION_SHAPES } from '../data/houston-map';
 
+const [regionEntries, guideEntries, areaEntries] = await Promise.all([
+  getCollection('regions'),
+  getCollection('guides', ({ data }) => data.status === 'published'),
+  getCollection('areas', ({ data }) => data.status === 'published'),
+]);
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const regionOrder = new Map(REGION_SHAPES.map((region, index) => [region.id, index]));
+const regions = regionEntries.sort((a, b) =>
+  (regionOrder.get(a.data.slug) ?? 99) - (regionOrder.get(b.data.slug) ?? 99));
+
+const guideOrder = [
+  'how-houston-is-organized',
+  'traffic-and-commutes',
+  'toll-roads-and-ez-tag',
+  'flood-risk-and-insurance',
+  'property-taxes',
+  'muds-pids-and-utility-districts',
+  'electricity-choice-and-utilities',
+  'hoas-and-deed-restrictions',
+  'heat-humidity-and-hurricane-prep',
+  'no-zoning-explained',
+];
+const guidePosition = new Map(guideOrder.map((slug, index) => [slug, index]));
+const guides = guideEntries.sort((a, b) =>
+  (guidePosition.get(a.data.slug) ?? 99) - (guidePosition.get(b.data.slug) ?? 99));
+
+const areaOrder = ['the-heights', 'eado', 'katy', 'the-woodlands', 'sugar-land', 'clear-lake'];
+const areaPosition = new Map(areaOrder.map((slug, index) => [slug, index]));
+const areas = areaEntries.sort((a, b) =>
+  (areaPosition.get(a.data.slug) ?? 99) - (areaPosition.get(b.data.slug) ?? 99));
+const areaByName = new Map(areas.map((area) => [area.data.name.toLowerCase(), area.data.slug]));
+
+const updatedAt = [...regions, ...guides, ...areas]
+  .map((entry) => entry.data.updatedAt)
+  .sort()
+  .at(-1) ?? '2026-07-18';
+
+const landingSources = [
+  {
+    label: 'Texas Department of Transportation — 2026 Grand Parkway system map',
+    url: 'https://www.txdot.gov/content/dam/project-sites/grand-parkway-system/docs/sh99-grand-parkway-project-and-system.pdf',
+    accessed: '2026-07-18',
+  },
+  {
+    label: 'Houston Airports — George Bush Intercontinental Airport directions',
+    url: 'https://www.fly2houston.com/iah/visitor-information/maps-and-directions/',
+    accessed: '2026-07-18',
+  },
+  {
+    label: 'City of Houston — Super Neighborhoods directory',
+    url: 'https://www.houstontx.gov/superneighborhoods/directory.html',
+    accessed: '2026-07-18',
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  title="Houston, Handled. — JWILLSOLDIT"
+  description="A map-led, plain-language relocation guide to Greater Houston regions, area details, and the systems that change from address to address."
+  updatedAt={updatedAt}
+>
+  <main data-track-page="houston_landing">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="mono-label mono-label--red">JWILLSOLDIT — Texas, handled.</p>
+        <h1>Houston is not one place.</h1>
+        <p class="hero-subline">Find the part that fits how you actually live.</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="#regions">Explore the regions</a>
+          <a class="button" href={`${base}/guides`}>Read the moving guide</a>
+        </div>
+      </div>
+      <div class="hero-map">
+        <HoustonRegionMap interactive />
+      </div>
+    </section>
+
+    <section class="section orientation">
+      <div class="container split">
+        <div>
+          <p class="mono-label">How Houston fits together</p>
+          <h2>Start with the loops. Then find your anchor.</h2>
+        </div>
+        <ol class="orientation-list">
+          <li><span>01</span> Loop 610 and Beltway 8 form the two closer rings. SH 99/Grand Parkway is the farther outer-ring system, with open, developing, and future segments.</li>
+          <li><span>02</span> I-10, I-45, I-69/US 59, US 290, and SH 288 carry different parts of the region outward.</li>
+          <li><span>03</span> George Bush Intercontinental Airport sits north of the core. Hobby Airport sits southeast of it.</li>
+          <li><span>04</span> These nine regions are editorial guide groupings. They are not municipal, county, or legal boundaries.</li>
+          <li><span>05</span> Compare an address with the places you must reach regularly before you compare finishes.</li>
+        </ol>
+      </div>
+      <div class="container orientation-link">
+        <a href={`${base}/guides/how-houston-is-organized`}>Read how Houston is organized <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section id="regions" class="section container">
+      <header class="section-header">
+        <p class="mono-label mono-label--red">Nine guide regions</p>
+        <h2>Learn the shape before you learn the streets.</h2>
+      </header>
+      <div class="region-grid">
+        {regions.map((region, index) => (
+          <article class="region-card">
+            <p class="card-number mono-label">{String(index + 1).padStart(2, '0')}</p>
+            <h3>{region.data.name}</h3>
+            <p class="county-line">{region.data.counties.join(' · ')}</p>
+            <dl>
+              <div><dt>Housing</dt><dd>{region.data.housingMix[0]}</dd></div>
+              <div><dt>Corridors</dt><dd>{region.data.corridors.join(' · ')}</dd></div>
+              <div>
+                <dt>Examples</dt>
+                <dd>
+                  {region.data.exampleCommunities.slice(0, 3).map((community, communityIndex) => {
+                    const areaSlug = areaByName.get(community.toLowerCase());
+                    return (
+                      <>
+                        {communityIndex > 0 && ' · '}
+                        {areaSlug
+                          ? <a href={`${base}/areas/${areaSlug}`}>{community}</a>
+                          : community}
+                      </>
+                    );
+                  })}
+                </dd>
+              </div>
+            </dl>
+            <a
+              class="card-link"
+              href={`${base}/regions/${region.data.slug}`}
+              data-track="houston_region_card_click"
+              data-track-slug={region.data.slug}
+            >Explore {region.data.name} <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section guides-section">
+      <div class="container">
+        <header class="section-header section-header--light">
+          <p class="mono-label">Houston in real life</p>
+          <h2>The systems around the address matter.</h2>
+        </header>
+        <div class="guide-list">
+          {guides.map((guide, index) => (
+            <a class="guide-row" href={`${base}/guides/${guide.data.slug}`}>
+              <span class="mono-label">{String(index + 1).padStart(2, '0')}</span>
+              <span class="guide-title">{guide.data.title}</span>
+              <span class="guide-description">{guide.data.description}</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          ))}
+        </div>
+        <a class="all-guides-link" href={`${base}/guides`}>See all guides</a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <header class="section-header">
+        <p class="mono-label mono-label--red">Areas in depth</p>
+        <h2>First six of a growing set — more added regularly.</h2>
+      </header>
+      <div class="area-grid">
+        {areas.map((area) => (
+          <article class="area-card">
+            <p class="mono-label">{area.data.areaType.replaceAll('-', ' ')} · {area.data.counties.join(' · ')}</p>
+            <h3><a href={`${base}/areas/${area.data.slug}`}>{area.data.name}</a></h3>
+            <p>{area.data.jurisdiction}</p>
+            <a class="card-link" href={`${base}/areas/${area.data.slug}`}>Read the area guide <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section container relocation-wrap">
+      <div class="relocation">
+        <p class="mono-label">Houston relocation</p>
+        <h2>Houston makes more sense when someone helps you connect the pieces.</h2>
+        <p>
+          Tell me where you need to be, what kind of housing you are considering, and what you do not want to learn the hard way. I’ll help you connect the address to the rest of the move.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button button--signal"
+            href="https://move.jwillsoldit.com/?intent=houston-relocation"
+            data-track="houston_cta_smartmove_click"
+          >Start Smart Move</a>
+          <a
+            class="button button--dark"
+            href="tel:+15616856566"
+            data-track="houston_cta_contact_click"
+          >Call Joey</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container landing-sources">
+      <SourcePanel sources={landingSources} updatedAt={updatedAt} />
+    </div>
+  </main>
+</Base>
+
+<style>
+  .hero {
+    min-height: calc(100svh - var(--masthead-h));
+    padding-top: clamp(48px, 7vw, 96px);
+    padding-bottom: clamp(52px, 8vw, 110px);
+    display: grid;
+    align-items: center;
+    gap: var(--space-block);
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: 22px;
+  }
+
+  h1 {
+    max-width: 9ch;
+    font-family: var(--display);
+    font-size: var(--fs-hero);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-subline {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: var(--mid);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .button {
+    min-height: 50px;
+    padding: 12px 20px;
+    border: 1px solid var(--forest);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: var(--fs-small);
+    text-decoration: none;
+  }
+
+  .button--primary {
+    background: var(--forest);
+    color: var(--off-white);
+  }
+
+  .hero-map {
+    min-width: 0;
+  }
+
+  .orientation {
+    border-top: 1px solid var(--trace);
+    border-bottom: 1px solid var(--trace);
+  }
+
+  .split {
+    display: grid;
+    gap: var(--space-block);
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: var(--fs-h2);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    max-width: 18ch;
+    margin-top: 14px;
+  }
+
+  .orientation-list {
+    list-style: none;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--trace);
+  }
+
+  .orientation-list li {
+    min-height: 76px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--trace);
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 12px;
+    align-items: start;
+    line-height: 1.55;
+  }
+
+  .orientation-list span {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    color: var(--red-text);
+  }
+
+  .orientation-link {
+    margin-top: var(--space-block);
+  }
+
+  .orientation-link a,
+  .all-guides-link {
+    color: var(--red-text);
+    font-weight: 600;
+    text-underline-offset: 4px;
+  }
+
+  .section-header {
+    display: grid;
+    gap: 8px;
+    margin-bottom: var(--space-block);
+  }
+
+  .region-grid,
+  .area-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+    gap: 1px;
+    border: 1px solid var(--trace);
+    background: var(--trace);
+  }
+
+  .region-card,
+  .area-card {
+    padding: clamp(24px, 4vw, 38px);
+    background: var(--off-white);
+    min-height: 365px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .region-card h3,
+  .area-card h3 {
+    font-family: var(--display);
+    font-size: var(--fs-h3);
+    line-height: 1.12;
+  }
+
+  .area-card h3 a {
+    text-decoration: none;
+  }
+
+  .county-line,
+  .area-card > p:not(.mono-label) {
+    color: var(--mid);
+  }
+
+  .region-card dl {
+    display: grid;
+    gap: 12px;
+  }
+
+  .region-card dt {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .region-card dd {
+    line-height: 1.5;
+  }
+
+  .region-card dd a {
+    color: var(--red-text);
+  }
+
+  .card-link {
+    min-height: 44px;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--red-text);
+    font-weight: 600;
+    text-underline-offset: 4px;
+  }
+
+  .guides-section {
+    background: var(--forest);
+    color: var(--off-white);
+  }
+
+  .section-header--light .mono-label,
+  .guide-row .mono-label {
+    color: var(--mid-on-dark);
+  }
+
+  .guide-list {
+    border-top: 1px solid var(--trace-dark);
+    margin-bottom: 28px;
+  }
+
+  .guide-row {
+    min-height: 88px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--trace-dark);
+    display: grid;
+    grid-template-columns: 42px 1fr 24px;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .guide-title {
+    font-family: var(--display);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 600;
+  }
+
+  .guide-description {
+    display: none;
+    color: var(--mid-on-dark);
+  }
+
+  .all-guides-link {
+    color: var(--off-white);
+  }
+
+  .relocation-wrap {
+    padding-bottom: 0;
+  }
+
+  .relocation {
+    padding: clamp(32px, 7vw, 80px);
+    background: var(--ink);
+    color: var(--off-white);
+  }
+
+  .relocation .mono-label {
+    color: var(--red);
+  }
+
+  .relocation h2 {
+    max-width: 19ch;
+  }
+
+  .relocation > p:not(.mono-label) {
+    max-width: 64ch;
+    color: var(--mid-on-dark);
+    margin-top: 24px;
+  }
+
+  .button--signal {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--pure);
+  }
+
+  .button--dark {
+    border-color: var(--trace-dark);
+    color: var(--off-white);
+  }
+
+  .landing-sources {
+    padding-top: var(--space-block);
+  }
+
+  @media (min-width: 860px) {
+    .hero {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .split {
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .guide-row {
+      grid-template-columns: 48px minmax(220px, 0.7fr) 1.3fr 24px;
+    }
+
+    .guide-description {
+      display: block;
+    }
+  }
+</style>

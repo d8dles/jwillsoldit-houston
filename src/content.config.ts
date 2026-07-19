@@ -1,9 +1,10 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 const sources = z.array(z.object({
   label: z.string(),
-  url: z.string().url().optional(),
+  url: z.url().optional(),
   accessed: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 })).min(1);
 
@@ -13,7 +14,8 @@ const regions = defineCollection({
     name: z.string(), slug: z.string(), counties: z.array(z.string()).min(1),
     housingMix: z.array(z.string()).min(1), corridors: z.array(z.string()).min(1),
     anchors: z.array(z.string()).min(1), exampleCommunities: z.array(z.string()).min(1),
-    mapId: z.string(), updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    mapId: z.string(), sources,
+    updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   }),
 });
 
@@ -26,7 +28,7 @@ const areas = defineCollection({
     housingTypes: z.array(z.string()).min(1), typicalEra: z.string(), lotCharacter: z.string(),
     hoaPrevalence: z.enum(['rare', 'some', 'common', 'nearly-universal']),
     connections: z.array(z.object({ destination: z.string(), note: z.string() })).min(1),
-    schoolDistricts: z.array(z.object({ name: z.string(), officialUrl: z.string().url() })).min(1),
+    schoolDistricts: z.array(z.object({ name: z.string(), officialUrl: z.url() })).min(1),
     thingsNearby: z.array(z.object({ category: z.string(), items: z.array(z.string()).min(1) })),
     thingsToUnderstand: z.array(z.string()).min(3),
     localNotes: z.string().optional(),

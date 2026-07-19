@@ -20,7 +20,7 @@ anchors:
 exampleCommunities:
   - "Downtown"
   - "EaDo"
-  - "Memorial"
+  - "Memorial Park area"
   - "Midtown"
   - "Montrose"
   - "Museum District"
@@ -28,6 +28,19 @@ exampleCommunities:
   - "The Heights"
   - "Uptown/Galleria"
 mapId: "central-houston"
+sources:
+  - label: "City of Houston — Super Neighborhoods directory"
+    url: "https://www.houstontx.gov/superneighborhoods/directory.html"
+    accessed: "2026-07-18"
+  - label: "City of Houston — Washington Avenue Coalition / Memorial Park resource assessment"
+    url: "https://www.houstontx.gov/planning/Demographics/docs_pdfs/SN/2017/Washington_Avenue_Memorial_Park_Final.pdf"
+    accessed: "2026-07-18"
+  - label: "Uptown Houston District — who we are"
+    url: "https://uptown-houston.com/about/who-we-are/"
+    accessed: "2026-07-18"
+  - label: "Texas Medical Center — facts and figures"
+    url: "https://www.tmc.edu/wp-content/uploads/2018/07/TMC_FactsFiguresOnePager_07052018-1.pdf"
+    accessed: "2026-07-18"
 updatedAt: "2026-07-18"
 ---
 

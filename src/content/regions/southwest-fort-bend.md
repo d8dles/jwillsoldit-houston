@@ -23,6 +23,16 @@ exampleCommunities:
   - "Rosenberg"
   - "Sugar Land"
 mapId: "southwest-fort-bend"
+sources:
+  - label: "City of Sugar Land — City Hall and Town Square event locations"
+    url: "https://www.sugarlandtx.gov/calendar.aspx"
+    accessed: "2026-07-18"
+  - label: "Harris County Toll Road Authority — Westpark and Fort Bend Parkway facilities"
+    url: "https://www.hctra.org/-/media/e6f15b125dcb4d58a405cd9528d2cd00.ashx"
+    accessed: "2026-07-18"
+  - label: "Texas Department of Transportation — 2026 Grand Parkway system map"
+    url: "https://www.txdot.gov/content/dam/project-sites/grand-parkway-system/docs/sh99-grand-parkway-project-and-system.pdf"
+    accessed: "2026-07-18"
 updatedAt: "2026-07-18"
 ---
 

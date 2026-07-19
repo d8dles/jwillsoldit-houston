@@ -1,0 +1,73 @@
+---
+name: "Clear Lake"
+slug: "clear-lake"
+regionSlug: "clear-lake-bay-area"
+counties:
+  - "Harris County"
+jurisdiction: "City of Houston, Harris County; this page follows Clear Lake Super Neighborhood 81 and centers Clear Lake City rather than adjacent Bay Area municipalities"
+areaType: "district"
+housingTypes:
+  - "detached houses"
+  - "townhouses and other attached housing"
+  - "apartments and condominiums"
+typicalEra: "1960s-present, beginning with the original Clear Lake City master-planned development and continuing through later neighborhood and infill construction"
+lotCharacter: "Master-planned subdivisions with varying lot sizes and association common areas, plus attached and multifamily settings near major corridors"
+hoaPrevalence: "common"
+connections:
+  - destination: "Downtown Houston"
+    note: "Common road routes are roughly 23–30 miles; I-45 is the main regional roadway west of the district."
+  - destination: "Johnson Space Center and the Bay Area"
+    note: "Common road routes are roughly 1–12 miles depending on the destination; municipal boundaries and waterways shape the practical route."
+schoolDistricts:
+  - name: "Clear Creek Independent School District"
+    officialUrl: "https://www.ccisd.net/"
+thingsNearby:
+  - category: "Science and space"
+    items:
+      - "NASA Johnson Space Center"
+      - "Space Center Houston"
+  - category: "Nature"
+    items:
+      - "Armand Bayou Nature Center"
+thingsToUnderstand:
+  - "This page uses Houston's Clear Lake Super Neighborhood as its boundary; Nassau Bay, Webster, League City, Taylor Lake Village, and other nearby Bay Area municipalities have separate taxes, services, and regulations."
+  - "Clear Lake City Community Association covers only part of the broader district, and other subdivisions may have different deed restrictions, assessments, architectural review, and recreation access."
+  - "Clear Creek and Armand Bayou watershed conditions vary by parcel; check current Harris County and FEMA flood maps, drainage information, and insurance requirements for the address."
+  - "The Clear Lake or Bay Area label alone does not establish Texas Windstorm Insurance Association eligibility; use the current Texas Department of Insurance catastrophe-area map for the property."
+  - "Confirm Clear Creek ISD attendance zones through the district's current address-based school finder because campus assignments can change."
+sources:
+  - label: "City of Houston - Clear Lake Super Neighborhood 81"
+    url: "https://www.houstontx.gov/superneighborhoods/81.html"
+    accessed: "2026-07-18"
+  - label: "City of Houston Planning - housing units by structure for super neighborhoods"
+    url: "https://www.houstontx.gov/planning/Demographics/docs_pdfs/SN/Housing-Units-in-Structure.pdf"
+    accessed: "2026-07-18"
+  - label: "Clear Lake City Community Association - boundaries, services, and deed-restriction role"
+    url: "https://www.clcca.org/about"
+    accessed: "2026-07-18"
+  - label: "Clear Creek ISD - District Map and School Finder"
+    url: "https://www.ccisd.net/district-map"
+    accessed: "2026-07-18"
+  - label: "NASA - Johnson Space Center"
+    url: "https://www.nasa.gov/johnson/"
+    accessed: "2026-07-18"
+  - label: "Space Center Houston - current visitor information"
+    url: "https://spacecenter.org/visitor-information/"
+    accessed: "2026-07-18"
+  - label: "Armand Bayou Nature Center - current programs and visitor information"
+    url: "https://www.abnc.org/"
+    accessed: "2026-07-18"
+  - label: "Harris County Flood Control District - Flood Education Mapping Tool"
+    url: "https://www.harriscountyfemt.org/"
+    accessed: "2026-07-18"
+  - label: "Texas Department of Insurance - designated catastrophe areas"
+    url: "https://www.tdi.texas.gov/wind/maps/"
+    accessed: "2026-07-18"
+  - label: "Google Maps - road-distance checks for listed connections"
+    url: "https://www.google.com/maps"
+    accessed: "2026-07-18"
+updatedAt: "2026-07-18"
+status: "published"
+---
+
+This Clear Lake profile uses City of Houston Super Neighborhood 81 as its frame, with Clear Lake City—the 1963 master-planned community—as the residential core. The district lies in southeast Harris County near Johnson Space Center and Ellington Airport. Housing includes detached houses, attached units, and apartment or condominium buildings from original 1960s neighborhoods through later development. Clear Lake City Community Association covers part, not all, of the broader super neighborhood; deed restrictions, recreation access, and assessments therefore depend on the subdivision. I-45 is the primary regional corridor, while Bay Area Boulevard, El Camino Real, Space Center Boulevard, and NASA Parkway shape local trips. Municipal boundaries matter because nearby Bay Area communities are separate cities. Verify the exact City boundary, association, school assignment, flood and drainage maps, and windstorm-insurance rules for the address rather than relying on the broader Clear Lake or Bay Area label.

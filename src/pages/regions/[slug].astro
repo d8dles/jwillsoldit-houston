@@ -2,21 +2,24 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import HoustonRegionMap from '../../components/HoustonRegionMap.astro';
+import SourcePanel from '../../components/SourcePanel.astro';
 
 export async function getStaticPaths() {
   const regions = await getCollection('regions');
+  const areas = await getCollection('areas', ({ data }) => data.status === 'published');
   return regions.map((region) => ({
     params: { slug: region.data.slug },
-    props: { region, allRegions: regions },
+    props: { region, allRegions: regions, areas },
   }));
 }
 
 interface Props {
   region: Awaited<ReturnType<typeof getCollection<'regions'>>>[number];
   allRegions: Awaited<ReturnType<typeof getCollection<'regions'>>>;
+  areas: Awaited<ReturnType<typeof getCollection<'areas'>>>;
 }
 
-const { region, allRegions } = Astro.props;
+const { region, allRegions, areas } = Astro.props;
 const { data } = region;
 const { Content } = await render(region);
 
@@ -25,6 +28,7 @@ const siblings = allRegions
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const areaByName = new Map(areas.map((area) => [area.data.name.toLowerCase(), area.data.slug]));
 ---
 
 <Base
@@ -67,7 +71,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <section class="block">
       <h2 class="mono-label">Example communities</h2>
       <ul class="fact-list fact-list--inline">
-        {data.exampleCommunities.map((item) => <li>{item}</li>)}
+        {data.exampleCommunities.map((item) => {
+          const areaSlug = areaByName.get(item.toLowerCase());
+          return <li>{areaSlug ? <a href={`${base}/areas/${areaSlug}`}>{item}</a> : item}</li>;
+        })}
       </ul>
     </section>
 
@@ -85,12 +92,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </p>
     </nav>
 
-    <footer class="block source-note">
-      <p class="updated-line mono-label">Updated {data.updatedAt}</p>
-      <p class="methodology-line">
-        Sources and methodology: see <a href={`${base}/methodology`}>/houston/methodology</a>.
-      </p>
-    </footer>
+    <SourcePanel sources={data.sources} updatedAt={data.updatedAt} />
   </main>
 </Base>
 
@@ -151,6 +153,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     list-style: none;
   }
 
+  .fact-list a {
+    color: var(--red-text);
+    text-underline-offset: 3px;
+  }
+
   .sibling-nav {
     border-top: 1px solid var(--trace);
     padding-top: var(--space-block);
@@ -179,28 +186,4 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     text-underline-offset: 3px;
   }
 
-  .source-note {
-    border-top: 1px solid var(--trace);
-    padding-top: 20px;
-  }
-
-  .updated-line {
-    margin-bottom: 4px;
-  }
-
-  .methodology-line {
-    font-size: var(--fs-small);
-    color: var(--mid);
-  }
-
-  .methodology-line a {
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: var(--trace);
-    text-underline-offset: 3px;
-  }
-
-  .methodology-line a:hover {
-    color: var(--red-text);
-  }
 </style>

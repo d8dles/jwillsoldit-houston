@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Disclaimer from '../components/Disclaimer.astro';
+import SourcePanel from '../components/SourcePanel.astro';
 import type { DisclaimerId } from '../data/disclaimers';
 
 const disclaimerIds: DisclaimerId[] = [
@@ -15,11 +16,31 @@ const disclaimerIds: DisclaimerId[] = [
 const correctionsHref =
   'mailto:jwillsoldit@icloud.com?subject=' +
   encodeURIComponent('Houston, Handled. correction');
+
+const updatedAt = '2026-07-18';
+const sources = [
+  {
+    label: 'Houston, Handled. Phase 1 Specification',
+    accessed: updatedAt,
+  },
+  {
+    label: 'Texas Real Estate Commission — public information and required notices',
+    url: 'https://www.trec.texas.gov/public-information-0',
+    accessed: updatedAt,
+  },
+  {
+    label: 'U.S. Department of Housing and Urban Development — Fair Housing Act overview',
+    url: 'https://www.hud.gov/helping-americans/fair-housing-act-overview',
+    accessed: updatedAt,
+  },
+];
 ---
 
 <Base
   title="Methodology — Houston, Handled."
   description="How Houston, Handled. sources and verifies its information, what Greater Houston means on this site, and where its limits are."
+  pageType="real-estate-agent"
+  updatedAt={updatedAt}
 >
   <main class="container methodology">
     <header class="page-header">
@@ -60,7 +81,7 @@ const correctionsHref =
         </li>
       </ol>
       <p>
-        Every guide and area page links its sources and the date I accessed
+        Every region, guide, and area page links its sources and the date I accessed
         them, plus the date the page was last reviewed.
       </p>
     </section>
@@ -114,6 +135,8 @@ const correctionsHref =
         with the subject line "Houston, Handled. correction."
       </p>
     </section>
+
+    <SourcePanel sources={sources} updatedAt={updatedAt} />
   </main>
 </Base>
 
