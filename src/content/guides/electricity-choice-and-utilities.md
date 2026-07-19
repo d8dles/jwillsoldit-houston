@@ -131,7 +131,7 @@ Use a simple address-level record:
 
 Keep a copy of every enrollment confirmation and record the date. Provider offerings, rates, rules, and contact details can change.
 
-## What this means when you're choosing a place
+## Before you set up service
 
 Start with the exact service address. Confirm which electricity structure applies, identify the delivery utility, and read the full plan documents before enrolling. Then verify water, wastewater, gas, and trash one provider at a time.
 

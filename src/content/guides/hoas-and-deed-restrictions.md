@@ -102,7 +102,7 @@ For each property, collect:
 
 Check that the legal property description and association name match across the documents. If the community has multiple sections or associations, confirm which package applies to the lot. Date the records so an older package is not mistaken for the current one.
 
-## What this means when you're choosing a place
+## Before you sign
 
 Treat the recorded documents as part of the property, not as paperwork to skim after the decision. Verify the restrictions, association membership, recurring dues, other charges, approval process, property-specific violations, and current association records.
 

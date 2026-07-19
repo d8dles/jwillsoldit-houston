@@ -76,7 +76,7 @@ Identify the facility and operator. Confirm whether the exact lane is tolled. Ch
 
 These checks take less time than correcting an account problem later. They also keep a toll-road claim tied to a current source instead of a remembered rule.
 
-## What this means when you're choosing a place
+## Before you count on the toll route
 
 Treat toll access as one route characteristic, not a verdict on a location. Trace the actual commute and identify every toll facility it uses. Confirm the operator, accepted tag, current charge, and non-tolled alternative from official sources.
 

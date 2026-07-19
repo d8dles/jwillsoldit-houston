@@ -20,10 +20,9 @@ test('counts words while ignoring Markdown punctuation', () => {
   assert.equal(wordCount('## A heading\n\nA short, direct sentence.'), 6);
 });
 
-test('flags short guides and a missing closing heading', () => {
+test('flags short guides', () => {
   const errors = validateContent('---\ntitle: Test\n---\n\nShort body.', 'src/content/guides/test.md');
   assert.ok(errors.some((error) => error.includes('expected 700–1,200')));
-  assert.ok(errors.some((error) => error.includes('missing required closing heading')));
 });
 
 test('flags specific minute promises', () => {

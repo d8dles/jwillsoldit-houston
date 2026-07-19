@@ -6,7 +6,7 @@ counties:
   - "Harris County"
   - "Fort Bend County"
   - "Waller County"
-jurisdiction: "Incorporated City of Katy across Harris, Fort Bend, and Waller counties; this page does not cover the larger unincorporated area that uses Katy mailing addresses"
+jurisdiction: "Incorporated City of Katy across Harris, Fort Bend, and Waller counties, not the larger unincorporated area that uses Katy mailing addresses"
 areaType: "city"
 housingTypes:
   - "detached houses"
@@ -26,10 +26,14 @@ schoolDistricts:
 thingsNearby:
   - category: "City parks and historic sites"
     items:
-      - "Katy City Park"
-      - "Katy Heritage Park"
-      - "Thomas Park"
-      - "MKT Railroad Depot and Park"
+      - name: "Katy City Park"
+        officialUrl: "https://www.cityofkaty.com/Home/Components/FacilityDirectory/FacilityDirectory/8/"
+      - name: "Katy Heritage Park"
+        officialUrl: "https://www.cityofkaty.com/Home/Components/FacilityDirectory/FacilityDirectory/10/35"
+      - name: "Thomas Park"
+        officialUrl: "https://www.cityofkaty.com/Home/Components/FacilityDirectory/FacilityDirectory/12/"
+      - name: "MKT Railroad Depot and Park"
+        officialUrl: "https://www.cityofkaty.com/government/city-departments/parks-recreation"
 thingsToUnderstand:
   - "The incorporated City of Katy is smaller than the broader area that uses Katy postal addresses; confirm the city-limit line before relying on City services, taxes, or regulations."
   - "City parcels can be in Harris, Fort Bend, or Waller County, so appraisal, taxation, elections, records, and some public services depend on the property's county."
@@ -64,4 +68,4 @@ updatedAt: "2026-07-18"
 status: "published"
 ---
 
-The City of Katy profile covers incorporated city limits, which meet Harris, Fort Bend, and Waller counties, rather than the much larger area that uses a Katy mailing address. Katy began as a rice-farming settlement and incorporated in 1945; its built pattern now includes a historic core, established neighborhoods, newer detached subdivisions, attached housing, apartments, and commercial development along I-10. The City's comprehensive plan describes both long-established neighborhoods and ongoing infill and redevelopment, so lot sizes, setbacks, street patterns, and deed restrictions can differ by subdivision or block. I-10 is the main east-west connection toward the Energy Corridor and Houston. A parcel's county affects appraisal, taxation, elections, records, and some services, and the city-limit line does not track every Katy address. Verify jurisdiction, school assignment, HOA documents, drainage and flood information, and current road conditions for the property itself.
+When someone says “Katy,” ask whether they mean the City of Katy or the much larger area that uses a Katy mailing address. The incorporated city crosses Harris, Fort Bend, and Waller counties and includes a historic core, established neighborhoods, newer subdivisions, townhouses, apartments, and commercial development along I-10. Lot sizes, setbacks, street patterns, and deed restrictions can change from one block or subdivision to the next. I-10 is the main connection toward the Energy Corridor and Houston. The county line also matters because it affects appraisal, taxes, elections, records, and some public services. Before relying on the name in a listing, confirm that the property is inside city limits, then check the county, school assignment, HOA documents, drainage and flood information, and current road conditions for the address.

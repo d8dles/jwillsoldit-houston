@@ -8,6 +8,11 @@ const sources = z.array(z.object({
   accessed: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 })).min(1);
 
+const nearbyItem = z.object({
+  name: z.string(),
+  officialUrl: z.url(),
+});
+
 const regions = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/regions' }),
   schema: z.object({
@@ -29,7 +34,7 @@ const areas = defineCollection({
     hoaPrevalence: z.enum(['rare', 'some', 'common', 'nearly-universal']),
     connections: z.array(z.object({ destination: z.string(), note: z.string() })).min(1),
     schoolDistricts: z.array(z.object({ name: z.string(), officialUrl: z.url() })).min(1),
-    thingsNearby: z.array(z.object({ category: z.string(), items: z.array(z.string()).min(1) })),
+    thingsNearby: z.array(z.object({ category: z.string(), items: z.array(nearbyItem).min(1) })),
     thingsToUnderstand: z.array(z.string()).min(3),
     localNotes: z.string().optional(),
     sources, updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),

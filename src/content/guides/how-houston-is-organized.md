@@ -62,13 +62,13 @@ Do not treat “near an airport” as a single Houston category. A home oriented
 
 ## Use official maps for the exact address
 
-The schematic map in this guide is an orientation tool. It shows the rings, corridors, airports, and broad regions without claiming survey-accurate boundaries. Once a location makes your short list, switch to official tools.
+Use the schematic map to get your bearings around the rings, corridors, airports, and broad regions. It does not show survey-accurate boundaries. Once a location makes your short list, switch to official tools.
 
 The City of Houston Map Viewer can clarify whether an address is in the city, the City’s extraterritorial jurisdiction, a management district, or another mapped layer. TxDOT’s system maps clarify state highways and the current status of Grand Parkway segments. HCTRA materials clarify Harris County toll facilities. Airport information should come from Houston Airports.
 
 This sequence keeps broad geography in its proper role. Use it to narrow the field. Use the exact address to verify the facts that affect a housing decision.
 
-## What this means when you're choosing a place
+## A quick way to place any address
 
 Start with the destinations you cannot move. Identify the main corridor for each one. Note where the address sits relative to I-610, Beltway 8, and SH 99. Confirm the city, county, and other jurisdictional layers with official address tools. Check IAH and Hobby separately if air travel matters.
 

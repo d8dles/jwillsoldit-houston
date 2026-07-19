@@ -106,7 +106,7 @@ Use the same checklist for each address:
 
 Date every item. Maps, insurance products, and property conditions can change. If two sources conflict, identify their dates and ask the responsible agency, floodplain administrator, lender, or insurer which record governs its decision.
 
-## What this means when you're choosing a place
+## Before you rule a property in or out
 
 Compare documented conditions, not labels alone. Use the effective FEMA map, the appropriate county tools, property records, physical documents, seller disclosures, and address-specific insurance quotes. Keep mapped risk, observed history, lender requirements, and policy coverage as separate lines.
 

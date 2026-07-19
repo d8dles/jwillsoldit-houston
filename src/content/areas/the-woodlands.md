@@ -29,11 +29,16 @@ schoolDistricts:
 thingsNearby:
   - category: "Parks and outdoor recreation"
     items:
-      - "George Mitchell Nature Preserve"
-      - "Riva Row Boat House and The Woodlands Waterway"
+      - name: "George Mitchell Nature Preserve"
+        officialUrl: "https://www.thewoodlandsparks.com/Parks/George-Mitchell-Nature-Preserve"
+      - name: "Riva Row Boat House"
+        officialUrl: "https://rivarowboathouse.com/"
+      - name: "The Woodlands Waterway"
+        officialUrl: "https://www.visitthewoodlands.com/things-to-do/outdoors-and-recreation/the-waterway/"
   - category: "Arts and events"
     items:
-      - "Cynthia Woods Mitchell Pavilion"
+      - name: "Cynthia Woods Mitchell Pavilion"
+        officialUrl: "https://www.woodlandscenter.org/"
 thingsToUnderstand:
   - "The Woodlands Township is a special-purpose district rather than a city; county and other public entities provide services such as law enforcement, roads, drainage, and utilities according to the address."
   - "Most properties are governed by Township-administered covenants and standards, and neighborhood criteria can add lot-specific requirements or approval steps for exterior work."
@@ -74,4 +79,4 @@ updatedAt: "2026-07-18"
 status: "published"
 ---
 
-The Woodlands profile covers the master-planned community governed by The Woodlands Township across parts of Montgomery and Harris counties. The Township is a special-purpose district, not an incorporated city, so county and other public entities handle services such as law enforcement, roads, drainage, and utilities according to the address. Development is organized into villages, neighborhood parks, pathways, forest preserves, Town Center, and employment and medical areas, with housing that ranges from older detached homes to newer detached and attached homes, apartments, and condominiums. Covenants and development standards apply throughout The Woodlands, and neighborhood criteria can add lot-specific requirements for exterior work. I-45 and major internal roads provide regional and village connections, but route conditions vary. School district, county, utility provider, covenant criteria, flood and drainage context, and any improvement approvals should be confirmed for the specific parcel.
+The first thing to know about The Woodlands is that it is not an incorporated city. The Woodlands Township is a special-purpose district spanning parts of Montgomery and Harris counties, while the counties and other public entities handle services such as law enforcement, roads, drainage, and utilities. The community is organized into villages, parks, pathways, forest preserves, Town Center, and employment and medical areas. Housing ranges from older detached homes to newer houses, townhouses, apartments, and condos. Covenants and development standards apply throughout The Woodlands, and individual neighborhoods can add their own requirements for exterior work. Before choosing a property, confirm the county, school district, utility provider, covenant rules, flood and drainage information, and any approval needed for planned improvements. Those details depend on the parcel, not simply the village name.

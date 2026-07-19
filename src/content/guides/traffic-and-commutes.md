@@ -67,7 +67,7 @@ The same caution applies to a new road shown on a marketing map. Confirm that th
 
 Online tools are a screening method. A repeated real-world drive can reveal the parts that a summary misses: the approach to a garage, a difficult left turn, a queue at a ramp, a railroad crossing, or the walk from parking to the destination.
 
-Make the test near the time you expect to travel. Repeat the return trip if that direction matters. If the household has more than one fixed anchor, test each one. The goal is not to produce a guaranteed duration. It is to understand the route, the alternatives, and the conditions that make it less predictable.
+Make the test near the time you expect to travel. Repeat the return trip if that direction matters. If the household has more than one fixed anchor, test each one. Do this to understand the route, its alternatives, and the conditions that make it less predictable—not to produce a guaranteed duration.
 
 Weather deserves a separate check. Heavy rain can affect roads unevenly, and conditions can change while a storm is moving through the region. Never drive into water covering a roadway. Use official road and emergency information for the current event.
 
@@ -77,7 +77,7 @@ For some origins and destinations, transit may change the calculation. METRO ope
 
 Other practical adjustments can matter too: a flexible start time, a hybrid schedule, a carpool, or choosing a home and workplace on the same side of a recurring crossing. These are household-specific decisions. The useful comparison is between complete routines, not between two isolated mileage figures.
 
-## What this means when you're choosing a place
+## Before you call the commute workable
 
 Define each fixed destination and normal travel window. Trace the primary corridor, the interchanges, and the surface-street approaches. Identify an alternate route and any point both routes share. Compare historical patterns on Houston TranStar, then check current incidents and construction through TranStar and DriveTexas.
 

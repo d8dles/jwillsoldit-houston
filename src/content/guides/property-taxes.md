@@ -91,7 +91,7 @@ Then ask the lender how it calculates the initial escrow deposit and monthly esc
 
 Avoid treating a listing's tax figure, a mortgage calculator, or a seller's monthly escrow payment as the final answer. Those figures may use different years, assumptions, or exemptions.
 
-## What this means when you're choosing a place
+## Before you estimate the monthly payment
 
 Compare the full jurisdiction stack for the exact address. Pull the appraisal record and tax bill, then verify the taxing units, current rates, exemptions, and any unresolved appraisal matter with the county offices. Ask the lender how those verified inputs will be reflected in escrow.
 

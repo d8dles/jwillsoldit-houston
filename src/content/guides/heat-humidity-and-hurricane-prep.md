@@ -89,7 +89,7 @@ Document visible damage safely. Avoid downed lines, floodwater, unstable structu
 
 Preparedness is a maintenance task. Recheck alerts, contacts, insurance, evacuation information, and supplies on a regular schedule and after a move.
 
-## What this means when you're choosing a place
+## Before the weather turns
 
 Evaluate the home in ordinary heat and under a realistic outage plan. Verify cooling-system condition and responsibilities. Check the exact address for evacuation, flood, wind, and insurance considerations through the responsible official sources and qualified professionals.
 
