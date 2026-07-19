@@ -36,7 +36,7 @@ const areaOrder = ['the-heights', 'eado', 'katy', 'the-woodlands', 'sugar-land',
 const areaPosition = new Map(areaOrder.map((slug, index) => [slug, index]));
 const areas = areaEntries.sort((a, b) =>
   (areaPosition.get(a.data.slug) ?? 99) - (areaPosition.get(b.data.slug) ?? 99));
-const areaByName = new Map(areas.map((area) => [area.data.name.toLowerCase(), area.data.slug]));
+const isExternal = (href: string) => href.startsWith('http');
 
 const updatedAt = [...regions, ...guides, ...areas]
   .map((entry) => entry.data.updatedAt)
@@ -120,13 +120,14 @@ const landingSources = [
                 <dt>Examples</dt>
                 <dd>
                   {region.data.exampleCommunities.slice(0, 3).map((community, communityIndex) => {
-                    const areaSlug = areaByName.get(community.toLowerCase());
                     return (
                       <>
                         {communityIndex > 0 && ' · '}
-                        {areaSlug
-                          ? <a href={`${base}/areas/${areaSlug}`}>{community}</a>
-                          : community}
+                        <a
+                          href={community.href}
+                          target={isExternal(community.href) ? '_blank' : undefined}
+                          rel={isExternal(community.href) ? 'noopener' : undefined}
+                        >{community.name}</a>
                       </>
                     );
                   })}

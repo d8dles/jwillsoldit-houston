@@ -18,10 +18,14 @@ corridors:
 anchors:
   - "Sugar Land Town Square"
 exampleCommunities:
-  - "Missouri City"
-  - "Richmond"
-  - "Rosenberg"
-  - "Sugar Land"
+  - name: "Missouri City"
+    href: "https://www.missouricitytx.gov/"
+  - name: "Richmond"
+    href: "https://www.richmondtx.gov/"
+  - name: "Rosenberg"
+    href: "https://www.rosenbergtx.gov/"
+  - name: "Sugar Land"
+    href: "/houston/areas/sugar-land"
 mapId: "southwest-fort-bend"
 sources:
   - label: "City of Sugar Land — City Hall and Town Square event locations"

@@ -19,9 +19,12 @@ anchors:
   - "Energy Corridor District"
   - "CityCentre"
 exampleCommunities:
-  - "Cinco Ranch"
-  - "Energy Corridor"
-  - "Katy"
+  - name: "Cinco Ranch"
+    href: "https://www.cincoranch.com/"
+  - name: "Energy Corridor"
+    href: "https://energycorridor.org/"
+  - name: "Katy"
+    href: "/houston/areas/katy"
 mapId: "west-houston-energy-corridor"
 sources:
   - label: "Energy Corridor District — official district boundaries"

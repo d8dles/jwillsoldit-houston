@@ -17,10 +17,14 @@ anchors:
   - "Willowbrook Mall"
   - "Vintage Park"
 exampleCommunities:
-  - "Champions"
-  - "Cypress"
-  - "Jersey Village"
-  - "Willowbrook"
+  - name: "Champions"
+    href: "https://www.championscommunity.org/"
+  - name: "Cypress"
+    href: "https://www.tshaonline.org/handbook/entries/cypress-tx-harris-county"
+  - name: "Jersey Village"
+    href: "https://www.jerseyvillagetx.com/"
+  - name: "Willowbrook"
+    href: "https://www.houstontx.gov/superneighborhoods/1.html"
 mapId: "northwest-houston"
 sources:
   - label: "Texas Department of Transportation — SH 99 segment E between I-10 and US 290"

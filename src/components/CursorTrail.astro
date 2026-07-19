@@ -1,0 +1,149 @@
+<canvas class="cursor-trail" data-cursor-trail aria-hidden="true"></canvas>
+
+<script>
+  const canvas = document.querySelector<HTMLCanvasElement>('[data-cursor-trail]');
+
+  if (canvas) {
+    const finePointer = window.matchMedia('(pointer: fine) and (hover: hover)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const context = canvas.getContext('2d');
+
+    if (finePointer.matches && !reducedMotion.matches && context) {
+      const poolSize = 56;
+      const lifeMs = 560;
+      const spawnSpacing = 13;
+      let width = 0;
+      let height = 0;
+      let deviceScale = 1;
+
+      const resize = () => {
+        deviceScale = Math.min(window.devicePixelRatio || 1, 2);
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.round(width * deviceScale);
+        canvas.height = Math.round(height * deviceScale);
+        context.setTransform(deviceScale, 0, 0, deviceScale, 0, 0);
+      };
+
+      const particles = Array.from({ length: poolSize }, () => ({
+        x: 0,
+        y: 0,
+        born: 0,
+        drift: 0,
+        alive: false,
+      }));
+      let poolIndex = 0;
+      let aliveCount = 0;
+      let animationFrame = 0;
+      let running = false;
+      let lastX: number | null = null;
+      let lastY: number | null = null;
+
+      const spawn = (x: number, y: number, now: number) => {
+        const particle = particles[poolIndex];
+        poolIndex = (poolIndex + 1) % poolSize;
+        if (!particle.alive) aliveCount += 1;
+        particle.x = x;
+        particle.y = y;
+        particle.born = now;
+        particle.drift = (Math.random() - 0.5) * 0.5;
+        particle.alive = true;
+      };
+
+      const draw = () => {
+        const now = performance.now();
+        context.clearRect(0, 0, width, height);
+
+        for (const particle of particles) {
+          if (!particle.alive) continue;
+          const age = (now - particle.born) / lifeMs;
+          if (age >= 1) {
+            particle.alive = false;
+            aliveCount -= 1;
+            continue;
+          }
+
+          const fade = 1 - age;
+          const red = Math.round(232 - 40 * age);
+          const green = Math.round(93 - 15 * age);
+          const blue = Math.round(42 + 4 * age);
+          context.beginPath();
+          context.arc(
+            particle.x + particle.drift * age * 26,
+            particle.y - age * 9,
+            0.5 + 2.1 * fade,
+            0,
+            Math.PI * 2,
+          );
+          context.fillStyle = `rgba(${red}, ${green}, ${blue}, ${(0.38 * fade * fade).toFixed(3)})`;
+          context.fill();
+        }
+
+        if (aliveCount > 0) {
+          animationFrame = requestAnimationFrame(draw);
+        } else {
+          running = false;
+        }
+      };
+
+      const ensureRunning = () => {
+        if (!running) {
+          running = true;
+          animationFrame = requestAnimationFrame(draw);
+        }
+      };
+
+      const handleMove = (event: MouseEvent) => {
+        const now = performance.now();
+        const x = event.clientX;
+        const y = event.clientY;
+
+        if (lastX === null || lastY === null) {
+          spawn(x, y, now);
+        } else {
+          const deltaX = x - lastX;
+          const deltaY = y - lastY;
+          const distance = Math.hypot(deltaX, deltaY);
+          const steps = Math.min(Math.floor(distance / spawnSpacing), 6);
+          for (let step = 1; step <= steps; step += 1) {
+            spawn(
+              lastX + (deltaX * step) / (steps + 1),
+              lastY + (deltaY * step) / (steps + 1),
+              now,
+            );
+          }
+          if (distance >= spawnSpacing) spawn(x, y, now);
+        }
+
+        lastX = x;
+        lastY = y;
+        ensureRunning();
+      };
+
+      const handleVisibility = () => {
+        if (document.hidden) {
+          cancelAnimationFrame(animationFrame);
+          running = false;
+        } else if (aliveCount > 0) {
+          ensureRunning();
+        }
+      };
+
+      resize();
+      window.addEventListener('mousemove', handleMove, { passive: true });
+      window.addEventListener('resize', resize);
+      document.addEventListener('visibilitychange', handleVisibility);
+    }
+  }
+</script>
+
+<style>
+  .cursor-trail {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+  }
+</style>

@@ -18,7 +18,11 @@ const regions = defineCollection({
   schema: z.object({
     name: z.string(), slug: z.string(), counties: z.array(z.string()).min(1),
     housingMix: z.array(z.string()).min(1), corridors: z.array(z.string()).min(1),
-    anchors: z.array(z.string()).min(1), exampleCommunities: z.array(z.string()).min(1),
+    anchors: z.array(z.string()).min(1),
+    exampleCommunities: z.array(z.object({
+      name: z.string(),
+      href: z.string().min(1),
+    })).min(1),
     mapId: z.string(), sources,
     updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   }),

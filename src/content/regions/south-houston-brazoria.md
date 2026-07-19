@@ -16,9 +16,12 @@ corridors:
 anchors:
   - "Pearland Town Center"
 exampleCommunities:
-  - "Alvin"
-  - "Manvel"
-  - "Pearland"
+  - name: "Alvin"
+    href: "https://www.alvin-tx.gov/"
+  - name: "Manvel"
+    href: "https://www.cityofmanvel.com/"
+  - name: "Pearland"
+    href: "https://www.pearlandtx.gov/"
 mapId: "south-houston-brazoria"
 sources:
   - label: "City of Pearland — county jurisdictions"

@@ -17,9 +17,12 @@ anchors:
   - "The Woodlands Town Center"
   - "George Bush Intercontinental Airport (IAH)"
 exampleCommunities:
-  - "Conroe"
-  - "Spring"
-  - "The Woodlands"
+  - name: "Conroe"
+    href: "https://www.cityofconroe.org/"
+  - name: "Spring"
+    href: "https://www.tshaonline.org/handbook/entries/spring-tx"
+  - name: "The Woodlands"
+    href: "/houston/areas/the-woodlands"
 mapId: "north-houston-woodlands"
 sources:
   - label: "Houston Airports — IAH maps and directions"

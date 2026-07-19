@@ -19,10 +19,14 @@ anchors:
   - "ExxonMobil Baytown Complex"
   - "San Jacinto Monument"
 exampleCommunities:
-  - "Baytown"
-  - "Channelview"
-  - "Highlands"
-  - "Pasadena"
+  - name: "Baytown"
+    href: "https://www.baytown.org/"
+  - name: "Channelview"
+    href: "https://www.tshaonline.org/handbook/entries/channelview-tx"
+  - name: "Highlands"
+    href: "https://www.tshaonline.org/handbook/entries/highlands-tx"
+  - name: "Pasadena"
+    href: "https://www.pasadenatx.gov/"
 mapId: "east-houston-baytown"
 sources:
   - label: "Port Houston — Turning Basin Terminal property information"

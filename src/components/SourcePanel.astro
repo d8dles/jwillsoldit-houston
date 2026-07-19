@@ -11,24 +11,32 @@ interface Props {
 }
 
 const { sources, updatedAt } = Astro.props;
+const formatDate = (value: string) => new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(`${value}T00:00:00Z`));
 ---
 
 <details class="source-panel">
   <summary class="mono-label">Data and methodology</summary>
   <div class="source-panel-body">
-    <p class="updated-line">Updated {updatedAt}</p>
     <ul class="source-list">
       {sources.map((source) => (
         <li>
-          {source.url ? (
-            <a href={source.url} rel="noopener" target="_blank">{source.label}</a>
-          ) : (
-            <span>{source.label}</span>
-          )}
-          <span class="accessed">accessed {source.accessed}</span>
+          <div class="source-entry">
+            {source.url ? (
+              <a href={source.url} rel="noopener" target="_blank">{source.label}</a>
+            ) : (
+              <span>{source.label}</span>
+            )}
+            <span class="accessed">Source checked {formatDate(source.accessed)}</span>
+          </div>
         </li>
       ))}
     </ul>
+    <p class="reviewed-line">Page information last reviewed {formatDate(updatedAt)}</p>
   </div>
 </details>
 
@@ -55,13 +63,6 @@ const { sources, updatedAt } = Astro.props;
     padding-top: 16px;
   }
 
-  .updated-line {
-    font-family: var(--mono);
-    font-size: var(--fs-micro);
-    color: var(--mid);
-    margin-bottom: 12px;
-  }
-
   .source-list {
     list-style: none;
     display: flex;
@@ -70,11 +71,12 @@ const { sources, updatedAt } = Astro.props;
   }
 
   .source-list li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 8px;
     font-size: var(--fs-small);
+  }
+
+  .source-entry {
+    display: grid;
+    gap: 2px;
   }
 
   .source-list a {
@@ -89,6 +91,15 @@ const { sources, updatedAt } = Astro.props;
   }
 
   .accessed {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    color: var(--mid);
+  }
+
+  .reviewed-line {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid var(--trace);
     font-family: var(--mono);
     font-size: var(--fs-micro);
     color: var(--mid);

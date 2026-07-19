@@ -2,6 +2,7 @@
 import Analytics from '@vercel/analytics/astro';
 import Masthead from '../components/Masthead.astro';
 import ComplianceFooter from '../components/ComplianceFooter.astro';
+import CursorTrail from '../components/CursorTrail.astro';
 import '../styles/tokens.css';
 import '../styles/global.css';
 
@@ -124,6 +125,7 @@ const jsonLdText = JSON.stringify(jsonLd).replaceAll('<', '\\u003c');
     />
   </head>
   <body>
+    <CursorTrail />
     <Masthead />
     <slot />
     <ComplianceFooter />

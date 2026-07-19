@@ -16,9 +16,12 @@ corridors:
 anchors:
   - "Deerbrook Mall"
 exampleCommunities:
-  - "Atascocita"
-  - "Humble"
-  - "Kingwood"
+  - name: "Atascocita"
+    href: "https://www.tshaonline.org/handbook/entries/atascocita-tx"
+  - name: "Humble"
+    href: "https://www.cityofhumbletx.gov/"
+  - name: "Kingwood"
+    href: "https://www.houstontx.gov/superneighborhoods/43.html"
 mapId: "northeast-lake-houston"
 sources:
   - label: "City of Houston — Kingwood and Lake Houston"

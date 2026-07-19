@@ -18,10 +18,14 @@ anchors:
   - "Port Houston — Bayport and Barbours Cut terminals"
   - "Kemah Boardwalk"
 exampleCommunities:
-  - "Clear Lake"
-  - "Friendswood"
-  - "League City"
-  - "Seabrook"
+  - name: "Clear Lake"
+    href: "/houston/areas/clear-lake"
+  - name: "Friendswood"
+    href: "https://www.ci.friendswood.tx.us/"
+  - name: "League City"
+    href: "https://www.leaguecitytx.gov/"
+  - name: "Seabrook"
+    href: "https://www.seabrooktx.gov/"
 mapId: "clear-lake-bay-area"
 sources:
   - label: "NASA — Johnson Space Center"

@@ -6,20 +6,18 @@ import SourcePanel from '../../components/SourcePanel.astro';
 
 export async function getStaticPaths() {
   const regions = await getCollection('regions');
-  const areas = await getCollection('areas', ({ data }) => data.status === 'published');
   return regions.map((region) => ({
     params: { slug: region.data.slug },
-    props: { region, allRegions: regions, areas },
+    props: { region, allRegions: regions },
   }));
 }
 
 interface Props {
   region: Awaited<ReturnType<typeof getCollection<'regions'>>>[number];
   allRegions: Awaited<ReturnType<typeof getCollection<'regions'>>>;
-  areas: Awaited<ReturnType<typeof getCollection<'areas'>>>;
 }
 
-const { region, allRegions, areas } = Astro.props;
+const { region, allRegions } = Astro.props;
 const { data } = region;
 const { Content } = await render(region);
 
@@ -28,7 +26,7 @@ const siblings = allRegions
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const areaByName = new Map(areas.map((area) => [area.data.name.toLowerCase(), area.data.slug]));
+const isExternal = (href: string) => href.startsWith('http');
 ---
 
 <Base
@@ -71,10 +69,15 @@ const areaByName = new Map(areas.map((area) => [area.data.name.toLowerCase(), ar
     <section class="block">
       <h2 class="mono-label">Example communities</h2>
       <ul class="fact-list fact-list--inline">
-        {data.exampleCommunities.map((item) => {
-          const areaSlug = areaByName.get(item.toLowerCase());
-          return <li>{areaSlug ? <a href={`${base}/areas/${areaSlug}`}>{item}</a> : item}</li>;
-        })}
+        {data.exampleCommunities.map((community) => (
+          <li>
+            <a
+              href={community.href}
+              target={isExternal(community.href) ? '_blank' : undefined}
+              rel={isExternal(community.href) ? 'noopener' : undefined}
+            >{community.name}</a>
+          </li>
+        ))}
       </ul>
     </section>
 
