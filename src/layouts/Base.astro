@@ -71,7 +71,12 @@ if (pageType === 'article') {
     url: canonicalURL.toString(),
     image: ogImage,
     ...(updatedAt ? { dateModified: updatedAt } : {}),
-    author: { '@type': 'Person', name: 'Joey Williams' },
+    author: {
+      '@type': 'Person',
+      '@id': 'https://www.jwillsoldit.com/#joey',
+      name: 'Joey Williams',
+      url: 'https://www.jwillsoldit.com/about',
+    },
     publisher: { '@type': 'Organization', name: 'JWILLSOLDIT' },
   });
 }
