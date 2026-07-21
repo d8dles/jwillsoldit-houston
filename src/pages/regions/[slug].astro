@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import HoustonRegionMap from '../../components/HoustonRegionMap.astro';
 import SourcePanel from '../../components/SourcePanel.astro';
+import { communityHref } from '../../data/community-links.mjs';
 
 export async function getStaticPaths() {
   const regions = await getCollection('regions');
@@ -26,7 +27,6 @@ const siblings = allRegions
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const isExternal = (href: string) => href.startsWith('http');
 ---
 
 <Base
@@ -72,9 +72,7 @@ const isExternal = (href: string) => href.startsWith('http');
         {data.exampleCommunities.map((community) => (
           <li>
             <a
-              href={community.href}
-              target={isExternal(community.href) ? '_blank' : undefined}
-              rel={isExternal(community.href) ? 'noopener' : undefined}
+              href={communityHref(community.name, data.slug, base)}
             >{community.name}</a>
           </li>
         ))}

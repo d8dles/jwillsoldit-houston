@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import HoustonRegionMap from '../components/HoustonRegionMap.astro';
 import SourcePanel from '../components/SourcePanel.astro';
 import { REGION_SHAPES } from '../data/houston-map';
+import { communityHref } from '../data/community-links.mjs';
 
 const [regionEntries, guideEntries, areaEntries] = await Promise.all([
   getCollection('regions'),
@@ -36,8 +37,6 @@ const areaOrder = ['the-heights', 'eado', 'katy', 'the-woodlands', 'sugar-land',
 const areaPosition = new Map(areaOrder.map((slug, index) => [slug, index]));
 const areas = areaEntries.sort((a, b) =>
   (areaPosition.get(a.data.slug) ?? 99) - (areaPosition.get(b.data.slug) ?? 99));
-const isExternal = (href: string) => href.startsWith('http');
-
 const updatedAt = [...regions, ...guides, ...areas]
   .map((entry) => entry.data.updatedAt)
   .sort()
@@ -124,9 +123,7 @@ const landingSources = [
                       <>
                         {communityIndex > 0 && ' · '}
                         <a
-                          href={community.href}
-                          target={isExternal(community.href) ? '_blank' : undefined}
-                          rel={isExternal(community.href) ? 'noopener' : undefined}
+                          href={communityHref(community.name, region.data.slug, base)}
                         >{community.name}</a>
                       </>
                     );

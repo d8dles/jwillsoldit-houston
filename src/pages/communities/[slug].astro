@@ -1,0 +1,204 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SourcePanel from '../../components/SourcePanel.astro';
+import { areaRouteForCommunity, communitySlug } from '../../data/community-links.mjs';
+
+export async function getStaticPaths() {
+  const regions = await getCollection('regions');
+  return regions.flatMap((region) => region.data.exampleCommunities
+    .filter((community) => !areaRouteForCommunity(community.name))
+    .map((community) => ({
+      params: { slug: communitySlug(community.name) },
+      props: { community, region },
+    })));
+}
+
+interface Props {
+  community: { name: string; href: string };
+  region: Awaited<ReturnType<typeof getCollection<'regions'>>>[number];
+}
+
+const { community, region } = Astro.props;
+const { data } = region;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const description = `${community.name} is an example community within ${data.name}. Start with the regional guide, then verify the exact address and its public-service boundaries.`;
+---
+
+<Base
+  title={`${community.name} — Houston, Handled.`}
+  description={description}
+>
+  <main class="container community-page">
+    <header class="page-header">
+      <p class="mono-label mono-label--red">Community orientation · {data.name}</p>
+      <h1>{community.name}</h1>
+      <p class="lede">A starting point for understanding where {community.name} fits in Greater Houston.</p>
+    </header>
+
+    <section class="block orientation-card">
+      <p>
+        {community.name} is listed here as part of the <strong>{data.name}</strong> region. The regional guide is the best current overview on this site; the exact city, county, school, utility, flood, and deed-restriction answers still depend on the property address.
+      </p>
+      <a class="button button--primary" href={`${base}/regions/${data.slug}`}>Read the {data.name} guide</a>
+    </section>
+
+    <section class="block">
+      <h2>Start with the surrounding region</h2>
+      <dl class="fact-grid">
+        <div><dt>Counties</dt><dd>{data.counties.join(' · ')}</dd></div>
+        <div><dt>Housing mix</dt><dd>{data.housingMix.join('; ')}</dd></div>
+        <div><dt>Main corridors</dt><dd>{data.corridors.join(' · ')}</dd></div>
+        <div><dt>Regional anchors</dt><dd>{data.anchors.join(' · ')}</dd></div>
+      </dl>
+    </section>
+
+    <section class="block next-step">
+      <h2>What to verify next</h2>
+      <ul>
+        <li>Confirm the exact municipality and county for the property.</li>
+        <li>Check the assigned school district and any district boundaries.</li>
+        <li>Review utilities, taxes, flood and drainage information, and private restrictions at the address level.</li>
+      </ul>
+    </section>
+
+    <section class="block relocation-cta">
+      <p class="mono-label mono-label--red">Planning a Houston move</p>
+      <h2>Connect the address to the rest of the decision.</h2>
+      <p>Tell me what you are balancing, and I’ll help you work through the pieces around the property.</p>
+      <div class="cta-links">
+        <a class="button button--primary" href="https://move.jwillsoldit.com/?intent=houston-relocation">Start Smart Move</a>
+        <a class="button" href="sms:+15616856566">Text Joey</a>
+        <a class="button" href="tel:+15616856566">Call Joey</a>
+      </div>
+    </section>
+
+    <nav class="back-link" aria-label="Community navigation">
+      <a href={`${base}/regions/${data.slug}`}>Back to {data.name}</a>
+    </nav>
+
+    <SourcePanel sources={data.sources} updatedAt={data.updatedAt} />
+  </main>
+</Base>
+
+<style>
+  .community-page {
+    max-width: 980px;
+    padding-top: var(--space-block);
+    padding-bottom: var(--space-section);
+  }
+
+  .page-header {
+    display: grid;
+    gap: 14px;
+    margin-bottom: var(--space-block);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: var(--fs-hero);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: var(--fs-h3);
+    margin-bottom: 20px;
+  }
+
+  .lede {
+    color: var(--mid);
+    font-size: 1.1rem;
+  }
+
+  .block {
+    margin-top: var(--space-block);
+    max-width: 72ch;
+  }
+
+  .orientation-card {
+    border-left: 3px solid var(--red);
+    background: var(--off-white);
+    padding: 24px;
+  }
+
+  .orientation-card p {
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .fact-grid {
+    display: grid;
+    gap: 1px;
+    background: var(--trace);
+    border: 1px solid var(--trace);
+  }
+
+  .fact-grid > div {
+    padding: 20px;
+    background: var(--off-white);
+  }
+
+  dt {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 6px;
+  }
+
+  dd,
+  li {
+    line-height: 1.65;
+  }
+
+  .next-step ul {
+    padding-left: 1.25em;
+  }
+
+  .relocation-cta {
+    border-top: 1px solid var(--trace);
+    padding-top: var(--space-block);
+  }
+
+  .relocation-cta p:not(.mono-label) {
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .button {
+    min-height: 46px;
+    padding: 11px 18px;
+    border: 1px solid var(--forest);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: var(--fs-small);
+    text-decoration: none;
+  }
+
+  .button--primary {
+    background: var(--forest);
+    color: var(--off-white);
+  }
+
+  .back-link {
+    margin-top: var(--space-block);
+  }
+
+  .back-link a {
+    color: var(--red-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
