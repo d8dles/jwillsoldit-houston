@@ -2,6 +2,11 @@
 name: "The Heights"
 slug: "the-heights"
 regionSlug: "central-houston"
+relatedGuides:
+  - how-houston-is-organized
+  - no-zoning-explained
+  - hoas-and-deed-restrictions
+  - traffic-and-commutes
 counties:
   - "Harris County"
 jurisdiction: "Houston Heights within the City of Houston's Greater Heights Super Neighborhood 15 in Harris County"

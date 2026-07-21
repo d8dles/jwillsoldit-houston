@@ -20,6 +20,15 @@ sources:
   - label: "Texas Legislature Online — Local Government Code Chapter 212"
     url: "https://statutes.capitol.texas.gov/?artSec=&chapter=LG.212&code=LG&tab=1"
     accessed: "2026-07-18"
+relatedRegions:
+  - central-houston
+  - west-houston-energy-corridor
+  - north-houston-woodlands
+relatedAreas:
+  - the-heights
+  - eado
+  - katy
+  - the-woodlands
 updatedAt: "2026-07-18"
 status: "published"
 ---

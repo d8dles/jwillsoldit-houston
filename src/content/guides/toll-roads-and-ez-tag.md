@@ -18,6 +18,14 @@ sources:
   - label: "Harris County Toll Road Authority — Sam Houston Tollway facility description"
     url: "https://www.hctra.org/-/media/e6f15b125dcb4d58a405cd9528d2cd00.ashx"
     accessed: "2026-07-18"
+relatedRegions:
+  - west-houston-energy-corridor
+  - north-houston-woodlands
+  - clear-lake-bay-area
+relatedAreas:
+  - katy
+  - the-woodlands
+  - clear-lake
 updatedAt: "2026-07-18"
 status: "published"
 ---
