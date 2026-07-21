@@ -20,6 +20,23 @@ sources:
   - label: "Houston Airports — official airport system site"
     url: "https://www.fly2houston.com/"
     accessed: "2026-07-18"
+relatedRegions:
+  - central-houston
+  - west-houston-energy-corridor
+  - northwest-houston
+  - north-houston-woodlands
+  - northeast-lake-houston
+  - east-houston-baytown
+  - south-houston-brazoria
+  - clear-lake-bay-area
+  - southwest-fort-bend
+relatedAreas:
+  - the-heights
+  - eado
+  - katy
+  - the-woodlands
+  - sugar-land
+  - clear-lake
 updatedAt: "2026-07-18"
 status: "published"
 ---

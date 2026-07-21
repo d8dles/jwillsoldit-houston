@@ -23,6 +23,14 @@ sources:
   - label: "City of Houston Planning and Development — Development Regulations"
     url: "https://cohips.houstontx.gov/planning/DevelopRegs/index.html"
     accessed: "2026-07-18"
+relatedRegions:
+  - west-houston-energy-corridor
+  - north-houston-woodlands
+  - southwest-fort-bend
+relatedAreas:
+  - katy
+  - the-woodlands
+  - sugar-land
 updatedAt: "2026-07-18"
 status: published
 ---

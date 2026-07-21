@@ -32,6 +32,7 @@ const areas = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/areas' }),
   schema: z.object({
     name: z.string(), slug: z.string(), regionSlug: z.string(),
+    relatedGuides: z.array(z.string()).default([]),
     counties: z.array(z.string()).min(1), jurisdiction: z.string(),
     areaType: z.enum(['neighborhood', 'district', 'city', 'master-planned-community']),
     housingTypes: z.array(z.string()).min(1), typicalEra: z.string(), lotCharacter: z.string(),
@@ -50,6 +51,8 @@ const guides = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/guides' }),
   schema: z.object({
     title: z.string(), slug: z.string(), description: z.string().max(160),
+    relatedRegions: z.array(z.string()).default([]),
+    relatedAreas: z.array(z.string()).default([]),
     disclaimerIds: z.array(z.enum(['general', 'schools', 'flood', 'travel-times', 'development', 'market'])),
     sources, updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     status: z.enum(['draft', 'published']),

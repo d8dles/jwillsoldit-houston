@@ -2,6 +2,11 @@
 name: "EaDo"
 slug: "eado"
 regionSlug: "central-houston"
+relatedGuides:
+  - how-houston-is-organized
+  - no-zoning-explained
+  - traffic-and-commutes
+  - heat-humidity-and-hurricane-prep
 counties:
   - "Harris County"
 jurisdiction: "City of Houston, Harris County; East Downtown Management District and Tax Increment Reinvestment Zone 15 cover much of the district"

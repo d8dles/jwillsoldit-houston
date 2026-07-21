@@ -4,6 +4,8 @@ import Base from '../../layouts/Base.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
 import HoustonRegionMap from '../../components/HoustonRegionMap.astro';
 import SourcePanel from '../../components/SourcePanel.astro';
+import RelatedEditorialLinks from '../../components/RelatedEditorialLinks.astro';
+import { resolveEditorialLinks } from '../../data/editorial-links.mjs';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides', ({ data }) => data.status === 'published');
@@ -20,6 +22,14 @@ interface Props {
 const { guide } = Astro.props;
 const { data } = guide;
 const { Content } = await render(guide);
+const [areas, regions] = await Promise.all([
+  getCollection('areas', ({ data }) => data.status === 'published'),
+  getCollection('regions'),
+]);
+const relatedLinks = [
+  ...resolveEditorialLinks({ kind: 'region', slugs: data.relatedRegions, entries: regions }),
+  ...resolveEditorialLinks({ kind: 'area', slugs: data.relatedAreas, entries: areas }),
+];
 ---
 
 <Base
@@ -44,6 +54,11 @@ const { Content } = await render(guide);
       {data.slug === 'how-houston-is-organized' && <HoustonRegionMap />}
       <Content />
     </article>
+
+    <RelatedEditorialLinks
+      links={relatedLinks}
+      heading="See how the topic changes by place."
+    />
 
     <section class="disclaimers" aria-label="Important notices">
       {data.disclaimerIds.map((id) => <Disclaimer id={id} />)}

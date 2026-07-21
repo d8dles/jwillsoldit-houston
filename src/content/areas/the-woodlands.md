@@ -2,6 +2,13 @@
 name: "The Woodlands"
 slug: "the-woodlands"
 regionSlug: "north-houston-woodlands"
+relatedGuides:
+  - property-taxes
+  - muds-pids-and-utility-districts
+  - hoas-and-deed-restrictions
+  - toll-roads-and-ez-tag
+  - traffic-and-commutes
+  - electricity-choice-and-utilities
 counties:
   - "Montgomery County"
   - "Harris County"

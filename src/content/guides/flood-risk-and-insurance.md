@@ -27,6 +27,13 @@ sources:
   - label: "FEMA — Flood Map Products and Tools"
     url: "https://msc.fema.gov/portal/resources/productsandtools"
     accessed: "2026-07-18"
+relatedRegions:
+  - clear-lake-bay-area
+  - northeast-lake-houston
+  - southwest-fort-bend
+relatedAreas:
+  - clear-lake
+  - sugar-land
 updatedAt: "2026-07-18"
 status: published
 ---

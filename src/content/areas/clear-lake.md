@@ -2,6 +2,12 @@
 name: "Clear Lake"
 slug: "clear-lake"
 regionSlug: "clear-lake-bay-area"
+relatedGuides:
+  - flood-risk-and-insurance
+  - heat-humidity-and-hurricane-prep
+  - electricity-choice-and-utilities
+  - property-taxes
+  - traffic-and-commutes
 counties:
   - "Harris County"
 jurisdiction: "Clear Lake section of the City of Houston in Harris County, centered on Clear Lake City; neighboring Bay Area communities are separate cities"

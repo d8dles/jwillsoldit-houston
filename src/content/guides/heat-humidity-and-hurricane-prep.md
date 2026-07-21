@@ -23,6 +23,13 @@ sources:
   - label: "Texas Department of Insurance — 2026 Hurricane-Season Insurance Guidance"
     url: "https://www.tdi.texas.gov/news/2026/tdi05282026.html"
     accessed: "2026-07-18"
+relatedRegions:
+  - clear-lake-bay-area
+  - south-houston-brazoria
+  - central-houston
+relatedAreas:
+  - clear-lake
+  - eado
 updatedAt: "2026-07-18"
 status: "published"
 ---

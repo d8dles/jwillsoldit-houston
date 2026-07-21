@@ -23,6 +23,14 @@ sources:
   - label: "Texas Comptroller — Property Tax Exemptions"
     url: "https://comptroller.texas.gov/taxes/property-tax/exemptions/"
     accessed: "2026-07-18"
+relatedRegions:
+  - west-houston-energy-corridor
+  - southwest-fort-bend
+  - north-houston-woodlands
+relatedAreas:
+  - katy
+  - sugar-land
+  - the-woodlands
 updatedAt: "2026-07-18"
 status: published
 ---

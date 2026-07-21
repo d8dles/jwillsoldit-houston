@@ -2,6 +2,12 @@
 name: "Sugar Land"
 slug: "sugar-land"
 regionSlug: "southwest-fort-bend"
+relatedGuides:
+  - property-taxes
+  - muds-pids-and-utility-districts
+  - hoas-and-deed-restrictions
+  - flood-risk-and-insurance
+  - traffic-and-commutes
 counties:
   - "Fort Bend County"
 jurisdiction: "Full-purpose City of Sugar Land limits in Fort Bend County, not the City's extraterritorial jurisdiction or every property with a Sugar Land mailing address"

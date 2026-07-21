@@ -23,6 +23,16 @@ sources:
   - label: "Texas Local Government Code, Chapter 372 — Improvement Districts"
     url: "https://statutes.capitol.texas.gov/docs/lg/pdf/lg.372.pdf"
     accessed: "2026-07-18"
+relatedRegions:
+  - west-houston-energy-corridor
+  - southwest-fort-bend
+  - north-houston-woodlands
+  - clear-lake-bay-area
+relatedAreas:
+  - katy
+  - sugar-land
+  - the-woodlands
+  - clear-lake
 updatedAt: "2026-07-18"
 status: published
 ---
