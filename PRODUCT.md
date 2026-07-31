@@ -31,6 +31,8 @@ Content is maintained in Markdown with source access dates, review dates, draft 
 - Standalone static Astro application served under `/houston`.
 - Current merged inventory: 9 regions, 10 guides, 6 areas, and 27 routes.
 - Source, schema, fair-housing language, voice, and content checks are build gates.
+- Customer-facing links must resolve to a working destination when published. Do not add speculative or placeholder links.
+- Volatile program, availability, rate, or eligibility data belongs only when it can be refreshed from a dependable official source. Otherwise, link to the official source without restating a changing number or current-status claim.
 - Schematic maps must retain accuracy captions and must not imply parcel, school-zone, flood-zone, or travel-time precision.
 - No community stub pages, location finder, public methodology page, CMS, database, Mapbox, listings feed, or live market data in the current product.
 - Houston is editorial orientation. Smart Move remains the intake product; the Hub remains the parent site and routing layer.
@@ -60,10 +62,11 @@ Content is maintained in Markdown with source access dates, review dates, draft 
 - Explain systems; never rank people or places.
 - Verify property-dependent facts at the address level.
 - Make provenance useful to customers, not an internal-process exhibit.
+- Publish working links only; remove or replace broken destinations.
+- Prefer self-refreshing official data for facts that change. When automation is unavailable, display a verification date and avoid evergreen wording.
 - Separate education from professional determinations.
 - Expand only with independently researched content that has a named maintenance path.
 
 ## Accessibility & Inclusion
 
 The product targets WCAG AA contrast, visible keyboard focus, reduced-motion support, touch-friendly targets, neutral fair-housing language, readable long-form measures, and the required compliance footer.
-
