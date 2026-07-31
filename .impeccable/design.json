@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-31T00:00:00-05:00",
+  "title": "Design System: Houston, Handled.",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper"
+      },
+      "forest": {
+        "role": "primary",
+        "displayName": "Field Forest"
+      },
+      "signal-red": {
+        "role": "primary",
+        "displayName": "Signal Red"
+      },
+      "accessible-red-text": {
+        "role": "primary",
+        "displayName": "Accessible Red Text"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink"
+      },
+      "trace": {
+        "role": "neutral",
+        "displayName": "Trace"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page-level hero headings."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Cards and article subheads."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Readable running copy."
+      },
+      "label": {
+        "displayName": "System Label",
+        "purpose": "Navigation, eyebrows, buttons, and data terms."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Restrained reveal motion."
+      },
+      {
+        "name": "fast",
+        "value": "0.22s",
+        "purpose": "Interactive color and border transitions."
+      },
+      {
+        "name": "reveal",
+        "value": "0.55s",
+        "purpose": "Maximum established reveal duration."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "masthead-label",
+        "value": "560px"
+      },
+      {
+        "name": "fact-grid",
+        "value": "700px"
+      },
+      {
+        "name": "major-layout",
+        "value": "860px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Hero Button",
+      "kind": "button",
+      "refersTo": "button-hero",
+      "description": "Forest parent action used in the landing hero.",
+      "html": "<a class=\"ds-button-hero\" href=\"#\">EXPLORE THE REGIONS</a>",
+      "css": ".ds-button-hero { display:inline-flex; align-items:center; min-height:44px; padding:14px 22px; background:#1C3B2E; color:#FAF7F2; border:1px solid #1C3B2E; border-radius:0; font:400 12px/1.4 'Space Mono',monospace; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; transition:background .22s ease,border-color .22s ease; } .ds-button-hero:hover { background:#142B21; border-color:#142B21; } .ds-button-hero:focus-visible { outline:2px solid #E03A1F; outline-offset:3px; }"
+    },
+    {
+      "name": "Signal Button",
+      "kind": "button",
+      "refersTo": "button-signal",
+      "description": "Red decisive action used for Smart Move and relocation handoffs.",
+      "html": "<a class=\"ds-button-signal\" href=\"#\">START YOUR SMART MOVE</a>",
+      "css": ".ds-button-signal { display:inline-flex; align-items:center; min-height:44px; padding:14px 22px; background:#E03A1F; color:#FFFFFF; border:1px solid #E03A1F; border-radius:0; font:400 12px/1.4 'Space Mono',monospace; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; transition:background .22s ease,border-color .22s ease; } .ds-button-signal:hover { background:#C93318; border-color:#C93318; } .ds-button-signal:focus-visible { outline:2px solid #E03A1F; outline-offset:3px; }"
+    },
+    {
+      "name": "Editorial Link Card",
+      "kind": "card",
+      "refersTo": "editorial-card",
+      "description": "Flat square related-content card with a mono type label.",
+      "html": "<a class=\"ds-editorial-card\" href=\"#\"><span class=\"ds-card-kind\">GUIDE</span><span class=\"ds-card-title\">Flood risk and insurance</span><span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-editorial-card { display:grid; grid-template-columns:1fr auto; gap:4px 12px; min-height:68px; padding:14px 16px; background:#FAF7F2; color:#0D0D0D; border:1px solid #E7E1D8; border-radius:0; text-decoration:none; transition:border-color .18s ease,background-color .18s ease; } .ds-editorial-card:hover,.ds-editorial-card:focus-visible { border-color:#E03A1F; background:#FFFFFF; } .ds-card-kind { grid-column:1/-1; color:#6B6B6B; font:400 12px/1.4 'Space Mono',monospace; letter-spacing:.14em; } .ds-card-title { font:600 17px/1.15 'Instrument Sans',system-ui,sans-serif; }"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "description": "Paper masthead with linked parent wordmark and compact Houston navigation.",
+      "html": "<nav class=\"ds-masthead\"><a class=\"ds-wordmark\" href=\"#\">JWILLSOLDIT<span>.</span></a><div><a href=\"#\">HOUSTON, HANDLED.</a><a href=\"#\">GUIDES</a></div></nav>",
+      "css": ".ds-masthead { height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 24px; background:#FAF7F2; color:#0D0D0D; border-bottom:1px solid #E7E1D8; } .ds-masthead a { min-height:44px; display:inline-flex; align-items:center; color:inherit; text-decoration:none; } .ds-masthead div { display:flex; gap:24px; font:400 12px/1.4 'Space Mono',monospace; letter-spacing:.14em; } .ds-wordmark { font:700 16px/1 'Instrument Sans',system-ui,sans-serif; letter-spacing:.06em; } .ds-wordmark span { color:#C93318; } .ds-masthead a:hover { color:#C93318; } .ds-masthead a:focus-visible { outline:2px solid #E03A1F; outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Texas Field Guide",
+    "overview": "The incumbent system feels like a well-edited field guide: direct, regional, source-conscious, and useful in the real world. Warm paper and assertive display type keep it human; mono labels, hairline structures, and schematic maps make complex regional information easy to scan. The experience is editorial rather than promotional and confident without looking luxurious or theatrical.",
+    "keyCharacteristics": [
+      "Warm paper, forest, signal red, and ink.",
+      "Large, tightly tracked editorial headlines.",
+      "Mono system labels and readable long-form body copy.",
+      "Flat color fields, square geometry, and hairline grids.",
+      "Source panels, adjacent disclaimers, and schematic accuracy captions.",
+      "Restrained, optional motion with reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The Signal Rule",
+        "body": "Forest establishes the world; red marks attention, focus, and decisive action. Preserve the observed forest hero action and red relocation CTA as distinct variants.",
+        "section": "colors"
+      },
+      {
+        "name": "The Small-Text Red Rule",
+        "body": "Use #C93318 for small red text on paper. Keep #E03A1F for fills, borders, focus, and large display marks.",
+        "section": "colors"
+      },
+      {
+        "name": "The System-Label Rule",
+        "body": "Space Mono is for navigation, labels, buttons, and data terms, not headlines or prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-by-Default Rule",
+        "body": "Separate information with color fields, spacing, and hairlines—never decorative elevation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the parent JWILLSOLDIT wordmark and red dot across every surface.",
+      "Do keep source panels, review dates, and relevant disclaimers visible.",
+      "Do use accessible red text for small red copy on paper.",
+      "Do retain keyboard focus, touch-target, and reduced-motion behavior."
+    ],
+    "donts": [
+      "Don't add shadows, gradients, glassmorphism, rounded SaaS cards, or dark dashboard styling.",
+      "Don't restore the location finder, public methodology page, or generic community stubs as a visual-design side effect.",
+      "Don't rank communities or visually imply desirability, safety, school quality, or demographic fit.",
+      "Don't use motion that competes with reading or ignores reduced-motion preferences."
+    ]
+  }
+}
