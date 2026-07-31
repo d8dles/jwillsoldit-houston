@@ -22,6 +22,10 @@ test('normalizes Houston paths, trailing slashes, and fragments', () => {
   assert.equal(normalizeInternalPath('https://houstontx.gov/housing/hap.html'), null);
 });
 
+test('treats apex JWILLSOLDIT Houston URLs as local routes', () => {
+  assert.equal(normalizeInternalPath('https://jwillsoldit.com/houston/guides/property-taxes/'), '/houston/guides/property-taxes');
+});
+
 test('accepts published routes and rejects missing or draft destinations', () => {
   const routes = buildPublishedRoutes([
     { collection: 'guides', slug: 'property-taxes', status: 'published' },

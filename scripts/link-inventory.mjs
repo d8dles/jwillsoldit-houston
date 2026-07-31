@@ -1,5 +1,6 @@
 const FRONTMATTER_LINK_KEY = /^(\s*)(url|officialUrl|href):\s*(?:"([^"]+)"|'([^']+)'|([^\s#]+))\s*(?:#.*)?$/gm;
 const MARKDOWN_LINK = /\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g;
+const JWILLSOLDIT_HOSTS = new Set(['jwillsoldit.com', 'www.jwillsoldit.com']);
 
 export function extractLinkReferences(text, filePath) {
   const references = [];
@@ -31,7 +32,7 @@ export function normalizeInternalPath(href) {
   } else {
     try {
       const url = new URL(href);
-      if (url.hostname !== 'www.jwillsoldit.com') return null;
+      if (!JWILLSOLDIT_HOSTS.has(url.hostname)) return null;
       path = url.pathname;
     } catch {
       return null;
