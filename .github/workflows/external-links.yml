@@ -1,0 +1,29 @@
+name: External link check
+
+on:
+  schedule:
+    - cron: '17 12 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p artifacts
+      - run: npm run check:external-links -- --output artifacts/external-links.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-link-report
+          path: artifacts/external-links.json
+          if-no-files-found: error
