@@ -1,11 +1,32 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { scanInternalLinks } from './check-internal-links.mjs';
 import {
   buildPublishedRoutes,
   extractLinkReferences,
   normalizeInternalPath,
   validateInternalLinks,
 } from './link-inventory.mjs';
+
+test('scans content files and groups missing internal destinations', async (t) => {
+  const root = await mkdtemp(path.join(tmpdir(), 'houston-internal-links-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const guides = path.join(root, 'src/content/guides');
+  await mkdir(guides, { recursive: true });
+  await writeFile(path.join(guides, 'published-guide.md'), '---\nslug: published-guide\nstatus: published\n---\n');
+  await writeFile(path.join(guides, 'linking-guide.md'), '---\nslug: linking-guide\nstatus: published\n---\n[Missing guide](/houston/guides/missing-guide)');
+
+  assert.deepEqual(await scanInternalLinks(root), [
+    {
+      href: '/houston/guides/missing-guide',
+      normalizedPath: '/houston/guides/missing-guide',
+      referrers: ['src/content/guides/linking-guide.md'],
+    },
+  ]);
+});
 
 test('extracts markdown and structured frontmatter links', () => {
   const text = `---\nsource:\n  url: "https://houstontx.gov/housing/hap.html"\nnearby:\n  officialUrl: "https://www.houstontx.gov/parks"\n---\nRead [property taxes](/houston/guides/property-taxes#exemptions).`;
