@@ -36,6 +36,21 @@ test('checks URL responses and classifies network failures as inconclusive', asy
   assert.equal((await checkUrl('https://example.gov/unreachable', { fetchImpl })).classification, 'inconclusive');
 });
 
+test('distinguishes unrelated redirect errors from a redirect-loop cause chain', async () => {
+  const unrelatedRedirect = await checkUrl('https://example.gov/unreachable', {
+    fetchImpl: async () => { throw new TypeError('network redirect failed'); },
+  });
+  const redirectLoop = await checkUrl('https://example.gov/loop', {
+    fetchImpl: async () => {
+      throw new TypeError('fetch failed', { cause: new Error('redirect count exceeded') });
+    },
+  });
+
+  assert.equal(unrelatedRedirect.classification, 'inconclusive');
+  assert.equal(redirectLoop.classification, 'broken');
+  assert.equal(redirectLoop.detail, 'Redirect loop');
+});
+
 test('marks an aborted URL check as inconclusive', async () => {
   const fetchImpl = (_url, { signal }) => new Promise((_resolve, reject) => {
     signal.addEventListener('abort', () => reject(new DOMException('Timed out', 'AbortError')));

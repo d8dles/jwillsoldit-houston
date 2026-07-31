@@ -10,6 +10,24 @@ function result(url, classification, status, finalUrl, detail) {
   return { url, classification, status, finalUrl, detail };
 }
 
+function isRedirectLoopError(error) {
+  const seen = new Set();
+  let cause = error?.cause;
+
+  while (cause && typeof cause === 'object' && !seen.has(cause)) {
+    seen.add(cause);
+    if (
+      /^(ERR_TOO_MANY_REDIRECTS|ERR_FR_TOO_MANY_REDIRECTS|UND_ERR_TOO_MANY_REDIRECTS)$/.test(cause.code ?? '') ||
+      /\b(?:too many redirects|redirect loop|redirect (?:count|limit) (?:exceeded|reached)|maximum redirects?)\b/i.test(cause.message ?? '')
+    ) {
+      return true;
+    }
+    cause = cause.cause;
+  }
+
+  return false;
+}
+
 export async function checkUrl(url, { fetchImpl = fetch, timeoutMs = 12_000 } = {}) {
   try {
     const parsedUrl = new URL(url);
@@ -37,7 +55,7 @@ export async function checkUrl(url, { fetchImpl = fetch, timeoutMs = 12_000 } = 
       `HTTP ${response.status}`,
     );
   } catch (error) {
-    if (/redirect/i.test(String(error?.message))) {
+    if (isRedirectLoopError(error)) {
       return result(url, 'broken', null, null, 'Redirect loop');
     }
     const detail = controller.signal.aborted ? 'Request timed out' : `Request failed: ${error?.message ?? 'unknown error'}`;
