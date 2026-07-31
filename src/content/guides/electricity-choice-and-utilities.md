@@ -29,6 +29,14 @@ sources:
   - label: "City of Houston Solid Waste — Residential Service and Address Lookup"
     url: "https://houstontx.gov/solidwaste/garbage.html"
     accessed: "2026-07-18"
+relatedRegions:
+  - west-houston-energy-corridor
+  - north-houston-woodlands
+  - clear-lake-bay-area
+relatedAreas:
+  - katy
+  - the-woodlands
+  - clear-lake
 updatedAt: "2026-07-18"
 status: published
 ---

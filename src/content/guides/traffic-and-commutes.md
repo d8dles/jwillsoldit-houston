@@ -21,6 +21,16 @@ sources:
   - label: "National Weather Service — Flood Roadway Safety"
     url: "https://www.weather.gov/safety/flood-turn-around-dont-drown"
     accessed: "2026-07-18"
+relatedRegions:
+  - central-houston
+  - west-houston-energy-corridor
+  - southwest-fort-bend
+  - clear-lake-bay-area
+relatedAreas:
+  - the-heights
+  - katy
+  - sugar-land
+  - clear-lake
 updatedAt: "2026-07-18"
 status: "published"
 ---

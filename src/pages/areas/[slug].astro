@@ -4,6 +4,8 @@ import Base from '../../layouts/Base.astro';
 import AreaLocatorMap from '../../components/AreaLocatorMap.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
 import SourcePanel from '../../components/SourcePanel.astro';
+import RelatedEditorialLinks from '../../components/RelatedEditorialLinks.astro';
+import { resolveEditorialLinks } from '../../data/editorial-links.mjs';
 import { AREA_PINS } from '../../data/area-pins';
 
 export async function getStaticPaths() {
@@ -25,6 +27,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pin = AREA_PINS[data.slug];
 if (!pin) throw new Error(`Missing schematic locator pin for area: ${data.slug}`);
 const areaType = data.areaType.replaceAll('-', ' ');
+const guides = await getCollection('guides', ({ data }) => data.status === 'published');
+const relatedLinks = resolveEditorialLinks({ kind: 'guide', slugs: data.relatedGuides, entries: guides });
 ---
 
 <Base
@@ -48,6 +52,11 @@ const areaType = data.areaType.replaceAll('-', ' ');
     <section class="block overview">
       <Content />
     </section>
+
+    <RelatedEditorialLinks
+      links={relatedLinks}
+      heading="Read the decisions that travel with this area."
+    />
 
     <section class="block">
       <h2>Location and connections</h2>
