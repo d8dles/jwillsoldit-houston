@@ -9,6 +9,7 @@
     "dev": "node node_modules/astro/bin/astro.mjs dev",
     "build": "node scripts/lint-language.mjs && node scripts/lint-voice.mjs && node scripts/lint-content.mjs && node scripts/check-internal-links.mjs && node node_modules/astro/bin/astro.mjs check && node node_modules/astro/bin/astro.mjs build",
     "check:internal-links": "node scripts/check-internal-links.mjs",
+    "check:external-links": "node scripts/check-external-links.mjs",
     "test": "node --test scripts/*.test.mjs",
     "preview": "node node_modules/astro/bin/astro.mjs preview",
     "astro": "node node_modules/astro/bin/astro.mjs"
