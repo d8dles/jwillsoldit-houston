@@ -28,7 +28,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const homeURL = new URL(`${base}/`, Astro.site).toString();
 const ogImage = 'https://www.jwillsoldit.com/assets/jwillsoldit-texas-handled-v2.png';
-const ogImageAlt = 'JWILLSOLDIT. Texas Handled. Your Smart Move Starts Here.';
+const ogImageAlt = 'JWILLSOLDIT. Texas, handled. Moves, stays, rentals, management, and investing.';
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '');
 const breadcrumbItems = breadcrumbs.length > 0
   ? breadcrumbs
