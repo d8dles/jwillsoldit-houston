@@ -46,9 +46,9 @@ The Consumer Financial Protection Bureau's homebuying education is a useful plac
 
 ## Understand representation before touring
 
-Before a tour turns into a choice, understand how a real estate professional may work with you. Texas has current guidance on buyer and tenant representation, and the role can affect communication, obligations, and agreements. Read the current Texas Real Estate Commission guidance and ask for an explanation of any agreement before you sign it.
+Before a tour turns into a choice, understand how a real estate professional may work with you. Under current Texas guidance, a Texas license holder working with a prospective residential buyer generally must enter a written agreement before showing residential property. The written choice may be representation or qualifying showing-only non-representation. Read the current Texas Real Estate Commission guidance and ask for an explanation of any agreement before you sign it.
 
-Representation is not a shortcut around your own review. It clarifies the relationship and the work a professional may perform. If you are considering non-representation, ask what that means for communication and the transaction. The point is to make the arrangement clear early, when you can ask questions without the pressure of a particular property moving quickly.
+Representation is not a shortcut around your own review. It clarifies the relationship and the work a professional may perform. A showing-only non-representative cannot provide opinions, advice, or other brokerage services. If you are considering non-representation, ask what that means for communication and the transaction. The point is to make the arrangement clear early, when you can ask questions without the pressure of a particular property moving quickly.
 
 ## Search one address at a time
 

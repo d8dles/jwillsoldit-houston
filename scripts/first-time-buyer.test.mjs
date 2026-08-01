@@ -18,3 +18,12 @@ test('does not ship qualification-like calculator language or inputs', () => {
   assert.doesNotMatch(combined, /28\s*\/\s*36|supported home price|estimated home price|affordability calculator/i);
   assert.doesNotMatch(component, /type=["']range["']|annual household income|other monthly debts/i);
 });
+
+test('explains the current Texas pre-showing agreement choices and limit', () => {
+  const component = readFileSync('src/components/FirstTimeBuyerTools.astro', 'utf8');
+  const guide = readFileSync('src/content/guides/first-time-homebuyer.md', 'utf8');
+  assert.match(component, /Texas license holder.*generally must enter a written agreement before showing residential property/i);
+  assert.match(guide, /representation or qualifying showing-only non-representation/i);
+  assert.match(guide, /showing-only non-representative cannot provide opinions, advice, or other brokerage services/i);
+  assert.match(guide, /current Texas Real Estate Commission guidance/i);
+});
