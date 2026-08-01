@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
 import HoustonRegionMap from '../../components/HoustonRegionMap.astro';
+import FirstTimeBuyerTools from '../../components/FirstTimeBuyerTools.astro';
 import SourcePanel from '../../components/SourcePanel.astro';
 import RelatedEditorialLinks from '../../components/RelatedEditorialLinks.astro';
 import { resolveEditorialLinks } from '../../data/editorial-links.mjs';
@@ -20,6 +21,7 @@ interface Props {
 }
 
 const { guide } = Astro.props;
+const entry = guide;
 const { data } = guide;
 const { Content } = await render(guide);
 const [areas, regions] = await Promise.all([
@@ -53,6 +55,7 @@ const relatedLinks = [
     <article class="article-body">
       {data.slug === 'how-houston-is-organized' && <HoustonRegionMap />}
       <Content />
+      {entry.data.slug === 'first-time-homebuyer' && <FirstTimeBuyerTools />}
     </article>
 
     <RelatedEditorialLinks
