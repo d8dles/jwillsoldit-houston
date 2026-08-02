@@ -28,6 +28,40 @@ test('scans content files and groups missing internal destinations', async (t) =
   ]);
 });
 
+test('resolves relative links from the referring guide route', async (t) => {
+  const root = await mkdtemp(path.join(tmpdir(), 'houston-relative-links-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const guides = path.join(root, 'src/content/guides');
+  await mkdir(guides, { recursive: true });
+  await writeFile(path.join(guides, 'property-taxes.md'), '---\nslug: property-taxes\nstatus: published\n---\n');
+  await writeFile(path.join(guides, 'draft-guide.md'), '---\nslug: draft-guide\nstatus: draft\n---\n');
+  await writeFile(path.join(guides, 'linking-guide.md'), `---
+slug: linking-guide
+status: published
+---
+[Bare valid](property-taxes)
+[Dot valid](./property-taxes?from=guide#taxes)
+[Parent valid](../guides/property-taxes/)
+[Fragment valid](#section)
+[Query valid](?mode=compact)
+[Missing dot](./missing)
+[Missing parent](../guides/missing#facts)
+[Draft bare](draft-guide?mode=compact)`);
+
+  assert.deepEqual(await scanInternalLinks(root), [
+    {
+      href: 'draft-guide?mode=compact',
+      normalizedPath: '/houston/guides/draft-guide',
+      referrers: ['src/content/guides/linking-guide.md'],
+    },
+    {
+      href: './missing',
+      normalizedPath: '/houston/guides/missing',
+      referrers: ['src/content/guides/linking-guide.md'],
+    },
+  ]);
+});
+
 test('extracts markdown and structured frontmatter links', () => {
   const text = `---\nsource:\n  url: "https://houstontx.gov/housing/hap.html"\nnearby:\n  officialUrl: "https://www.houstontx.gov/parks"\n---\nRead [property taxes](/houston/guides/property-taxes#exemptions).`;
   assert.deepEqual(extractLinkReferences(text, 'src/content/guides/test.md'), [
@@ -35,6 +69,33 @@ test('extracts markdown and structured frontmatter links', () => {
     { href: 'https://www.houstontx.gov/parks', filePath: 'src/content/guides/test.md', field: 'frontmatter' },
     { href: '/houston/guides/property-taxes#exemptions', filePath: 'src/content/guides/test.md', field: 'markdown' },
   ]);
+});
+
+test('extracts complete inline and reference-style Markdown destinations', () => {
+  const text = String.raw`[Balanced](https://example.gov/path_(draft))
+[Escaped](https://example.gov/a\)b)
+[Angle](<https://example.gov/angle_(path)> "Angle title")
+[Titled](https://example.gov/titled_(v2) 'A title')
+[Reference][official]
+[Collapsed][]
+[Shortcut]
+
+[official]: https://example.gov/reference_(v1) "Official source"
+[collapsed]: <https://example.gov/collapsed\)page>
+[shortcut]: https://example.gov/shortcut_(page) (Shortcut title)`;
+
+  assert.deepEqual(
+    extractLinkReferences(text, 'src/content/guides/test.md').map(({ href }) => href),
+    [
+      'https://example.gov/path_(draft)',
+      'https://example.gov/a)b',
+      'https://example.gov/angle_(path)',
+      'https://example.gov/titled_(v2)',
+      'https://example.gov/reference_(v1)',
+      'https://example.gov/collapsed)page',
+      'https://example.gov/shortcut_(page)',
+    ],
+  );
 });
 
 test('normalizes Houston paths, trailing slashes, and fragments', () => {
