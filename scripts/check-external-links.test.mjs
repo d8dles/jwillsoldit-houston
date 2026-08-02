@@ -1,10 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { tmpdir } from 'node:os';
 import {
   checkExternalLinks,
   checkUrl,
   classifyStatus,
   parseOutputPath,
+  readExternalContentReferences,
 } from './check-external-links.mjs';
 
 test('classifies HTTP evidence without treating bot blocks as broken', () => {
@@ -90,6 +94,19 @@ test('checks duplicate external URLs once and retains every referrer', async () 
   ]);
 });
 
+test('reports malformed HTTP-like destinations as broken', async () => {
+  const report = await checkExternalLinks([
+    { href: 'https://%', filePath: 'broken.md', field: 'frontmatter' },
+  ], {
+    fetchImpl: async () => { throw new Error('invalid URL should not be fetched'); },
+  });
+
+  assert.deepEqual(report.totals, { working: 0, broken: 1, inconclusive: 0, 'manual-working': 0 });
+  assert.deepEqual(report.results.map(({ url, classification, detail, referrers }) => ({ url, classification, detail, referrers })), [
+    { url: 'https://%', classification: 'broken', detail: 'Invalid URL', referrers: ['broken.md'] },
+  ]);
+});
+
 test('uses a recent manual verification only for inconclusive automated results', async () => {
   const fetchImpl = async (url) => new Response('', { status: url.endsWith('/missing') ? 404 : 403 });
   const report = await checkExternalLinks([
@@ -100,9 +117,9 @@ test('uses a recent manual verification only for inconclusive automated results'
     fetchImpl,
     now: '2026-07-31T00:00:00.000Z',
     manualVerifications: {
-      'https://example.gov/recent': { verifiedAt: '2026-07-02', note: 'Opened in a normal browser after automated 403' },
-      'https://example.gov/stale': { verifiedAt: '2026-06-30', note: 'Older browser check' },
-      'https://example.gov/missing': { verifiedAt: '2026-07-02', note: 'Cannot override a confirmed 404' },
+      'https://example.gov/recent': { verifiedAt: '2026-07-02', note: 'Opened in a normal browser after automated 403', officialGovernment: true },
+      'https://example.gov/stale': { verifiedAt: '2026-06-30', note: 'Older browser check', officialGovernment: true },
+      'https://example.gov/missing': { verifiedAt: '2026-07-02', note: 'Cannot override a confirmed 404', officialGovernment: true },
     },
   });
 
@@ -112,6 +129,59 @@ test('uses a recent manual verification only for inconclusive automated results'
     { url: 'https://example.gov/stale', classification: 'inconclusive' },
   ]);
   assert.deepEqual(report.totals, { working: 0, broken: 1, inconclusive: 1, 'manual-working': 1 });
+});
+
+test('requires valid government manual evidence before overriding an inconclusive result', async () => {
+  const fetchImpl = async () => new Response('', { status: 403 });
+  const report = await checkExternalLinks([
+    { href: 'https://example.gov/valid', filePath: 'valid.md', field: 'markdown' },
+    { href: 'https://example.gov/date-only', filePath: 'date-only.md', field: 'markdown' },
+    { href: 'https://example.gov/not-government', filePath: 'not-government.md', field: 'markdown' },
+    { href: 'https://example.gov/blank-note', filePath: 'blank-note.md', field: 'markdown' },
+  ], {
+    fetchImpl,
+    now: '2026-07-31T00:00:00.000Z',
+    manualVerifications: {
+      'https://example.gov/valid': { verifiedAt: '2026-07-02', note: 'Opened in a normal browser', officialGovernment: true },
+      'https://example.gov/date-only': { verifiedAt: '2026-02-30', note: 'Impossible date', officialGovernment: true },
+      'https://example.gov/not-government': { verifiedAt: '2026-07-02', note: 'No designation' },
+      'https://example.gov/blank-note': { verifiedAt: '2026-07-02', note: '  ', officialGovernment: true },
+    },
+  });
+
+  assert.deepEqual(report.results.map(({ url, classification }) => ({ url, classification })), [
+    { url: 'https://example.gov/blank-note', classification: 'inconclusive' },
+    { url: 'https://example.gov/date-only', classification: 'inconclusive' },
+    { url: 'https://example.gov/not-government', classification: 'inconclusive' },
+    { url: 'https://example.gov/valid', classification: 'manual-working' },
+  ]);
+});
+
+test('reads external links only from published guides and areas plus all regions', async () => {
+  const root = await mkdtemp(path.join(tmpdir(), 'external-link-inventory-'));
+  try {
+    await Promise.all([
+      mkdir(path.join(root, 'src/content/guides'), { recursive: true }),
+      mkdir(path.join(root, 'src/content/areas'), { recursive: true }),
+      mkdir(path.join(root, 'src/content/regions'), { recursive: true }),
+    ]);
+    await Promise.all([
+      writeFile(path.join(root, 'src/content/guides/published.md'), '---\nstatus: published\nsource:\n  url: "https://example.gov/published-guide"\n---\n'),
+      writeFile(path.join(root, 'src/content/guides/draft.md'), '---\nstatus: draft\nsource:\n  url: "https://example.gov/draft-guide"\n---\n'),
+      writeFile(path.join(root, 'src/content/areas/published.md'), '---\nstatus: published\nsource:\n  url: "https://example.gov/published-area"\n---\n'),
+      writeFile(path.join(root, 'src/content/areas/draft.md'), '---\nstatus: draft\nsource:\n  url: "https://example.gov/draft-area"\n---\n'),
+      writeFile(path.join(root, 'src/content/regions/region.md'), '---\nsource:\n  url: "https://example.gov/region"\n---\n'),
+    ]);
+
+    const references = await readExternalContentReferences(root);
+    assert.deepEqual(references.map(({ href, filePath }) => ({ href, filePath })), [
+      { href: 'https://example.gov/published-area', filePath: 'src/content/areas/published.md' },
+      { href: 'https://example.gov/published-guide', filePath: 'src/content/guides/published.md' },
+      { href: 'https://example.gov/region', filePath: 'src/content/regions/region.md' },
+    ]);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
 });
 
 test('parses an external-link report output path', () => {

@@ -67,19 +67,41 @@ export async function checkUrl(url, { fetchImpl = fetch, timeoutMs = 12_000 } = 
 
 function isExternalUrl(href) {
   if (normalizeInternalPath(href)) return false;
-  try {
-    const url = new URL(href);
-    return url.protocol === 'http:' || url.protocol === 'https:';
-  } catch {
-    return false;
+  return /^https?:\/\//i.test(href);
+}
+
+function validVerifiedAt(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+  const date = new Date(`${value}T00:00:00.000Z`);
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value ? date : null;
+}
+
+function isValidManualVerification(verification) {
+  return Boolean(
+    verification &&
+    verification.officialGovernment === true &&
+    typeof verification.note === 'string' &&
+    verification.note.trim() &&
+    validVerifiedAt(verification.verifiedAt),
+  );
+}
+
+export function validateManualVerifications(manualVerifications) {
+  if (!manualVerifications || Array.isArray(manualVerifications) || typeof manualVerifications !== 'object') {
+    throw new Error('Manual verifications must be an object keyed by exact URL');
+  }
+  for (const [url, verification] of Object.entries(manualVerifications)) {
+    if (!isValidManualVerification(verification)) {
+      throw new Error(`Invalid manual verification for ${url}`);
+    }
   }
 }
 
 function hasRecentManualVerification(url, manualVerifications, now) {
   const verification = manualVerifications?.[url];
-  if (!verification?.verifiedAt) return false;
+  if (!isValidManualVerification(verification)) return false;
 
-  const verifiedAt = new Date(`${verification.verifiedAt}T00:00:00.000Z`);
+  const verifiedAt = validVerifiedAt(verification.verifiedAt);
   const ageMs = new Date(now).getTime() - verifiedAt.getTime();
   return Number.isFinite(ageMs) && ageMs >= 0 && ageMs <= 30 * 24 * 60 * 60 * 1000;
 }
@@ -138,15 +160,23 @@ async function findMarkdownFiles(directory) {
     if (entry.isDirectory()) files.push(...await findMarkdownFiles(entryPath));
     else if (entry.isFile() && entry.name.endsWith('.md')) files.push(entryPath);
   }
-  return files;
+  return files.sort();
 }
 
-async function readContentReferences(root) {
+function publishedContentFile(relativePath, text) {
+  const collection = relativePath.split('/')[2];
+  if (collection === 'regions') return true;
+  if (collection !== 'guides' && collection !== 'areas') return false;
+  return /^status:\s*["']?published["']?\s*$/m.test(text);
+}
+
+export async function readExternalContentReferences(root) {
   const files = await findMarkdownFiles(path.join(root, 'src/content'));
   const references = [];
   for (const filePath of files) {
     const text = await readFile(filePath, 'utf8');
     const relativePath = path.relative(root, filePath).split(path.sep).join('/');
+    if (!publishedContentFile(relativePath, text)) continue;
     references.push(...extractLinkReferences(text, relativePath));
   }
   return references;
@@ -158,7 +188,8 @@ async function main() {
 
   const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
   const manualVerifications = JSON.parse(await readFile(path.join(scriptDirectory, 'manual-link-verifications.json'), 'utf8'));
-  const report = await checkExternalLinks(await readContentReferences(process.cwd()), { manualVerifications });
+  validateManualVerifications(manualVerifications);
+  const report = await checkExternalLinks(await readExternalContentReferences(process.cwd()), { manualVerifications });
 
   await mkdir(path.dirname(outputPath), { recursive: true });
   await writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`);

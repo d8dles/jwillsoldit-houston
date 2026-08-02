@@ -1,70 +1,87 @@
 {
   "https://www.alvin-tx.gov/": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser redirected to and loaded the official City of Alvin site; the destination matched the link label."
   },
   "https://www.cityofkaty.com/Home/Components/FacilityDirectory/FacilityDirectory/10/35": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy facility page; the destination matched the link label."
   },
   "https://www.cityofkaty.com/Home/Components/FacilityDirectory/FacilityDirectory/12/": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy facility page; the destination matched the link label."
   },
   "https://www.cityofkaty.com/Home/Components/FacilityDirectory/FacilityDirectory/8/": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy facility page; the destination matched the link label."
   },
   "https://www.cityofkaty.com/about": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy page; the destination matched the link label."
   },
   "https://www.cityofkaty.com/government/city-departments/parks-recreation": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy Parks and Recreation page; the destination matched the link label."
   },
   "https://www.cityofkaty.com/government/city-departments/parks-recreation/parks-facilities": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy parks and facilities page; the destination matched the link label."
   },
   "https://www.cityofkaty.com/government/city-departments/police-department/resources": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy Police Department resources page; the destination matched the link label."
   },
   "https://www.cityofkaty.com/government/comprehensive-plan": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy comprehensive plan page; the destination matched the link label."
   },
   "https://www.cityofkaty.com/home/showpublisheddocument/7192/638191633103370000": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Katy published document; the destination matched the link label."
   },
   "https://www.missouricitytx.gov/": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Missouri City site; the destination matched the link label."
   },
   "https://www.nhc.noaa.gov/prepare/hazards.php": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official NOAA National Hurricane Center hazards page; the destination matched the link label."
   },
   "https://www.pearlandtx.gov/": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Pearland site; the destination matched the link label."
   },
   "https://www.pearlandtx.gov/departments/finance/city-tax-information/local-sales-and-use-tax": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Pearland local sales and use tax page; the destination matched the link label."
   },
   "https://www.puc.texas.gov/agency/rulesnlaws/subrules/electric/ch25complete.pdf": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official PUCT Chapter 25 PDF after redirecting to ftp.puc.texas.gov; the destination matched the link label."
   },
   "https://www.puc.texas.gov/industry/water/utilities/map.aspx": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official PUCT water utility mapping page; the destination matched the link label."
   },
   "https://www.richmondtx.gov/": {
     "verifiedAt": "2026-07-31",
+    "officialGovernment": true,
     "note": "Normal browser loaded the official City of Richmond site; the destination matched the link label."
   }
 }
