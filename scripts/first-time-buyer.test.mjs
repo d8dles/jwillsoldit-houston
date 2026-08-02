@@ -12,7 +12,7 @@ const FIXED_QUALIFICATION_CLAIMS = [
   ['earnest-money', new RegExp(String.raw`\bearnest money(?:\s+(?:of|is|at least))?\s*:?\s*${MONEY_OR_PERCENT}|(?:^|\s)${MONEY_OR_PERCENT}\s+(?:in|for|of)?\s*earnest money\b`, 'i')],
   ['rate', new RegExp(String.raw`\b(?:mortgage|interest|loan) rates?(?:\s+(?:of|is|are|at))?\s*:?\s*${MONEY_OR_PERCENT}|(?:^|\s)${MONEY_OR_PERCENT}\s+(?:mortgage|interest|loan) rate\b`, 'i')],
   ['assistance-amount', new RegExp(String.raw`\b(?:assistance|benefit|grant)(?:\s+(?:amount|of|is|provides?))?\s*:?\s*(?:up to\s+)?${MONEY_OR_PERCENT}|(?:^|\s)(?:up to\s+)?${MONEY_OR_PERCENT}\s+(?:in\s+)?(?:assistance|benefits?|grants?)\b`, 'i')],
-  ['dti', /\b(?:DTI|debt[- ]to[- ]income(?:\s+ratio)?)(?:\s+(?:of|is|under|below|at most|max(?:imum)?))?\s*:?\s*\d+(?:\.\d+)?\s*(?:%|percent\b)|\b\d+\s*\/\s*\d+\b/i],
+  ['dti', /\b(?:DTI|debt[- ]to[- ]income(?:\s+ratio)?)(?:\s+(?:of|is|under|below|at most|max(?:imum)?))?\s*:?\s*(?:\d+(?:\.\d+)?\s*(?:%|percent\b)|\d+\s*\/\s*\d+\b)|\b28\s*\/\s*36\b/i],
 ];
 
 function fixedQualificationClaims(text) {
@@ -58,6 +58,7 @@ test('rejects fixed qualification rules across protected lending categories', ()
 test('allows dates and ordinary educational lending language', () => {
   const safeCopy = [
     'Source checked July 31, 2026.',
+    'Reviewed 7/31/2026.',
     'Review credit-score requirements with a licensed lender.',
     'Down-payment and closing-cost requirements vary by loan and buyer.',
     'Your Loan Estimate lists the proposed interest rate and costs.',
