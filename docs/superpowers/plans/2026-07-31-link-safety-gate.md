@@ -76,7 +76,7 @@ test('normalizes Houston paths, trailing slashes, and fragments', () => {
 
 - [ ] **Step 2: Run the focused tests and verify RED**
 
-Run: `node --test scripts/link-inventory.test.mjs`  
+Run: `node --test scripts/link-inventory.test.mjs`
 Expected: FAIL because `scripts/link-inventory.mjs` does not exist.
 
 - [ ] **Step 3: Implement only extraction and normalization**
@@ -85,7 +85,7 @@ Implement frontmatter keys `url`, `officialUrl`, and `href`; Markdown `[label](h
 
 - [ ] **Step 4: Run the focused tests and verify GREEN**
 
-Run: `node --test scripts/link-inventory.test.mjs`  
+Run: `node --test scripts/link-inventory.test.mjs`
 Expected: 2 tests pass.
 
 - [ ] **Step 5: Write failing published-route tests**
@@ -112,7 +112,7 @@ test('accepts published routes and rejects missing or draft destinations', () =>
 
 - [ ] **Step 6: Run and verify RED**
 
-Run: `node --test scripts/link-inventory.test.mjs`  
+Run: `node --test scripts/link-inventory.test.mjs`
 Expected: FAIL because route inventory and grouped violations are not implemented.
 
 - [ ] **Step 7: Implement route inventory and grouped violations**
@@ -121,7 +121,7 @@ Always include `/houston` and `/houston/guides`. Add only published guide and ar
 
 - [ ] **Step 8: Run and verify GREEN**
 
-Run: `node --test scripts/link-inventory.test.mjs`  
+Run: `node --test scripts/link-inventory.test.mjs`
 Expected: all inventory tests pass.
 
 - [ ] **Step 9: Commit Task 1**
@@ -148,7 +148,7 @@ Add a temporary-directory test that writes one published guide and a second file
 
 - [ ] **Step 2: Run and verify RED**
 
-Run: `node --test scripts/link-inventory.test.mjs`  
+Run: `node --test scripts/link-inventory.test.mjs`
 Expected: FAIL because `check-internal-links.mjs` does not exist.
 
 - [ ] **Step 3: Implement the minimal CLI**
@@ -157,7 +157,7 @@ Recursively read `src/content/**/*.md`, parse collection, slug, and `status`, in
 
 - [ ] **Step 4: Run focused and full tests**
 
-Run: `node --test scripts/link-inventory.test.mjs && npm test`  
+Run: `node --test scripts/link-inventory.test.mjs && npm test`
 Expected: all tests pass.
 
 - [ ] **Step 5: Add scripts and build integration**
@@ -178,7 +178,7 @@ Create the external command now only after Task 3 creates its target file; until
 
 - [ ] **Step 6: Run the actual internal gate and build**
 
-Run: `npm run check:internal-links && npm run build`  
+Run: `npm run check:internal-links && npm run build`
 Expected: internal links clean; build succeeds.
 
 - [ ] **Step 7: Commit Task 2**
@@ -220,7 +220,7 @@ test('classifies HTTP evidence without treating bot blocks as broken', () => {
 
 - [ ] **Step 2: Run and verify RED**
 
-Run: `node --test scripts/check-external-links.test.mjs`  
+Run: `node --test scripts/check-external-links.test.mjs`
 Expected: FAIL because the implementation module does not exist.
 
 - [ ] **Step 3: Implement `classifyStatus` only**
@@ -229,7 +229,7 @@ Use `200–399 => working`, `404/410` and remaining `400–499` except `403/429 
 
 - [ ] **Step 4: Run and verify GREEN**
 
-Run: `node --test scripts/check-external-links.test.mjs`  
+Run: `node --test scripts/check-external-links.test.mjs`
 Expected: classification test passes.
 
 - [ ] **Step 5: Write failing fetch, timeout, and deduplication tests**
@@ -250,7 +250,7 @@ Assert duplicate URLs are fetched once, every referrer is retained, and thrown n
 
 - [ ] **Step 6: Run and verify RED**
 
-Run: `node --test scripts/check-external-links.test.mjs`  
+Run: `node --test scripts/check-external-links.test.mjs`
 Expected: FAIL because `checkUrl` and `checkExternalLinks` are missing.
 
 - [ ] **Step 7: Implement minimal URL checks**
@@ -278,7 +278,7 @@ Add `--output <path>` parsing, write JSON before setting exit code, exit 1 only 
 
 - [ ] **Step 10: Run focused and full tests**
 
-Run: `node --test scripts/check-external-links.test.mjs && npm test`  
+Run: `node --test scripts/check-external-links.test.mjs && npm test`
 Expected: all tests pass.
 
 - [ ] **Step 11: Add package command and commit Task 3**
@@ -338,10 +338,10 @@ Add commands, the four status meanings, 30-day manual evidence expiry, and the r
 
 - [ ] **Step 3: Validate YAML and actual external check**
 
-Run: `npm run check:external-links -- --output /tmp/houston-external-links.json`  
+Run: `npm run check:external-links -- --output /tmp/houston-external-links.json`
 Expected: JSON is written; confirmed broken links cause exit 1; inconclusive results are printed separately.
 
-Run: `node -e "JSON.parse(require('fs').readFileSync('/tmp/houston-external-links.json','utf8')); console.log('report valid')"`  
+Run: `node -e "JSON.parse(require('fs').readFileSync('/tmp/houston-external-links.json','utf8')); console.log('report valid')"`
 Expected: `report valid`.
 
 - [ ] **Step 4: Review every confirmed broken result**
@@ -354,7 +354,7 @@ For each official government `403`, `429`, timeout, or bot challenge, open the e
 
 - [ ] **Step 6: Re-run the report and full build**
 
-Run: `npm test && npm run build && npm run check:external-links -- --output /tmp/houston-external-links.json`  
+Run: `npm test && npm run build && npm run check:external-links -- --output /tmp/houston-external-links.json`
 Expected: tests/build pass and the report contains zero confirmed broken links.
 
 - [ ] **Step 7: Commit Task 4**

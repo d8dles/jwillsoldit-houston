@@ -1,7 +1,7 @@
 # Houston Link Safety and First-Time Buyer Guide Design
 
-Date: 2026-07-31  
-Status: Approved direction, awaiting written-spec review  
+Date: 2026-07-31
+Status: Approved direction, awaiting written-spec review
 Repository: `d8dles/jwillsoldit-houston`
 
 ## Objective
@@ -158,4 +158,3 @@ Implementation follows red-green-refactor.
 - The checker never edits content automatically.
 - The first-time-buyer guide contains no qualification-like calculator or volatile evergreen program amounts.
 - The full Houston build passes and the new route is verified in generated HTML before merge.
-

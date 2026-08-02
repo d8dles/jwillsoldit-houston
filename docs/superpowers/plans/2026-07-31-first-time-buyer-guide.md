@@ -67,7 +67,7 @@ test('does not ship qualification-like calculator language or inputs', () => {
 
 - [ ] **Step 2: Run and verify RED**
 
-Run: `node --test scripts/first-time-buyer.test.mjs`  
+Run: `node --test scripts/first-time-buyer.test.mjs`
 Expected: FAIL because the guide and safe component do not exist.
 
 - [ ] **Step 3: Commit the red contract test**
@@ -149,12 +149,12 @@ Keep the body between 800 and 1,050 words to leave editing room inside the 700â€
 
 - [ ] **Step 3: Run the buyer contract and content gates**
 
-Run: `node --test scripts/first-time-buyer.test.mjs && node scripts/lint-content.mjs && node scripts/lint-language.mjs && node scripts/lint-voice.mjs`  
+Run: `node --test scripts/first-time-buyer.test.mjs && node scripts/lint-content.mjs && node scripts/lint-language.mjs && node scripts/lint-voice.mjs`
 Expected: all pass. If the guide is outside the word range, edit copy without adding numeric lending rules.
 
 - [ ] **Step 4: Run the internal and external link gates**
 
-Run: `npm run check:internal-links && npm run check:external-links -- --output /tmp/first-time-buyer-links.json`  
+Run: `npm run check:internal-links && npm run check:external-links -- --output /tmp/first-time-buyer-links.json`
 Expected: no confirmed broken links.
 
 - [ ] **Step 5: Commit Task 3**
@@ -188,7 +188,7 @@ test('requires the published first-time buyer guide', () => {
 
 - [ ] **Step 2: Run and verify RED**
 
-Run: `node --test scripts/lint-content.test.mjs`  
+Run: `node --test scripts/lint-content.test.mjs`
 Expected: FAIL because the guide is not yet in `REQUIRED_PHASE1`.
 
 - [ ] **Step 3: Add the guide to the inventory and update docs**
@@ -197,7 +197,7 @@ Update both `PRODUCT.md` and `README.md` from 10 guides/27 routes to 11 guides/2
 
 - [ ] **Step 4: Run and verify GREEN**
 
-Run: `npm test`  
+Run: `npm test`
 Expected: all tests pass.
 
 - [ ] **Step 5: Commit Task 4**
