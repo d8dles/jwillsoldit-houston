@@ -5,22 +5,22 @@ description: "A plain-language guide to appraisals, taxing units, exemptions, bi
 disclaimerIds:
   - general
 sources:
-  - label: "Texas Comptroller — Property Tax System Basics"
+  - label: "Texas Comptroller: Property Tax System Basics"
     url: "https://comptroller.texas.gov/taxes/property-tax/basics.php"
     accessed: "2026-07-18"
-  - label: "Texas Comptroller — Local Property Appraisal and Tax Information"
+  - label: "Texas Comptroller: Local Property Appraisal and Tax Information"
     url: "https://comptroller.texas.gov/taxes/property-tax/county-directory/"
     accessed: "2026-07-18"
-  - label: "Texas Comptroller — Property Taxpayers' Bill of Rights"
+  - label: "Texas Comptroller: Property Taxpayers' Bill of Rights"
     url: "https://comptroller.texas.gov/taxes/property-tax/bill-of-rights.php"
     accessed: "2026-07-18"
-  - label: "Texas Comptroller — Property Tax Bills"
+  - label: "Texas Comptroller: Property Tax Bills"
     url: "https://comptroller.texas.gov/taxes/property-tax/bills/index.php"
     accessed: "2026-07-18"
-  - label: "Texas Comptroller — Appraisal Protests and Appeals"
+  - label: "Texas Comptroller: Appraisal Protests and Appeals"
     url: "https://comptroller.texas.gov/taxes/property-tax/protests/"
     accessed: "2026-07-18"
-  - label: "Texas Comptroller — Property Tax Exemptions"
+  - label: "Texas Comptroller: Property Tax Exemptions"
     url: "https://comptroller.texas.gov/taxes/property-tax/exemptions/"
     accessed: "2026-07-18"
 relatedRegions:
@@ -39,7 +39,7 @@ status: published
 
 Texas does not have a state property tax. Property taxes are local. A Houston-area address can sit inside several taxing units at the same time: a county, a school district, a city, and one or more special-purpose districts. Each unit can set its own rate within the rules that apply to it.
 
-That is why two homes with similar prices can carry different tax bills. They may be in different school districts, city limits, utility districts, or other jurisdictions. A tax rate shown on a listing is a starting point, not a complete forecast.
+That is why two homes with similar prices can carry different tax bills. They may be in different school districts, city limits, utility districts, or other jurisdictions. Most Harris County homeowners land somewhere around 2 to 2.5 percent of the home's value combined, but a home inside a MUD can run noticeably higher since the district adds its own rate on top of the county, city, and school district. A tax rate shown on a listing is a starting point, not a complete forecast.
 
 Before comparing properties, identify every taxing unit attached to each address. The county appraisal district's property record and the county tax office's records are the practical places to start. For an address near a county line, confirm which county appraisal district holds the account.
 
@@ -47,7 +47,7 @@ Before comparing properties, identify every taxing unit attached to each address
 
 The county appraisal district determines the property's value for tax purposes. Local governing bodies set their tax rates. The appraisal district does not set the rates, and the taxing units do not perform the appraisal.
 
-The basic calculation is taxable value multiplied by the applicable rate for each taxing unit. Taxable value is not always the same as market value or appraised value. An approved exemption or another limitation may change the value used by a particular taxing unit.
+The math itself is simple once you have the pieces: taxable value multiplied by the rate for each taxing unit, added together. Taxable value isn't always the same as market value or appraised value, since an approved exemption or another limitation can lower the value a particular taxing unit actually taxes.
 
 Treat each part as a separate question:
 
@@ -103,4 +103,4 @@ Avoid treating a listing's tax figure, a mortgage calculator, or a seller's mont
 
 Compare the full jurisdiction stack for the exact address. Pull the appraisal record and tax bill, then verify the taxing units, current rates, exemptions, and any unresolved appraisal matter with the county offices. Ask the lender how those verified inputs will be reflected in escrow.
 
-The useful question is not simply, "What is the tax rate?" It is, "Which values, rates, exemptions, and districts will apply to this property under my ownership?" That produces a clearer comparison without pretending a future bill is already known.
+Don't settle for "what's the tax rate." Ask which values, rates, exemptions, and districts will apply to this specific property once you own it. That's the version of the question that gives you a number worth planning around, instead of a guess dressed up as one.

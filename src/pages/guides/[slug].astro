@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
 import HoustonRegionMap from '../../components/HoustonRegionMap.astro';
+import FirstTimeBuyerTools from '../../components/FirstTimeBuyerTools.astro';
 import SourcePanel from '../../components/SourcePanel.astro';
 import RelatedEditorialLinks from '../../components/RelatedEditorialLinks.astro';
 import { resolveEditorialLinks } from '../../data/editorial-links.mjs';
@@ -52,6 +53,7 @@ const relatedLinks = [
 
     <article class="article-body">
       {data.slug === 'how-houston-is-organized' && <HoustonRegionMap />}
+      {data.slug === 'first-time-homebuyer' && <FirstTimeBuyerTools />}
       <Content />
     </article>
 

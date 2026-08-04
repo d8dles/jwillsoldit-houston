@@ -6,25 +6,25 @@ disclaimerIds:
   - general
   - flood
 sources:
-  - label: "FEMA — Flood Map Service Center"
+  - label: "FEMA: Flood Map Service Center"
     url: "https://msc.fema.gov/portal/home"
     accessed: "2026-07-18"
-  - label: "Harris County Flood Control District — Flood Education Mapping Tool"
+  - label: "Harris County Flood Control District: Flood Education Mapping Tool"
     url: "https://www.hcfcd.org/Resources/Interactive-Mapping-Tools/Harris-County-Flood-Education"
     accessed: "2026-07-18"
-  - label: "Harris County Flood Control District — Model and Map Management System"
+  - label: "Harris County Flood Control District: Model and Map Management System"
     url: "https://www.hcfcd.org/Resources/Interactive-Mapping-Tools/Model-and-Map-Management-M3-System"
     accessed: "2026-07-18"
-  - label: "Texas Department of Insurance — Flood Insurance"
+  - label: "Texas Department of Insurance: Flood Insurance"
     url: "https://www.tdi.texas.gov/consumer/storms/flood-insurance.html"
     accessed: "2026-07-18"
-  - label: "Texas Department of Insurance — Home, Flood, Wind"
+  - label: "Texas Department of Insurance: Home, Flood, Wind"
     url: "https://www.tdi.texas.gov/consumer/storms/home-flood-wind.html"
     accessed: "2026-07-18"
-  - label: "Texas Real Estate Commission — Seller's Disclosure Notice"
+  - label: "Texas Real Estate Commission: Seller's Disclosure Notice"
     url: "https://www.trec.texas.gov/forms/sellers-disclosure-notice"
     accessed: "2026-07-18"
-  - label: "FEMA — Flood Map Products and Tools"
+  - label: "FEMA: Flood Map Products and Tools"
     url: "https://msc.fema.gov/portal/resources/productsandtools"
     accessed: "2026-07-18"
 relatedRegions:
@@ -78,7 +78,7 @@ If prior flooding or repairs are material to the decision, an inspector, enginee
 
 The Texas Department of Insurance explains that homeowners policies do not cover flood damage and that a separate flood policy is needed for flood coverage. TDI describes flood coverage as coverage for damage from rising water. It also explains that properties in some coastal areas may need separate wind and hail coverage.
 
-Do not assume that one policy fills every gap. Ask a licensed insurance agent for written quotes tied to the exact address and property. Compare the policy forms and ask:
+Do not assume that one policy fills every gap. Costs vary enormously by property, but as a rough sense of scale: NFIP premiums in the Houston area often run somewhere around $700 to $1,900 a year in lower-risk zones, and can climb well past $2,000 to $4,000-plus a year in high-risk zones close to a bayou or the coast, depending on elevation. Treat any number you see online as a starting point, not a quote. Ask a licensed insurance agent for written quotes tied to the exact address and property. Compare the policy forms and ask:
 
 - What definition of flood applies?
 - Are the building and personal property covered separately?
@@ -117,4 +117,4 @@ Date every item. Maps, insurance products, and property conditions can change. I
 
 Compare documented conditions, not labels alone. Use the effective FEMA map, the appropriate county tools, property records, physical documents, seller disclosures, and address-specific insurance quotes. Keep mapped risk, observed history, lender requirements, and policy coverage as separate lines.
 
-The useful question is not, "Is this property in or out?" It is, "What do the current maps, property records, site details, and insurance terms show for this exact address, and what remains unknown?" That is the level of detail a Houston-area flood review requires.
+Don't ask "is this property in or out." Ask what the current maps, property records, site details, and insurance terms actually show for this exact address, and be honest about what's still unknown. That's the level of detail a Houston-area flood review really needs.

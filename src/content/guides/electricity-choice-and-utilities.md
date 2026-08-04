@@ -5,28 +5,28 @@ description: "How to identify electric, water, wastewater, gas, and trash provid
 disclaimerIds:
   - general
 sources:
-  - label: "Public Utility Commission of Texas — Power to Choose"
+  - label: "Public Utility Commission of Texas: Power to Choose"
     url: "https://www.powertochoose.org/"
     accessed: "2026-07-18"
-  - label: "Public Utility Commission of Texas — Electric Substantive Rules"
+  - label: "Public Utility Commission of Texas: Electric Substantive Rules"
     url: "https://www.puc.texas.gov/agency/rulesnlaws/subrules/electric/ch25complete.pdf"
     accessed: "2026-07-18"
-  - label: "Public Utility Commission of Texas — Water and Sewer CCN Viewer"
+  - label: "Public Utility Commission of Texas: Water and Sewer CCN Viewer"
     url: "https://www.puc.texas.gov/industry/water/utilities/map.aspx"
     accessed: "2026-07-18"
-  - label: "ERCOT — Load Serving Entities"
+  - label: "ERCOT: Load Serving Entities"
     url: "https://www.ercot.com/services/rq/lse/index.html"
     accessed: "2026-07-18"
-  - label: "ERCOT — Transmission and Distribution Service Providers"
+  - label: "ERCOT: Transmission and Distribution Service Providers"
     url: "https://www.ercot.com/services/rq/tdsp/index.html"
     accessed: "2026-07-18"
-  - label: "TCEQ — Municipal Utility Districts"
+  - label: "TCEQ: Municipal Utility Districts"
     url: "https://www.tceq.texas.gov/agency/subjects-of-interest/utilities/municipal-utility-districts"
     accessed: "2026-07-18"
-  - label: "Railroad Commission of Texas — Natural Gas Utility Contacts"
+  - label: "Railroad Commission of Texas: Natural Gas Utility Contacts"
     url: "https://www.rrc.texas.gov/weather/gas-utility-contacts/"
     accessed: "2026-07-18"
-  - label: "City of Houston Solid Waste — Residential Service and Address Lookup"
+  - label: "City of Houston Solid Waste: Residential Service and Address Lookup"
     url: "https://houstontx.gov/solidwaste/garbage.html"
     accessed: "2026-07-18"
 relatedRegions:
@@ -77,7 +77,7 @@ Power to Choose listings are supplied by providers. Confirm plan-specific questi
 
 ## Service setup needs its own checklist
 
-Before move-in, ask the REP or local utility what it needs to start service. Confirm the service address, requested start date, meter status, identification requirements, deposit terms, and any construction or connection work.
+Before move-in, ask the REP or local utility what it needs to start service. Confirm the service address, requested start date, meter status, identification requirements, deposit terms, and any construction or connection work. A deposit, if one applies, usually runs $50 to $400 depending on usage and credit history, and Texas rules require it to be waived if you meet certain criteria, so ask rather than assume you'll owe one.
 
 For new construction, a house without active service, or a property with a meter problem, retail enrollment may not be the only step. The delivery utility, builder, electrician, or local permitting authority may have work to complete. Ask each party to state its responsibility and expected sequence in writing.
 
@@ -104,9 +104,9 @@ The last question changes the review. Wells and septic systems involve property 
 
 Natural gas availability is not universal, and the presence of gas appliances does not identify the current account status. Ask the seller or utility which company serves the address, then verify the meter, start-service process, and any inspection requirement directly with that company.
 
-Trash and recycling may be provided by a city, utility district, HOA, landlord, or contracted company. Confirm whether the charge appears on a city bill, district bill, association assessment, lease statement, or separate account. Ask about container delivery, collection days, bulk pickup, and any mandatory provider.
+Trash and recycling may be provided by a city, utility district, HOA, landlord, or contracted company. Confirm whether the charge appears on a city bill, district bill, association assessment, lease statement, or separate account, and ask about container delivery, collection days, and bulk pickup.
 
-Do not assume utilities are included because a property is inside a managed community. Get the current list from the entity responsible for the account.
+Do not assume utilities are included in a managed community. Get the current list from the entity responsible for the account.
 
 ## Keep bills, taxes, and association charges separate
 
@@ -143,4 +143,4 @@ Keep a copy of every enrollment confirmation and record the date. Provider offer
 
 Start with the exact service address. Confirm which electricity structure applies, identify the delivery utility, and read the full plan documents before enrolling. Then verify water, wastewater, gas, and trash one provider at a time.
 
-The useful question is not, "Who handles utilities in this neighborhood?" It is, "Which entity serves this meter and parcel, what documents control the account, and what steps must be complete before service starts?" That keeps a routine setup from becoming a closing-week surprise.
+Skip "who handles utilities in this neighborhood." Ask instead which entity serves this exact meter and parcel, what documents control the account, and what has to happen before service actually starts. That's what keeps a routine setup from turning into a closing-week scramble.

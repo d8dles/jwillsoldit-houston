@@ -1,0 +1,465 @@
+---
+// Interactive quick-reference for the first-time-homebuyer guide: an at-a-glance
+// order of operations, a rough affordability estimator, and a glossary. Motion
+// is limited to IntersectionObserver reveals and click-triggered <details>
+// panels. No scroll-jacking, no parallax, no 3D. Everything respects
+// prefers-reduced-motion, handled by the inline script below.
+
+const steps = [
+  {
+    n: '01',
+    title: 'Get your finances checked',
+    body: 'Pull your credit report and fix any errors. Lenders look at your credit score together with your debt-to-income ratio (DTI): your total monthly debts, including the new mortgage, divided by your gross monthly income.',
+  },
+  {
+    n: '02',
+    title: 'Set a budget before you set a search',
+    body: 'A lender might approve you for more than you actually want to spend each month. Remember to add property taxes, insurance, HOA dues, and maintenance on top of principal and interest.',
+  },
+  {
+    n: '03',
+    title: 'Save for the down payment and closing costs',
+    body: 'Down payments run from 0% (VA, USDA) to 3 to 3.5% (conventional, FHA) up to 20% (avoids mortgage insurance). Closing costs are usually another 2 to 5% of price.',
+  },
+  {
+    n: '04',
+    title: 'Get pre-approved, not just pre-qualified',
+    body: 'Pre-approval means a lender checks your income, assets, and credit, then gives you a letter. That letter is what sellers actually trust when you make an offer.',
+  },
+  {
+    n: '05',
+    title: 'Tour with an agent, inside your real budget',
+    body: 'A buyer’s agent writes the offer, negotiates, and coordinates inspections. Touring inside a verified budget keeps the search shorter.',
+  },
+  {
+    n: '06',
+    title: 'Make the offer',
+    body: 'Price, earnest money, contingencies, and a proposed closing date. A clean, well-structured offer can beat a slightly higher, messier one.',
+  },
+  {
+    n: '07',
+    title: 'Inspection and appraisal',
+    body: 'The inspection checks physical condition. The appraisal, ordered by the lender, checks whether price matches value. They protect different interests.',
+  },
+  {
+    n: '08',
+    title: 'Final walkthrough and closing',
+    body: 'Confirms the home’s condition, then signatures, remaining costs, and the deed transfers. Verify wire instructions by phone before sending funds.',
+  },
+];
+
+const glossary = [
+  { term: 'Earnest money', def: 'A good-faith deposit submitted with an offer, credited toward closing rather than an extra fee.' },
+  { term: 'Escrow', def: 'A neutral third party holding funds or documents until agreed conditions are met.' },
+  { term: 'Contingency', def: 'A condition, like financing, inspection, or appraisal, that has to be met before the sale can go through.' },
+  { term: 'PMI', def: 'Private Mortgage Insurance, generally required on conventional loans under 20% down. You can drop it once your equity reaches 20%.' },
+  { term: 'Pre-approval', def: 'A conditional lending commitment based on your verified income, assets, and credit.' },
+  { term: 'DTI', def: 'Debt-to-income ratio: your monthly debt payments, including the mortgage, divided by your gross monthly income.' },
+];
+---
+
+<section class="fthb-tools" data-fthb-tools>
+  <div class="fthb-block fthb-reveal">
+    <p class="mono-label mono-label--red">At a glance</p>
+    <h2>The order this usually goes</h2>
+    <ol class="fthb-steps">
+      {steps.map((step) => (
+        <li>
+          <details>
+            <summary>
+              <span class="step-n">{step.n}</span>
+              <span class="step-title">{step.title}</span>
+            </summary>
+            <p class="step-body">{step.body}</p>
+          </details>
+        </li>
+      ))}
+    </ol>
+  </div>
+
+  <div class="fthb-block fthb-reveal">
+    <p class="mono-label mono-label--red">Rough estimate, not a loan offer</p>
+    <h2>What a monthly budget could support</h2>
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        <label class="calc-field">
+          <span class="calc-label">Annual household income <output for="income" id="income-val">$85,000</output></span>
+          <input type="range" id="income" min="30000" max="300000" step="1000" value="85000" />
+        </label>
+        <label class="calc-field">
+          <span class="calc-label">Other monthly debts <output for="debts" id="debts-val">$450</output></span>
+          <input type="range" id="debts" min="0" max="4000" step="25" value="450" />
+        </label>
+        <label class="calc-field">
+          <span class="calc-label">Down payment <output for="down" id="down-val">5%</output></span>
+          <input type="range" id="down" min="0" max="20" step="0.5" value="5" />
+        </label>
+        <label class="calc-field">
+          <span class="calc-label">Estimated interest rate <output for="rate" id="rate-val">6.50%</output></span>
+          <input type="range" id="rate" min="4" max="9" step="0.125" value="6.5" />
+        </label>
+      </div>
+      <div class="calc-outputs">
+        <p class="calc-out-label">Estimated home price range</p>
+        <p class="calc-out-value" id="out-price">$0</p>
+        <div class="calc-out-row"><span>Estimated monthly payment</span><strong id="out-monthly">$0</strong></div>
+        <div class="calc-out-row"><span>Estimated down payment</span><strong id="out-down">$0</strong></div>
+        <p class="calc-disclaimer">This uses a simplified 28/36 rule plus a rough Texas tax and insurance estimate. Real approval depends on full underwriting. Think of this as a starting point for a conversation with a lender, not a quote.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fthb-block fthb-reveal">
+    <p class="mono-label mono-label--red">Terms worth knowing</p>
+    <h2>A short glossary</h2>
+    <div class="glossary-grid">
+      {glossary.map((item) => (
+        <details class="glossary-item">
+          <summary>{item.term}</summary>
+          <p>{item.def}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-fthb-tools]');
+  if (root) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    // Reveal-on-scroll: IntersectionObserver only, no scroll-position math,
+    // no parallax. Skipped entirely under reduced motion, so blocks are just
+    // visible from the start.
+    if (!reducedMotion.matches) {
+      const blocks = root.querySelectorAll<HTMLElement>('.fthb-reveal');
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.15 },
+      );
+      blocks.forEach((block) => io.observe(block));
+    } else {
+      root.querySelectorAll('.fthb-reveal').forEach((block) => block.classList.add('is-visible'));
+    }
+
+    // Affordability estimate: 28/36 rule with a rough TX tax and insurance allowance.
+    const incomeEl = root.querySelector<HTMLInputElement>('#income');
+    const debtsEl = root.querySelector<HTMLInputElement>('#debts');
+    const downEl = root.querySelector<HTMLInputElement>('#down');
+    const rateEl = root.querySelector<HTMLInputElement>('#rate');
+
+    const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+    const pulse = (el: Element | null) => {
+      if (!el || reducedMotion.matches) return;
+      el.classList.remove('pulse');
+      // Force reflow so the animation can restart on repeated updates.
+      void (el as HTMLElement).offsetWidth;
+      el.classList.add('pulse');
+    };
+
+    function calc() {
+      if (!incomeEl || !debtsEl || !downEl || !rateEl) return;
+      const income = parseFloat(incomeEl.value);
+      const debts = parseFloat(debtsEl.value);
+      const downPct = parseFloat(downEl.value) / 100;
+      const rate = parseFloat(rateEl.value) / 100;
+      const n = 30 * 12;
+      const r = rate / 12;
+
+      root!.querySelector('#income-val')!.textContent = fmt(income);
+      root!.querySelector('#debts-val')!.textContent = fmt(debts);
+      root!.querySelector('#down-val')!.textContent = downEl.value + '%';
+      root!.querySelector('#rate-val')!.textContent = rateEl.value + '%';
+
+      const monthlyIncome = income / 12;
+      const budget28 = monthlyIncome * 0.28;
+      const budget36 = monthlyIncome * 0.36 - debts;
+      const budget = Math.max(0, Math.min(budget28, budget36));
+
+      const factor = r > 0 ? (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1) : 1 / n;
+      const taxInsRate = 0.018 / 12;
+      const denom = (1 - downPct) * factor + taxInsRate;
+      const homePrice = denom > 0 ? budget / denom : 0;
+      const downAmount = homePrice * downPct;
+      const monthlyPI = homePrice * (1 - downPct) * factor;
+      const monthlyTI = homePrice * taxInsRate;
+
+      const priceEl = root!.querySelector('#out-price')!;
+      const monthlyEl = root!.querySelector('#out-monthly')!;
+      const downOutEl = root!.querySelector('#out-down')!;
+
+      priceEl.textContent = fmt(homePrice);
+      monthlyEl.textContent = fmt(monthlyPI + monthlyTI) + '/mo';
+      downOutEl.textContent = fmt(downAmount);
+      pulse(priceEl);
+    }
+
+    [incomeEl, debtsEl, downEl, rateEl].forEach((el) => el?.addEventListener('input', calc));
+    calc();
+  }
+</script>
+
+<style>
+  .fthb-tools {
+    display: grid;
+    gap: var(--space-block);
+    margin: var(--space-block) 0;
+  }
+
+  .fthb-block h2 {
+    font-family: var(--display);
+    font-size: var(--fs-h3);
+    line-height: 1.15;
+    margin: 10px 0 20px;
+  }
+
+  .fthb-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out);
+  }
+
+  .fthb-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Roadmap ── */
+  .fthb-steps {
+    list-style: none;
+    border-top: 1px solid var(--trace);
+  }
+
+  .fthb-steps details {
+    border-bottom: 1px solid var(--trace);
+  }
+
+  .fthb-steps summary {
+    cursor: pointer;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    list-style: none;
+  }
+
+  .fthb-steps summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .step-n {
+    font-family: var(--mono);
+    font-size: var(--fs-small);
+    color: var(--red-text);
+    flex: 0 0 auto;
+  }
+
+  .step-title {
+    font-family: var(--display);
+    font-size: 1.05rem;
+  }
+
+  .step-body {
+    padding: 0 0 18px 40px;
+    color: var(--mid);
+    font-size: var(--fs-small);
+    max-width: 62ch;
+    line-height: 1.65;
+  }
+
+  /* ── Calculator ── */
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--gutter);
+    border: 1px solid var(--trace);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .calc-inputs {
+    padding: 28px;
+    display: grid;
+    gap: 22px;
+    background: var(--pure);
+  }
+
+  .calc-outputs {
+    padding: 28px;
+    background: var(--off-white);
+    border-left: 1px solid var(--trace);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .calc-field {
+    display: grid;
+    gap: 8px;
+  }
+
+  .calc-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .calc-label output {
+    font-family: var(--mono);
+    color: var(--red-text);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  input[type='range'] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background: var(--trace);
+    border-radius: 2px;
+    outline: none;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--red);
+    cursor: pointer;
+    border: 2px solid var(--off-white);
+    box-shadow: 0 0 0 1px var(--red);
+    transition: transform var(--dur-fast) ease;
+  }
+
+  input[type='range']:hover::-webkit-slider-thumb {
+    transform: scale(1.15);
+  }
+
+  input[type='range']::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--red);
+    cursor: pointer;
+    border: 2px solid var(--off-white);
+  }
+
+  .calc-out-label {
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 4px;
+  }
+
+  .calc-out-value {
+    font-family: var(--display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1.05;
+    margin-bottom: 18px;
+    border-radius: 2px;
+  }
+
+  .calc-out-value.pulse {
+    animation: value-pulse 0.4s var(--ease-out);
+  }
+
+  @keyframes value-pulse {
+    0% { color: var(--red-text); }
+    100% { color: var(--forest); }
+  }
+
+  .calc-out-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-top: 1px solid var(--trace);
+    font-size: var(--fs-small);
+  }
+
+  .calc-out-row span {
+    color: var(--mid);
+  }
+
+  .calc-disclaimer {
+    margin-top: 16px;
+    font-size: var(--fs-micro);
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  /* ── Glossary ── */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--trace);
+    border: 1px solid var(--trace);
+  }
+
+  .glossary-item {
+    background: var(--pure);
+    padding: 18px 20px;
+  }
+
+  .glossary-item summary {
+    cursor: pointer;
+    font-family: var(--display);
+    font-weight: 600;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .glossary-item p {
+    margin-top: 10px;
+    font-size: var(--fs-small);
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 760px) {
+    .calc-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .calc-outputs {
+      border-left: none;
+      border-top: 1px solid var(--trace);
+    }
+
+    .step-body {
+      padding-left: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fthb-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .calc-out-value.pulse {
+      animation: none;
+    }
+  }
+</style>

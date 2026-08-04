@@ -11,16 +11,16 @@ sources:
   - label: "Texas Property Code"
     url: "https://statutes.capitol.texas.gov/Docs/SDocs/PROPERTYCODE.pdf"
     accessed: "2026-07-18"
-  - label: "Texas Real Estate Commission — Mandatory HOA Addendum"
+  - label: "Texas Real Estate Commission: Mandatory HOA Addendum"
     url: "https://www.trec.texas.gov/forms/addendum-property-subject-mandatory-membership-property-owners-association"
     accessed: "2026-07-18"
-  - label: "Texas Real Estate Commission — HOA Management Certificate Database"
+  - label: "Texas Real Estate Commission: HOA Management Certificate Database"
     url: "https://www.trec.texas.gov/node/2143"
     accessed: "2026-07-18"
-  - label: "City of Houston Legal Department — Deed Restrictions"
+  - label: "City of Houston Legal Department: Deed Restrictions"
     url: "https://www.houstontx.gov/legal/deed.html"
     accessed: "2026-07-18"
-  - label: "City of Houston Planning and Development — Development Regulations"
+  - label: "City of Houston Planning and Development: Development Regulations"
     url: "https://cohips.houstontx.gov/planning/DevelopRegs/index.html"
     accessed: "2026-07-18"
 relatedRegions:
@@ -55,7 +55,7 @@ For a mandatory association, identify the association's legal name and managemen
 
 Texas Property Code Chapter 207 describes subdivision information that can include restrictions, bylaws, rules, and a resale certificate. TREC's mandatory-membership addendum uses that framework for covered transactions.
 
-A resale certificate can surface operational facts that a short listing description will not show. The statute calls for information such as regular assessments, special assessments, certain balances, capital expenditures and reserves, pending lawsuits, transfer-related fees, and known violations tied to the property. The exact statutory contents and transaction requirements should be reviewed in the current documents.
+A resale certificate can surface facts a short listing description won't show you: regular and special assessments, certain balances, capital expenditures and reserves, pending lawsuits, transfer-related fees, and known violations tied to the property. Texas law now caps what an association can charge for that certificate, generally $375, with a $75 cap on an update if the certificate needs to be refreshed closer to closing. Review the exact statutory contents and requirements in the current documents rather than assuming last year's rules still apply.
 
 Request the complete, current package. Check the issue date and whether an update is available or required under the contract. Do not substitute a neighbor's documents or an old online copy. Rules and financial information can change.
 
@@ -71,7 +71,7 @@ Put each item on its own line:
 - Any unpaid amount or violation attributed to the property.
 - Any utility or service included in the assessment.
 
-Then ask the title company how the contract and closing statement allocate those amounts. Do not infer the legal responsibility for a charge from who happened to pay it in a prior sale. Questions about the legal effect of a document or charge belong with an attorney or another professional working within the person's licensed scope.
+Then ask the title company how the contract and closing statement allocate those amounts. Don't assume a charge belongs to whoever paid it last time. If you need to know the legal effect of a document or charge, that question goes to an attorney or another qualified professional, not a guess based on precedent.
 
 ## Rules can reach ordinary ownership decisions
 
@@ -112,6 +112,6 @@ Check that the legal property description and association name match across the 
 
 ## Before you sign
 
-Treat the recorded documents as part of the property, not as paperwork to skim after the decision. Verify the restrictions, association membership, recurring dues, other charges, approval process, property-specific violations, and current association records.
+Treat the recorded documents as part of the property, not paperwork to skim after the decision is already made. Verify the restrictions, association membership, recurring dues, other charges, approval process, property-specific violations, and current association records.
 
-The useful question is, "What rules and obligations attach to this exact lot, and do the current documents match how I expect to own and use it?" Get that answer from the recorded instruments and current association information, then take legal questions to the appropriate professional.
+What you're really trying to answer is this: what rules and obligations attach to this exact lot, and do the current documents match how you plan to actually live in it? Get that from the recorded instruments and current association information, then take any legal questions to the right professional.

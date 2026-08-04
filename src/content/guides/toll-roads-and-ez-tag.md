@@ -6,16 +6,16 @@ disclaimerIds:
   - "general"
   - "travel-times"
 sources:
-  - label: "Texas Department of Transportation — Toll roads in Texas"
+  - label: "Texas Department of Transportation: Toll roads in Texas"
     url: "https://www.txdot.gov/discover/toll-roads-managed-lanes/txdot-toll-roads.html"
     accessed: "2026-07-18"
-  - label: "Texas Department of Transportation — How electronic toll tags work"
+  - label: "Texas Department of Transportation: How electronic toll tags work"
     url: "https://www.txdot.gov/discover/toll-roads-managed-lanes/paying-tolls/how-tags-work.html"
     accessed: "2026-07-18"
-  - label: "Harris County Toll Road Authority — HCTRA system map"
+  - label: "Harris County Toll Road Authority: HCTRA system map"
     url: "https://www.hctra.org/TollRoadMap"
     accessed: "2026-07-18"
-  - label: "Harris County Toll Road Authority — Sam Houston Tollway facility description"
+  - label: "Harris County Toll Road Authority: Sam Houston Tollway facility description"
     url: "https://www.hctra.org/-/media/e6f15b125dcb4d58a405cd9528d2cd00.ashx"
     accessed: "2026-07-18"
 relatedRegions:
@@ -48,23 +48,23 @@ Read the roadside signs and the agency map for the specific path. Check the entr
 
 TxDOT states that tolls on its Houston-area toll roads are collected electronically. A toll tag communicates with roadside equipment, and the account connected to that tag is charged for the transaction. An active account, a correctly installed tag, and current vehicle information work together.
 
-EZ TAG is issued through HCTRA. TxDOT also lists several interoperable tags accepted on its toll roads. That does not mean every tag-related service is identical. Parking uses, account features, discounts, and special programs can have separate rules. Verify acceptance for the road and use you actually need.
+EZ TAG is issued through HCTRA. Getting one typically means loading a small prepaid balance onto the account, often around $10 to $20 to start, with no monthly fee, and HCTRA tag rates run cheaper than paying by mail without a tag. TxDOT also lists several interoperable tags accepted on its toll roads. That does not mean every tag-related service is identical. Parking uses, account features, discounts, and special programs can have separate rules. Verify acceptance for the road and use you actually need.
 
 Keep the license plate, vehicle description, mailing address, and payment method current in the account. A tag read is only one part of toll processing. Plate information can matter when the system has to match a transaction to a vehicle.
 
-Avoid placing multiple active toll tags in one vehicle. TxDOT warns that more than one tag can interfere with reading or create duplicate charges. Follow the issuing agency’s installation instructions rather than moving a sticker between windshields.
+Avoid placing multiple active toll tags in one vehicle. TxDOT warns that more than one tag can interfere with reading or create duplicate charges. Follow the issuing agency's installation instructions rather than moving a sticker between windshields.
 
 ## A tag belongs with its registered vehicle
 
 Electronic sticker tags are installed for a particular vehicle. TxDOT advises customers not to move a tag between vehicles because removal can damage it. A replacement vehicle should be added through the account process, with a new tag requested when required.
 
-The same caution applies to a rental car. Do not peel a personal sticker from one windshield and place it in a rental. Rental companies set their own toll programs and administrative terms. Review that agreement before using a toll road, and confirm how the vehicle’s plate will be billed.
+The same caution applies to a rental car. Do not peel a personal sticker from one windshield and place it in a rental. Rental companies set their own toll programs and administrative terms. Review that agreement before using a toll road, and confirm how the vehicle's plate will be billed.
 
 When selling or transferring a vehicle, remove the tag and update the toll account promptly. Also complete the vehicle-transfer steps required by the state. Leaving an old plate or vehicle active on an account can create a dispute that is harder to unwind later.
 
 ## Compare the full recurring cost
 
-Do not estimate toll expense from one sign or one trip. Charges can depend on the facility, vehicle class, entry, exit, account status, and the rules in effect at the time of travel. Rates and fees can change. Use the operator’s current calculator or rate page for the exact route.
+Do not estimate toll expense from one sign or one trip. Charges can depend on the facility, vehicle class, entry, exit, account status, and the rules in effect at the time of travel. Rates and fees can change. Use the operator's current calculator or rate page for the exact route.
 
 For a housing comparison, map the complete outbound and return trips. Count every tolled segment that the routine uses. Then test a non-tolled alternative. The alternative may use frontage roads or another corridor, but it may also add turns, crossings, or exposure to different congestion points.
 
@@ -86,6 +86,6 @@ These checks take less time than correcting an account problem later. They also 
 
 ## Before you count on the toll route
 
-Treat toll access as one route characteristic, not a verdict on a location. Trace the actual commute and identify every toll facility it uses. Confirm the operator, accepted tag, current charge, and non-tolled alternative from official sources.
+Treat toll access as one route characteristic, not a verdict on a location. Trace the actual commute, identify every toll facility it touches, and confirm the operator, accepted tag, current charge, and non-tolled alternative from official sources.
 
-Then decide whether that recurring option fits the household’s transportation plan. Recheck the details before closing or signing a lease. The road will stay in the map, but its rates, account rules, construction, and daily conditions can change.
+Then decide whether that recurring cost actually fits the household's transportation plan, and recheck the details before closing or signing a lease. The road itself will stay on the map, but its rates, account rules, construction, and daily conditions can all change.

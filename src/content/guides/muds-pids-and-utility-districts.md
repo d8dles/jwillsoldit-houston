@@ -5,22 +5,22 @@ description: "How local districts provide infrastructure, collect taxes or asses
 disclaimerIds:
   - general
 sources:
-  - label: "TCEQ — Municipal Utility Districts"
+  - label: "TCEQ: Municipal Utility Districts"
     url: "https://www.tceq.texas.gov/agency/subjects-of-interest/utilities/municipal-utility-districts"
     accessed: "2026-07-18"
-  - label: "TCEQ — Texas Water Districts: A General Guide"
+  - label: "TCEQ: Texas Water Districts: A General Guide"
     url: "https://www.tceq.texas.gov/downloads/water-districts/guidance/gi-043.pdf/view"
     accessed: "2026-07-18"
-  - label: "Texas Comptroller — Special Purpose Districts"
+  - label: "Texas Comptroller: Special Purpose Districts"
     url: "https://comptroller.texas.gov/transparency/local/special-purpose.php"
     accessed: "2026-07-18"
-  - label: "Texas Comptroller — Special Purpose District Public Information Database"
+  - label: "Texas Comptroller: Special Purpose District Public Information Database"
     url: "https://comptroller.texas.gov/transparency/local/sb625/lookup.php"
     accessed: "2026-07-18"
   - label: "Texas Property Code, Chapter 5"
     url: "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf"
     accessed: "2026-07-18"
-  - label: "Texas Local Government Code, Chapter 372 — Improvement Districts"
+  - label: "Texas Local Government Code, Chapter 372: Improvement Districts"
     url: "https://statutes.capitol.texas.gov/docs/lg/pdf/lg.372.pdf"
     accessed: "2026-07-18"
 relatedRegions:
@@ -57,7 +57,7 @@ When a listing says "MUD," ask for the district's full legal name. Greater Houst
 
 Special-purpose districts may issue debt to fund authorized infrastructure. That district debt is not the buyer's mortgage, and the buyer does not take over a separate personal loan from the developer. The district may use property taxes or other authorized revenue to meet its obligations.
 
-That still matters to a property comparison. Review the district's current tax rate, outstanding obligations, adopted budget, and official financial reports. Ask whether the current rate includes separate components for debt service and operations, and whether the district has published plans for additional bonds or capital work.
+That still matters to a property comparison. MUD tax rates around the Houston area typically run somewhere between $0.20 and $1.40 per $100 of assessed value, and a brand-new district can start on the higher end and taper down over ten or fifteen years as its bonds get repaid. Review the district's current tax rate, outstanding obligations, adopted budget, and official financial reports. Ask whether the current rate includes separate components for debt service and operations, and whether the district has published plans for additional bonds or capital work.
 
 Do not convert a bond authorization into a prediction that taxes will rise or fall. Authorization, issuance, repayment, assessed values, and adopted annual rates are different facts. The district's current documents and representatives are the sources for property-specific questions.
 
@@ -67,7 +67,7 @@ A PID assessment may appear on a property-tax bill or in separate records, depen
 
 Texas Property Code includes a prescribed notice for a covered property that is obligated to pay an improvement district assessment. The notice identifies the municipality or county and directs the parties to obtain the exact assessment from that entity. That is a signal to verify the parcel, not to guess from a nearby address.
 
-Ask for the current assessment information, the latest annual service and assessment plan, any payoff amount, and the allocation of charges in the contract and closing documents. Questions about legal effect, payoff, proration, or transfer belong with the title company, the governing entity, and the appropriate licensed professionals.
+Ask for the current assessment information, the latest annual service and assessment plan, any payoff amount, and the allocation of charges in the contract and closing documents. For questions about legal effect, payoff, proration, or transfer, go to the title company, the governing entity, and the right licensed professionals rather than guessing.
 
 ## Boundaries can cut through a broader community
 
@@ -106,6 +106,6 @@ Names and figures should match across the documents. If they do not, stop and as
 
 ## What I would verify for one address
 
-Do not treat the presence of a district as a conclusion by itself. Identify the exact boundary, services, taxes, assessments, charges, and current documents for the address. Then compare those items with the same categories for the other properties you are considering.
+Don't treat the presence of a district as a conclusion by itself. Identify the exact boundary, services, taxes, assessments, charges, and current documents for the address, then compare those items against the same categories for the other properties on your list.
 
-Ask one question first: "Which entity is responsible for what, and how does this parcel pay for it?" Once that answer is documented, you can compare the district structure instead of staring at a line of unexplained initials.
+Start with one question: which entity is responsible for what, and how does this parcel pay for it? Once you have that documented, you can actually compare the district structures side by side instead of staring at a line of unexplained initials.
