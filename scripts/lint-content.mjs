@@ -15,6 +15,7 @@ export const REQUIRED_PHASE1 = {
     'toll-roads-and-ez-tag.md',
     'no-zoning-explained.md',
     'heat-humidity-and-hurricane-prep.md',
+    'first-time-homebuyer.md',
   ],
   areas: [
     'the-heights.md',

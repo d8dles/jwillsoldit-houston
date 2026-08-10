@@ -1,12 +1,17 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  REQUIRED_PHASE1,
   bodyFromMarkdown,
   frontmatterFromMarkdown,
   validateContent,
   validatePhase1Files,
   wordCount,
 } from './lint-content.mjs';
+
+test('requires the published first-time buyer guide', () => {
+  assert.ok(REQUIRED_PHASE1.guides.includes('first-time-homebuyer.md'));
+});
 
 test('extracts frontmatter-free Markdown body', () => {
   assert.equal(bodyFromMarkdown('---\ntitle: Test\n---\n\nHello world.'), 'Hello world.');

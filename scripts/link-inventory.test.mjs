@@ -1,0 +1,127 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { scanInternalLinks } from './check-internal-links.mjs';
+import {
+  buildPublishedRoutes,
+  extractLinkReferences,
+  normalizeInternalPath,
+  validateInternalLinks,
+} from './link-inventory.mjs';
+
+test('scans content files and groups missing internal destinations', async (t) => {
+  const root = await mkdtemp(path.join(tmpdir(), 'houston-internal-links-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const guides = path.join(root, 'src/content/guides');
+  await mkdir(guides, { recursive: true });
+  await writeFile(path.join(guides, 'published-guide.md'), '---\nslug: published-guide\nstatus: published\n---\n');
+  await writeFile(path.join(guides, 'linking-guide.md'), '---\nslug: linking-guide\nstatus: published\n---\n[Missing guide](/houston/guides/missing-guide)');
+
+  assert.deepEqual(await scanInternalLinks(root), [
+    {
+      href: '/houston/guides/missing-guide',
+      normalizedPath: '/houston/guides/missing-guide',
+      referrers: ['src/content/guides/linking-guide.md'],
+    },
+  ]);
+});
+
+test('resolves relative links from the referring guide route', async (t) => {
+  const root = await mkdtemp(path.join(tmpdir(), 'houston-relative-links-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const guides = path.join(root, 'src/content/guides');
+  await mkdir(guides, { recursive: true });
+  await writeFile(path.join(guides, 'property-taxes.md'), '---\nslug: property-taxes\nstatus: published\n---\n');
+  await writeFile(path.join(guides, 'draft-guide.md'), '---\nslug: draft-guide\nstatus: draft\n---\n');
+  await writeFile(path.join(guides, 'linking-guide.md'), `---
+slug: linking-guide
+status: published
+---
+[Bare valid](property-taxes)
+[Dot valid](./property-taxes?from=guide#taxes)
+[Parent valid](../guides/property-taxes/)
+[Fragment valid](#section)
+[Query valid](?mode=compact)
+[Missing dot](./missing)
+[Missing parent](../guides/missing#facts)
+[Draft bare](draft-guide?mode=compact)`);
+
+  assert.deepEqual(await scanInternalLinks(root), [
+    {
+      href: 'draft-guide?mode=compact',
+      normalizedPath: '/houston/guides/draft-guide',
+      referrers: ['src/content/guides/linking-guide.md'],
+    },
+    {
+      href: './missing',
+      normalizedPath: '/houston/guides/missing',
+      referrers: ['src/content/guides/linking-guide.md'],
+    },
+  ]);
+});
+
+test('extracts markdown and structured frontmatter links', () => {
+  const text = `---\nsource:\n  url: "https://houstontx.gov/housing/hap.html"\nnearby:\n  officialUrl: "https://www.houstontx.gov/parks"\n---\nRead [property taxes](/houston/guides/property-taxes#exemptions).`;
+  assert.deepEqual(extractLinkReferences(text, 'src/content/guides/test.md'), [
+    { href: 'https://houstontx.gov/housing/hap.html', filePath: 'src/content/guides/test.md', field: 'frontmatter' },
+    { href: 'https://www.houstontx.gov/parks', filePath: 'src/content/guides/test.md', field: 'frontmatter' },
+    { href: '/houston/guides/property-taxes#exemptions', filePath: 'src/content/guides/test.md', field: 'markdown' },
+  ]);
+});
+
+test('extracts complete inline and reference-style Markdown destinations', () => {
+  const text = String.raw`[Balanced](https://example.gov/path_(draft))
+[Escaped](https://example.gov/a\)b)
+[Angle](<https://example.gov/angle_(path)> "Angle title")
+[Titled](https://example.gov/titled_(v2) 'A title')
+[Reference][official]
+[Collapsed][]
+[Shortcut]
+
+[official]: https://example.gov/reference_(v1) "Official source"
+[collapsed]: <https://example.gov/collapsed\)page>
+[shortcut]: https://example.gov/shortcut_(page) (Shortcut title)`;
+
+  assert.deepEqual(
+    extractLinkReferences(text, 'src/content/guides/test.md').map(({ href }) => href),
+    [
+      'https://example.gov/path_(draft)',
+      'https://example.gov/a)b',
+      'https://example.gov/angle_(path)',
+      'https://example.gov/titled_(v2)',
+      'https://example.gov/reference_(v1)',
+      'https://example.gov/collapsed)page',
+      'https://example.gov/shortcut_(page)',
+    ],
+  );
+});
+
+test('normalizes Houston paths, trailing slashes, and fragments', () => {
+  assert.equal(normalizeInternalPath('/houston/guides/property-taxes/#exemptions'), '/houston/guides/property-taxes');
+  assert.equal(normalizeInternalPath('https://www.jwillsoldit.com/houston/areas/katy/'), '/houston/areas/katy');
+  assert.equal(normalizeInternalPath('https://houstontx.gov/housing/hap.html'), null);
+});
+
+test('treats apex JWILLSOLDIT Houston URLs as local routes', () => {
+  assert.equal(normalizeInternalPath('https://jwillsoldit.com/houston/guides/property-taxes/'), '/houston/guides/property-taxes');
+});
+
+test('accepts published routes and rejects missing or draft destinations', () => {
+  const routes = buildPublishedRoutes([
+    { collection: 'guides', slug: 'property-taxes', status: 'published' },
+    { collection: 'guides', slug: 'draft-guide', status: 'draft' },
+    { collection: 'areas', slug: 'katy', status: 'published' },
+  ]);
+  const violations = validateInternalLinks([
+    { href: '/houston/guides/property-taxes', filePath: 'a.md', field: 'markdown' },
+    { href: '/houston/guides/draft-guide', filePath: 'b.md', field: 'markdown' },
+    { href: '/houston/areas/missing', filePath: 'c.md', field: 'markdown' },
+    { href: '/houston/areas/missing#facts', filePath: 'd.md', field: 'markdown' },
+  ], routes);
+  assert.deepEqual(violations, [
+    { href: '/houston/areas/missing', normalizedPath: '/houston/areas/missing', referrers: ['c.md', 'd.md'] },
+    { href: '/houston/guides/draft-guide', normalizedPath: '/houston/guides/draft-guide', referrers: ['b.md'] },
+  ]);
+});

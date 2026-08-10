@@ -29,6 +29,8 @@ Content is organized into three collections:
 - `src/content/guides/` — long-form explainers.
 - `src/content/areas/` — sourced structural area profiles.
 
+Current merged inventory: 9 regions, 11 guides, 6 areas, and 28 routes.
+
 Guide and area frontmatter must include `sources`, `updatedAt`, and `status`. A file marked `status: "draft"` is excluded from static routes and the sitemap. Region sources are also required. Schemas live in `src/content.config.ts`.
 
 Before changing a content file:
@@ -39,6 +41,34 @@ Before changing a content file:
 4. Run `npm run build`. The build performs the fair-housing language gate, Astro checks, schema validation, and static rendering.
 
 Adding an area means adding one schema-complete Markdown file plus a presentation-only pin in `src/data/area-pins.ts`. The pin is schematic, not a geographic coordinate.
+
+## Link validation
+
+Run the local route gate whenever content links change:
+
+```sh
+npm run check:internal-links
+```
+
+Run the external checker manually when reviewing source freshness or before a release:
+
+```sh
+mkdir -p artifacts
+npm run check:external-links -- --output artifacts/external-links.json
+```
+
+The external report uses four statuses:
+
+- `working` — the automated request returned an HTTP status from 200 through 399.
+- `broken` — the destination returned a confirmed failure such as `404` or `410`, another non-exempt 4xx status, an invalid or unsupported URL, or a redirect loop. Confirmed broken results make the command exit with status 1.
+- `inconclusive` — the checker received `403`, `429`, or a 5xx response, timed out, or encountered another network failure. These results are reported separately and require normal-browser review.
+- `manual-working` — an otherwise inconclusive exact URL was opened in a normal browser, loaded successfully, and matched its link label, with that evidence recorded in `scripts/manual-link-verifications.json` within the last 30 days.
+
+Manual evidence expires after 30 days and never overrides a confirmed broken result. Add a manual record only for a verified official-government bot block or similar inconclusive response; do not use one for a confirmed `404` or `410`. For a confirmed broken link, open the URL normally, then replace it with a verified official destination or remove it.
+
+The checker is read-only: it writes the requested JSON report but never edits Markdown, source URLs, or manual-verification records. Content corrections and manual records require deliberate human review and a separate edit.
+
+GitHub Actions runs the same external check every Monday at 12:17 UTC and on manual dispatch. The `external-link-report` artifact is uploaded even when confirmed broken links cause the check step to fail.
 
 ## Architecture boundaries
 
