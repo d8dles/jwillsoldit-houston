@@ -1,7 +1,7 @@
 ---
-title: "A first-time homebuyer guide for Houston-area decisions"
+title: "A first-time buyer's guide to Houston"
 slug: "first-time-homebuyer"
-description: "A practical sequence for asking better questions, reviewing documents, and verifying a Houston-area property one address at a time."
+description: "Loan types, real Texas assistance programs, what a lender actually checks, and how to verify a Houston property before you buy."
 disclaimerIds:
   - general
 sources:
@@ -17,71 +17,79 @@ sources:
   - label: "TREC — What changes in 2026 about buyer/tenant representation in Texas"
     url: "https://www.trec.texas.gov/article/what-changes-2026-about-buyertenant-representation-texas"
     accessed: "2026-07-31"
-  - label: "HUD — Housing counseling"
-    url: "https://www.hud.gov/counseling"
+  - label: "HUD — Let FHA Loans Help You"
+    url: "https://www.hud.gov/helping-americans/loans"
+    accessed: "2026-07-31"
+  - label: "VA — Home Loan Types"
+    url: "https://www.va.gov/housing-assistance/home-loans/loan-types/"
+    accessed: "2026-07-31"
+  - label: "USDA Rural Development — Single Family Housing Guaranteed Loan Program"
+    url: "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program"
+    accessed: "2026-07-31"
+  - label: "Texas Homebuyer Program (TDHCA) — My First Texas Home"
+    url: "https://welcomehome.tdhca.texas.gov/programs/my-first-texas-home"
+    accessed: "2026-07-31"
+  - label: "Texas State Affordable Housing Corporation — Houston-Area Down Payment Assistance"
+    url: "https://www.tsahc.org/homebuyers-renters/houston-area-down-payment-assistance"
     accessed: "2026-07-31"
   - label: "City of Houston — Homebuyer Assistance Program status"
     url: "https://houstontx.gov/housing/hap.html"
+    accessed: "2026-07-31"
+  - label: "AnnualCreditReport.com — Official Free Credit Reports"
+    url: "https://www.annualcreditreport.com/"
+    accessed: "2026-07-31"
+  - label: "FTC — Permanent Access to Free Weekly Credit Reports"
+    url: "https://consumer.ftc.gov/consumer-alerts/2023/10/you-now-have-permanent-access-free-weekly-credit-reports"
+    accessed: "2026-07-31"
+  - label: "HUD — Housing counseling"
+    url: "https://www.hud.gov/counseling"
     accessed: "2026-07-31"
   - label: "Texas Department of Insurance — Title insurance"
     url: "https://www.tdi.texas.gov/title/index.html"
     accessed: "2026-07-31"
 relatedRegions: []
 relatedAreas: []
-updatedAt: "2026-07-31"
+updatedAt: "2026-08-10"
 status: published
 ---
 
-## Begin with your questions, not a price estimate
+## Start with what a lender actually checks
 
-Buying a first home creates a long list of decisions, and the useful starting point is not a universal number. Write down what needs to work for your household and what information you still need before making an offer. A list can include commute patterns, room use, maintenance tolerance, access needs, timing, and recurring costs.
+Before a lender gives you a real number, two things matter: your credit and your debt-to-income ratio. Pull your full credit report first and fix any errors you find. [AnnualCreditReport.com](https://www.annualcreditreport.com/) is the only site required by federal law to give you free reports from all three bureaus, and since 2023 that access is weekly, not annual. Then add up your monthly debts, including the new mortgage payment, and divide by your gross monthly income. Most loan programs want that ratio at or below roughly 43%, though the exact ceiling depends on the program and lender. Keep your finances steady through closing. A new car payment or a job change after pre-approval can move both numbers the wrong way.
 
-Then keep two kinds of questions separate. Some are personal choices. Others belong to a specific address, document, or professional review. A listing, calculator, or neighbor conversation can be a starting point, but none settles the facts for another property or buyer.
+## The loan types, and what each one actually requires
 
-## Ask for a current lender review
+These are the four programs almost every Houston first-time buyer is choosing between, and the structure hasn't shifted in years:
 
-Financing terms and eligibility require a licensed lender's current review. A lender can explain the documents it needs, the terms it is considering, and which assumptions need confirmation. Unlike an online scenario, that review identifies what is missing and what could change before closing.
+- **Conventional** — as low as 3% down for a qualifying first-time buyer, typically wants a credit score around 620, and carries private mortgage insurance below 20% down (removable later).
+- **FHA**, insured through HUD — 3.5% down with a 580+ score, or 10% down for scores between 500 and 579. Its mortgage insurance runs for most of the loan.
+- **VA** — available to eligible veterans, active-duty service members, and some surviving spouses. Usually zero down and no monthly mortgage insurance, with a funding fee that can be rolled into the loan.
+- **USDA**, backed by Rural Development — also zero down in eligible areas, and more of the Houston area qualifies than most people expect. It comes with income limits.
 
-The Consumer Financial Protection Bureau's homebuying education is a useful place to prepare questions. Ask the lender to explain the proposed loan structure, payment components, document timing, and any condition still to be met. Keep the documents you receive and ask questions while there is time to compare them.
+None of these is automatically the right one. It depends on your credit, savings, service history, and where you're buying.
 
-## Understand representation before touring
+## Real Texas and Houston programs, not a vague "check online"
 
-Before a tour turns into a choice, understand how a real estate professional may work with you. Under current Texas guidance, a Texas license holder working with a prospective residential buyer generally must enter a written agreement before showing residential property. The written choice may be representation or qualifying showing-only non-representation. Read the current Texas Real Estate Commission guidance and ask for an explanation of any agreement before you sign it.
+The City of Houston's Homebuyer Assistance Program offers forgivable, no-interest help toward a down payment and closing costs for income-qualified buyers purchasing inside city limits, structured as a lien forgiven after five years in the home. The Texas Homebuyer Program runs My First Texas Home: a 30-year mortgage paired with down payment and closing-cost help through approved lenders statewide. The Texas State Affordable Housing Corporation runs its own assistance, including options built specifically for the Houston area. Every one of these has its own income limits, purchase-price caps, and a required homebuyer education course, and the funding amounts move year to year, so confirm current numbers on the official program page before you count on any of it. [HUD keeps a directory of approved housing counselors](https://www.hud.gov/counseling) who teach that course and answer questions for free.
 
-Representation is not a shortcut around your own review. It clarifies the relationship and the work a professional may perform. A showing-only non-representative cannot provide opinions, advice, or other brokerage services. If you are considering non-representation, ask what that means for communication and the transaction. The point is to make the arrangement clear early, when you can ask questions without the pressure of a particular property moving quickly.
+## Pre-approval beats pre-qualification
+
+A pre-qualification is a quick estimate based on what you tell a lender. A pre-approval means the lender verifies your income, assets, and credit, then gives you a letter with a conditional commitment, which is what sellers and agents actually take seriously on an offer. Call two or three lenders before you pick one. Fees and terms vary enough between lenders to matter over 30 years, and getting pre-approved before you tour gives you a real price range instead of a guess.
+
+## Understand representation before you tour
+
+Before a tour turns into a decision, understand how a real estate professional may work with you. Under current Texas guidance, a license holder working with a prospective residential buyer generally must enter a written agreement before showing residential property, either representation or qualifying showing-only non-representation. A showing-only non-representative cannot provide opinions, advice, or other brokerage services. Read the current Texas Real Estate Commission guidance and ask for a plain explanation before you sign anything. This isn't paperwork for its own sake. It's the difference between someone working for you and someone just unlocking doors.
 
 ## Search one address at a time
 
-Houston-area homes can differ materially from one address to the next. Compare the property record, tax history, insurance questions, flood information, deed restrictions, condition, utility setup, and recurring charges for the exact home. Nearby addresses can sit in different jurisdictions, have different infrastructure, or carry different requirements.
+Houston-area homes can differ materially from one address to the next, even a block apart. Compare the property record, tax history, flood information, deed restrictions, condition, utility setup, and recurring costs for the exact home, not the neighborhood in general. Nearby addresses can sit in different taxing jurisdictions or utility districts, or carry different deed restrictions entirely. If you want the full picture on any of these, I've written through them address by address: how [property taxes](/houston/guides/property-taxes) actually get calculated, how to read a [flood map](/houston/guides/flood-risk-and-insurance) for a specific property, what a [MUD or PID](/houston/guides/muds-pids-and-utility-districts) means for your bill, and what [HOA and deed restrictions](/houston/guides/hoas-and-deed-restrictions) actually control.
 
-Use seller disclosures, inspection findings, public records, association documents when applicable, and the professionals responsible for each question. Ask which facts are current, historical, or need an address-level source. Make a written question list for the inspection, title, lender, insurance, association, or local office that can answer it.
+## What the offer, inspection, and appraisal each check
 
-## Read an offer as a set of separate terms
+Your offer sets the price, earnest money, contingencies, and closing date. Earnest money is a good-faith deposit, usually 1-2% of the price, credited toward closing, not a fee. A home inspection checks the physical condition of the house, typically $300-500, paid by you, and your lender doesn't require it. An appraisal is different: your lender orders it independently to confirm the price matches the home's value, protecting the loan rather than your negotiating position, usually $300-600 and typically your cost too. If you're weighing whether to waive the inspection to make an offer more competitive, know exactly what you're giving up first.
 
-An offer is more than one number. It can set deadlines, describe property conditions, allocate responsibilities, and connect to inspection, appraisal, title work, lender review, and closing. Each part has a different purpose. Inspection can reveal condition questions; title work addresses ownership and title questions.
+## Closing day, and the mistakes that actually cost buyers
 
-Ask the people advising you to explain the terms you are considering for this property. Avoid treating a percentage, customary practice, or another transaction as a rule for every offer. Keep the terms in writing and track the dates that matter.
+A final walkthrough, usually the day of or before closing, confirms the home matches what your contract describes. At closing you sign the loan documents, pay any remaining costs, and the deed transfers to you. The expensive mistakes are also the avoidable ones: changing jobs or financing a big purchase between pre-approval and closing, skipping the inspection to look more competitive, only getting one lender's quote, and trusting wire instructions without confirming them by phone through a number you already know independently, not one supplied in a new message. Wire fraud targeting real estate closings is real and ongoing, and a phone call to a number you already had is the entire fix.
 
-## Use the lending documents to slow down and review
-
-The CFPB explains the Loan Estimate and Closing Disclosure as documents that help consumers review loan terms and costs. Read each document with the proposed loan in front of you. Compare the names, property address, loan terms, payment information, closing costs, and cash-to-close information to what you understand from the transaction.
-
-If a document changes or you do not understand a line item, ask the lender for an explanation. Do not rely on a remembered rate, a broad fee claim, or someone else's paperwork. Give yourself time to read, note questions, and confirm answers through the lender's known contact information.
-
-## Treat assistance pages as status checks
-
-Official assistance pages can be useful places to check current program status and instructions. They are not a promise that a benefit applies to you, that funds are available, or that a program will remain open. The City of Houston — Homebuyer Assistance Program status page is one official place to check current status. Read the current page and direct program questions to the program administrator or an approved contact.
-
-HUD's housing counseling page can help you find counseling resources. Use a counselor or lender conversation to understand which questions need individualized review. Keep the source page with your notes rather than repeating changing program details in a general checklist.
-
-## Protect the transaction from wire fraud
-
-Near closing, changed instructions deserve extra caution. Do not use a phone number or link supplied only in a new message to confirm wiring details. Instead, contact the title company, lender, or other party through a number or address you already know independently, such as a prior verified document or official website.
-
-Ask who is authorized to send instructions and how changes will be confirmed. If an email, text, or call creates urgency or asks you to bypass the usual process, pause and verify it through the independently known contact. This simple habit protects the transaction without asking you to guess which message is legitimate.
-
-## Keep a written record as you move forward
-
-Create one folder for property records, disclosures, inspection notes, lender documents, title communications, and questions still open. Label each item with the property address and date. Before making a decision, review what has been confirmed, what remains an assumption, and who owns the next answer.
-
-The goal is a well-documented decision for one property, with current information from the people and records responsible for it.
+Keep one folder for every disclosure, inspection note, lender document, and open question, labeled by address and date. Before you decide, review what's confirmed, what's still assumed, and who owns the next answer. That's a well-documented decision on one property, not a guess based on the last house you saw.
