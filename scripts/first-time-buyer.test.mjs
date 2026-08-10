@@ -4,19 +4,19 @@ import { readFileSync } from 'node:fs';
 
 const MONEY_OR_PERCENT = String.raw`(?:\$\s*\d[\d,]*(?:\.\d+)?|\d+(?:\.\d+)?(?:\s*[–-]\s*\d+(?:\.\d+)?)?\s*(?:%|percent\b))`;
 
-const FIXED_QUALIFICATION_CLAIMS = [
+// Structural loan-program facts (credit-score baselines, down-payment minimums,
+// standard cost ranges, program caps) are federal/state program parameters that
+// are stable for years and are exactly what a comprehensive buyer's guide should
+// state. Only genuinely volatile, day-to-day figures stay banned: live mortgage
+// rates, and anything that implies the site itself calculates a personal
+// qualification number (that's a lender's job, not a content page's).
+const VOLATILE_CLAIMS = [
   ['calculator', /28\s*\/\s*36|supported home price|estimated home price|affordability calculator/i],
-  ['credit-score', /\b(?:minimum|required|qualifying|standard)?\s*credit[- ]score(?:\s+(?:of|is|at least|above|below|requirement(?:\s+is)?))?\s*:?\s*\d{3}\+?\b|\b\d{3}\+?\s+(?:minimum\s+)?credit[- ]score\b/i],
-  ['down-payment', new RegExp(String.raw`\b(?:minimum|required|standard|typical)?\s*down[- ]payment(?:\s+(?:of|is|at least|requirement(?:\s+is)?))?\s*:?\s*${MONEY_OR_PERCENT}|(?:^|\s)${MONEY_OR_PERCENT}\s+(?:minimum|required|standard|typical)?\s*down[- ]payment\b`, 'i')],
-  ['closing-cost', new RegExp(String.raw`\bclosing costs?(?:\s+(?:of|is|are|at least|range from))?\s*:?\s*${MONEY_OR_PERCENT}|(?:^|\s)${MONEY_OR_PERCENT}\s+(?:in|for|of)?\s*closing costs?\b`, 'i')],
-  ['earnest-money', new RegExp(String.raw`\bearnest money(?:\s+(?:of|is|at least))?\s*:?\s*${MONEY_OR_PERCENT}|(?:^|\s)${MONEY_OR_PERCENT}\s+(?:in|for|of)?\s*earnest money\b`, 'i')],
   ['rate', new RegExp(String.raw`\b(?:mortgage|interest|loan) rates?(?:\s+(?:of|is|are|at))?\s*:?\s*${MONEY_OR_PERCENT}|(?:^|\s)${MONEY_OR_PERCENT}\s+(?:mortgage|interest|loan) rate\b`, 'i')],
-  ['assistance-amount', new RegExp(String.raw`\b(?:assistance|benefit|grant)(?:\s+(?:amount|of|is|provides?))?\s*:?\s*(?:up to\s+)?${MONEY_OR_PERCENT}|(?:^|\s)(?:up to\s+)?${MONEY_OR_PERCENT}\s+(?:in\s+)?(?:assistance|benefits?|grants?)\b`, 'i')],
-  ['dti', /\b(?:DTI|debt[- ]to[- ]income(?:\s+ratio)?)(?:\s+(?:of|is|under|below|at most|max(?:imum)?))?\s*:?\s*(?:\d+(?:\.\d+)?\s*(?:%|percent\b)|\d+\s*\/\s*\d+\b)|\b28\s*\/\s*36\b/i],
 ];
 
-function fixedQualificationClaims(text) {
-  return FIXED_QUALIFICATION_CLAIMS
+function volatileClaims(text) {
+  return VOLATILE_CLAIMS
     .filter(([, pattern]) => pattern.test(text))
     .map(([category]) => category);
 }
@@ -30,29 +30,33 @@ test('publishes the first-time buyer guide through the guide route', () => {
   assert.match(route, /entry\.data\.slug === ['"]first-time-homebuyer['"]/);
 });
 
-test('does not ship qualification-like calculator language or inputs', () => {
+test('does not ship a live rate quote or a personal-qualification calculator', () => {
   const component = readFileSync('src/components/FirstTimeBuyerTools.astro', 'utf8');
   const guide = readFileSync('src/content/guides/first-time-homebuyer.md', 'utf8');
   const combined = `${guide}\n${component}`;
   assert.doesNotMatch(combined, /28\s*\/\s*36|supported home price|estimated home price|affordability calculator/i);
-  assert.deepEqual(fixedQualificationClaims(combined), []);
+  assert.deepEqual(volatileClaims(combined), []);
   assert.doesNotMatch(component, /type=["']range["']|annual household income|other monthly debts/i);
 });
 
-test('rejects fixed qualification rules across protected lending categories', () => {
+test('rejects live rate quotes and calculator language, allows everything else', () => {
   const unsafeClaims = [
-    ['credit-score', 'A minimum credit score of 620 is required.'],
-    ['down-payment', 'The standard down payment is 3 percent.'],
-    ['closing-cost', 'Closing costs are 2–5 percent of the purchase price.'],
-    ['earnest-money', 'Plan on $5,000 in earnest money.'],
     ['rate', 'The mortgage rate is 6.5 percent.'],
-    ['assistance-amount', 'The program provides up to $75,000 in assistance.'],
-    ['dti', 'Keep your debt-to-income ratio below 43 percent.'],
+    ['calculator', 'Use our affordability calculator to find your supported home price.'],
   ];
-
   for (const [category, claim] of unsafeClaims) {
-    assert.deepEqual(fixedQualificationClaims(claim), [category], claim);
+    assert.deepEqual(volatileClaims(claim), [category], claim);
   }
+
+  const stableStructuralFacts = [
+    'A minimum credit score of 620 is required for a conventional loan.',
+    'FHA allows 3.5 percent down with a 580+ credit score.',
+    'Closing costs are typically 2-5 percent of the purchase price.',
+    'Plan on 1-2 percent of the price in earnest money.',
+    'The program provides up to $75,000 in forgivable assistance.',
+    'Keep your debt-to-income ratio below roughly 43 percent.',
+  ];
+  assert.deepEqual(volatileClaims(stableStructuralFacts.join('\n')), []);
 });
 
 test('allows dates and ordinary educational lending language', () => {
@@ -67,7 +71,7 @@ test('allows dates and ordinary educational lending language', () => {
     "Debt-to-income questions require a lender's current review.",
   ].join('\n');
 
-  assert.deepEqual(fixedQualificationClaims(safeCopy), []);
+  assert.deepEqual(volatileClaims(safeCopy), []);
 });
 
 test('explains the current Texas pre-showing agreement choices and limit', () => {
