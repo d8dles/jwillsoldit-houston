@@ -41,7 +41,7 @@ The City of Houston does not have zoning. The city's Planning and Development De
 
 Private deed restrictions are another layer. They can limit how a specific property is used or changed. The City of Houston explains that restrictions can vary by subdivision, section, or even lot. There is no single set of deed restrictions for the whole city.
 
-Outside Houston city limits, municipal rules and enforcement structures can differ. Start with the property's exact jurisdiction and recorded documents rather than applying the Houston shorthand to the whole region.
+Outside Houston city limits, municipal rules and enforcement structures can differ. Start with the property's exact jurisdiction and recorded documents rather than applying the Houston shorthand to the whole region. The covenant systems described for [The Woodlands](/houston/areas/the-woodlands), [Sugar Land](/houston/areas/sugar-land), and [Katy](/houston/areas/katy) are three examples of why the governing documents must come from the parcel rather than the area name.
 
 ## Deed restrictions and an HOA are related, but not identical
 

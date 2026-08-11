@@ -45,7 +45,7 @@ status: published
 
 Many Houston-area addresses are in a competitive retail electricity area. At those addresses, the customer can select a retail electric provider, or REP, and a plan. That does not mean every address in Greater Houston has the same choice structure.
 
-Municipally owned utilities and electric cooperatives can operate under different arrangements. ERCOT distinguishes competitive retailers from non-opt-in municipal utilities and cooperatives. Confirm the service territory for the exact address before comparing offers.
+Municipal utilities and electric cooperatives can operate differently. ERCOT distinguishes competitive retailers from non-opt-in municipal utilities and cooperatives. Confirm the service territory for the address before comparing offers. The [Katy](/houston/areas/katy), [The Woodlands](/houston/areas/the-woodlands), and [Clear Lake](/houston/areas/clear-lake) pages show why a mailing name is not enough to identify the provider.
 
 The Public Utility Commission of Texas operates Power to Choose for addresses open to retail competition. Enter the service location rather than relying only on a ZIP code. ZIP codes can cross utility boundaries.
 

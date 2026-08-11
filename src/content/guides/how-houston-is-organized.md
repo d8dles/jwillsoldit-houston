@@ -43,7 +43,7 @@ status: "published"
 
 Houston gets easier to understand when you stop treating it as one continuous grid. The useful picture has layers. Start with the freeway rings. Add the major corridors that run through them. Then check county lines, municipal boundaries, and the places you expect to reach every week.
 
-That method is more reliable than choosing from a neighborhood name alone. Names can describe a subdivision, a management district, a postal address, or a broad part of town. They do not always tell you which government serves an address or how that address connects to the rest of the region.
+That method is more reliable than choosing from a neighborhood name alone. Names can describe a subdivision, a management district, a postal address, or a broad part of town. Compare an incorporated city such as [Sugar Land](/houston/areas/sugar-land), a special-purpose district such as [The Woodlands](/houston/areas/the-woodlands), and a Houston district such as [EaDo](/houston/areas/eado): the familiar name does not always tell you which government serves an address or how it connects to the region.
 
 ## Start with the rings
 

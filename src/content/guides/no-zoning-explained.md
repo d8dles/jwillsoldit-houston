@@ -37,7 +37,7 @@ status: "published"
 
 Houston does not have conventional citywide zoning. That sentence is accurate, but it is often stretched into a claim that anything can be built anywhere. The City’s own development-regulations page says otherwise. Subdivision, access, setbacks, parking, trees, building codes, platting, and other ordinance requirements still shape development.
 
-Private deed restrictions can add another layer. Special minimum lot size or building line protections may apply to a particular block or area.
+Private deed restrictions can add another layer. Special minimum lot size or building line protections may apply to a particular block or area. The block-level review on [The Heights](/houston/areas/the-heights) and [EaDo](/houston/areas/eado) shows how Houston's system differs from the municipal zoning and permitting questions on [Katy](/houston/areas/katy).
 
 The useful question is not “Does Houston have zoning?” It is “Which public and private rules apply to this exact address and this proposed use?”
 
