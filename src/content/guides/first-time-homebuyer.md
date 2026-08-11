@@ -59,22 +59,22 @@ First-time home buyers in Houston can combine the normal purchase process with c
 
 ## Start with what a lender actually checks
 
-Before a lender gives you a real number, two things matter: your credit and your debt-to-income ratio. Pull your full credit report first and fix any errors you find. [AnnualCreditReport.com](https://www.annualcreditreport.com/) is the only site required by federal law to give you free reports from all three bureaus, and since 2023 that access is weekly, not annual. Then add up your monthly debts, including the new mortgage payment, and divide by your gross monthly income. Most loan programs want that ratio at or below roughly 43%, though the exact ceiling depends on the program and lender. Keep your finances steady through closing. A new car payment or a job change after pre-approval can move both numbers the wrong way.
+Before a lender gives you a usable answer, credit, income, assets, debts, and the proposed property all matter. Pull your full credit report first and address any errors you find. [AnnualCreditReport.com](https://www.annualcreditreport.com/) is the federally authorized source for reports from the nationwide credit-reporting companies. Then ask a licensed lender to explain how it will evaluate your debt-to-income ratio and the rest of your application. Requirements vary by program, lender, borrower, and property, and they can change. Verify the current standards directly instead of treating a number in a general guide as your qualification answer. Keep your finances steady through closing. New debt, a job change, or an unexplained transfer after pre-approval can require another review.
 
 ## The loan types, and what each one actually requires
 
-These are the four programs almost every Houston first-time buyer is choosing between, and the structure hasn't shifted in years:
+Common financing categories include conventional, FHA-insured, VA-guaranteed, and USDA-guaranteed loans:
 
-- **Conventional** — as low as 3% down for a qualifying first-time buyer, typically wants a credit score around 620, and carries private mortgage insurance below 20% down (removable later).
-- **FHA**, insured through HUD — 3.5% down with a 580+ score, or 10% down for scores between 500 and 579. Its mortgage insurance runs for most of the loan.
-- **VA** — available to eligible veterans, active-duty service members, and some surviving spouses. Usually zero down and no monthly mortgage insurance, with a funding fee that can be rolled into the loan.
-- **USDA**, backed by Rural Development — also zero down in eligible areas, and more of the Houston area qualifies than most people expect. It comes with income limits.
+- **Conventional** loans are not government-insured. Down-payment, credit, mortgage-insurance, and property requirements depend on the particular product and lender.
+- **FHA-insured** loans follow current HUD rules and lender underwriting. Confirm the present down-payment, credit, mortgage-insurance, occupancy, and property requirements with an approved lender.
+- **VA-guaranteed** loans may be available to eligible service members, veterans, and certain surviving spouses. Eligibility does not by itself establish approval, cost, or the terms available to a particular borrower.
+- **USDA-guaranteed** loans involve current household-income, location, occupancy, lender, and property requirements. Verify an address and the program rules through USDA and a participating lender.
 
-None of these is automatically the right one. It depends on your credit, savings, service history, and where you're buying.
+None is automatically the right choice. Ask lenders to compare the current terms, total cash needed, mortgage insurance or fees, and long-term cost using the same property assumptions. Program rules change, and a general article cannot determine eligibility or approval.
 
 ## Real Texas and Houston programs, not a vague "check online"
 
-The City of Houston's Homebuyer Assistance Program offers forgivable, no-interest help toward a down payment and closing costs for income-qualified buyers purchasing inside city limits, structured as a lien forgiven after five years in the home. The Texas Homebuyer Program runs My First Texas Home: a 30-year mortgage paired with down payment and closing-cost help through approved lenders statewide. The Texas State Affordable Housing Corporation runs its own assistance, including options built specifically for the Houston area. Every one of these has its own income limits, purchase-price caps, and a required homebuyer education course, and the funding amounts move year to year, so confirm current numbers on the official program page before you count on any of it. [HUD keeps a directory of approved housing counselors](https://www.hud.gov/counseling) who teach that course and answer questions for free.
+Houston-area buyers may encounter assistance administered by the City of Houston, the Texas Department of Housing and Community Affairs, the Texas State Affordable Housing Corporation, and other local or statewide organizations. Availability, funding, geography, lender participation, household requirements, education requirements, repayment terms, and deadlines can change or close without this page changing at the same time. Treat the links below as places to check current status, not as a promise that a program is open or that you qualify. Confirm the written terms with the program administrator and lender before including assistance in a budget. [HUD maintains a directory of approved housing counselors](https://www.hud.gov/counseling) for buyers who want independent education or counseling.
 
 ## Pre-approval beats pre-qualification
 
@@ -90,7 +90,7 @@ Houston-area homes can differ materially from one address to the next, even a bl
 
 ## What the offer, inspection, and appraisal each check
 
-Your offer sets the price, earnest money, contingencies, and closing date. Earnest money is a good-faith deposit, usually 1-2% of the price, credited toward closing, not a fee. A home inspection checks the physical condition of the house, typically $300-500, paid by you, and your lender doesn't require it. An appraisal is different: your lender orders it independently to confirm the price matches the home's value, protecting the loan rather than your negotiating position, usually $300-600 and typically your cost too. If you're weighing whether to waive the inspection to make an offer more competitive, know exactly what you're giving up first.
+Your offer sets the proposed price, earnest money, option or contingency terms, and closing date. The amount and handling of earnest money come from the contract, not a universal percentage. An inspection is an independent evaluation of the property's condition within the inspector's scope. An appraisal is a different process, commonly ordered for the lender to support its collateral review. Costs, requirements, timing, and available contract rights vary, so confirm them with the inspector, lender, title company, and your real estate representative before signing or waiving anything.
 
 ## Closing day, and the mistakes that actually cost buyers
 

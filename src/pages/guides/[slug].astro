@@ -6,6 +6,7 @@ import HoustonRegionMap from '../../components/HoustonRegionMap.astro';
 import FirstTimeBuyerTools from '../../components/FirstTimeBuyerTools.astro';
 import SourcePanel from '../../components/SourcePanel.astro';
 import RelatedEditorialLinks from '../../components/RelatedEditorialLinks.astro';
+import EditorialNextStep from '../../components/EditorialNextStep.astro';
 import { resolveEditorialLinks } from '../../data/editorial-links.mjs';
 
 export async function getStaticPaths() {
@@ -62,6 +63,8 @@ const relatedLinks = [
       links={relatedLinks}
       heading="See how the topic changes by place."
     />
+
+    <EditorialNextStep context="this topic, the property, and the rest of your move" />
 
     <section class="disclaimers" aria-label="Important notices">
       {data.disclaimerIds.map((id) => <Disclaimer id={id} />)}

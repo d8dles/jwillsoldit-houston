@@ -1,0 +1,69 @@
+---
+interface Props {
+  context?: string;
+}
+
+const { context = 'the property and the rest of the move' } = Astro.props;
+---
+
+<section class="next-step">
+  <p class="mono-label mono-label--red">Planning a Houston move</p>
+  <h2>Connect the research to a real address.</h2>
+  <p>Tell me what you are balancing, and I’ll help you connect {context} without treating a general guide as a property-specific answer.</p>
+  <div class="actions">
+    <a
+      class="button button--primary"
+      href="https://move.jwillsoldit.com/?intent=houston-relocation"
+      data-track="houston_cta_smartmove_click"
+    >Start Smart Move</a>
+    <a class="button" href="sms:+15616856566" data-track="houston_cta_contact_click">Text Joey</a>
+    <a class="button" href="tel:+15616856566" data-track="houston_cta_contact_click">Call Joey</a>
+  </div>
+</section>
+
+<style>
+  .next-step {
+    max-width: 72ch;
+    margin-top: var(--space-block);
+    padding-top: var(--space-block);
+    border-top: 1px solid var(--trace);
+  }
+
+  h2 {
+    margin-top: 12px;
+    font-family: var(--display);
+    font-size: var(--fs-h3);
+    line-height: 1.15;
+  }
+
+  .next-step > p:not(.mono-label) {
+    margin-top: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .button {
+    min-height: 46px;
+    padding: 11px 18px;
+    border: 1px solid var(--forest);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: var(--fs-small);
+    color: var(--forest);
+    text-decoration: none;
+  }
+
+  .button--primary {
+    background: var(--forest);
+    color: var(--off-white);
+  }
+</style>
