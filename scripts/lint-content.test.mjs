@@ -30,6 +30,20 @@ test('flags short guides', () => {
   assert.ok(errors.some((error) => error.includes('expected 700–1,200')));
 });
 
+test('allows researched long-form area guides', () => {
+  const body = Array.from({ length: 900 }, () => 'word').join(' ');
+  const text = `---\nname: Test\n---\n\n${body}`;
+  const errors = validateContent(text, 'src/content/areas/test.md');
+  assert.ok(!errors.some((error) => error.includes('area guide')));
+});
+
+test('flags area guides above the editorial ceiling', () => {
+  const body = Array.from({ length: 1201 }, () => 'word').join(' ');
+  const text = `---\nname: Test\n---\n\n${body}`;
+  const errors = validateContent(text, 'src/content/areas/test.md');
+  assert.ok(errors.some((error) => error.includes('expected 100–1,200')));
+});
+
 test('flags specific minute promises', () => {
   const errors = validateContent('---\nname: Test\n---\n\nThe trip takes 10–20 minutes.', 'src/content/areas/test.md');
   assert.ok(errors.some((error) => error.includes('minute range')));

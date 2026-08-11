@@ -102,8 +102,8 @@ export function validateContent(text, filePath) {
   }
 
   if (filePath.includes('/areas/')) {
-    if (count < 100 || count > 175) {
-      errors.push(`${filePath}: area overview is ${count} words; expected 100–175`);
+    if (count < 100 || count > 1200) {
+      errors.push(`${filePath}: area guide is ${count} words; expected 100–1,200`);
     }
     const connectionCount = frontmatter.match(/^\s{2}- destination:/gm)?.length ?? 0;
     const distanceRangeCount = frontmatter.match(/roughly\s+\d+\s*[–-]\s*\d+\s+miles/gi)?.length ?? 0;
