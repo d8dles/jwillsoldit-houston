@@ -3,6 +3,9 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import HoustonRegionMap from '../../components/HoustonRegionMap.astro';
 import SourcePanel from '../../components/SourcePanel.astro';
+import RelatedEditorialLinks from '../../components/RelatedEditorialLinks.astro';
+import EditorialNextStep from '../../components/EditorialNextStep.astro';
+import { resolveEditorialLinks } from '../../data/editorial-links.mjs';
 
 export async function getStaticPaths() {
   const regions = await getCollection('regions');
@@ -20,6 +23,16 @@ interface Props {
 const { region, allRegions } = Astro.props;
 const { data } = region;
 const { Content } = await render(region);
+const targetRegionSlug = data.slug;
+
+const [areas, guides] = await Promise.all([
+  getCollection('areas', ({ data }) => data.status === 'published' && data.regionSlug === targetRegionSlug),
+  getCollection('guides', ({ data }) => data.status === 'published' && data.relatedRegions.includes(targetRegionSlug)),
+]);
+const relatedLinks = [
+  ...resolveEditorialLinks({ kind: 'area', slugs: areas.map((area) => area.data.slug), entries: areas }),
+  ...resolveEditorialLinks({ kind: 'guide', slugs: guides.map((guide) => guide.data.slug), entries: guides }),
+];
 
 const siblings = allRegions
   .filter((r) => r.data.slug !== data.slug)
@@ -94,6 +107,13 @@ const isExternal = (href: string) => href.startsWith('http');
         <a href={`${base}`}>Back to Houston, Handled.</a>
       </p>
     </nav>
+
+    <RelatedEditorialLinks
+      links={relatedLinks}
+      heading="Keep going with the areas and systems connected to this region."
+    />
+
+    <EditorialNextStep context="the region, a specific address, and your day-to-day priorities" />
 
     <SourcePanel sources={data.sources} updatedAt={data.updatedAt} />
   </main>

@@ -4,15 +4,11 @@ import { readFileSync } from 'node:fs';
 
 const MONEY_OR_PERCENT = String.raw`(?:\$\s*\d[\d,]*(?:\.\d+)?|\d+(?:\.\d+)?(?:\s*[–-]\s*\d+(?:\.\d+)?)?\s*(?:%|percent\b))`;
 
-// Structural loan-program facts (credit-score baselines, down-payment minimums,
-// standard cost ranges, program caps) are federal/state program parameters that
-// are stable for years and are exactly what a comprehensive buyer's guide should
-// state. Only genuinely volatile, day-to-day figures stay banned: live mortgage
-// rates, and anything that implies the site itself calculates a personal
-// qualification number (that's a lender's job, not a content page's).
 const VOLATILE_CLAIMS = [
   ['calculator', /28\s*\/\s*36|supported home price|estimated home price|affordability calculator/i],
   ['rate', new RegExp(String.raw`\b(?:mortgage|interest|loan) rates?(?:\s+(?:of|is|are|at))?\s*:?\s*${MONEY_OR_PERCENT}|(?:^|\s)${MONEY_OR_PERCENT}\s+(?:mortgage|interest|loan) rate\b`, 'i')],
+  ['fixed financing figure', /\b(?:DTI|debt-to-income|credit score|down payment|earnest money|inspection|appraisal)[^\n.]{0,100}(?:\$\s*\d|\d+(?:\.\d+)?\s*(?:%|percent))/i],
+  ['unverified program promise', /offers?\s+(?:forgivable|no-interest)\s+help|more of (?:the )?Houston area qualifies|(?:the|this|our) program is (?:open|available)/i],
 ];
 
 function volatileClaims(text) {
@@ -39,24 +35,25 @@ test('does not ship a live rate quote or a personal-qualification calculator', (
   assert.doesNotMatch(component, /type=["']range["']|annual household income|other monthly debts/i);
 });
 
-test('rejects live rate quotes and calculator language, allows everything else', () => {
+test('rejects fixed financing figures, program promises, live rates, and calculator language', () => {
   const unsafeClaims = [
     ['rate', 'The mortgage rate is 6.5 percent.'],
     ['calculator', 'Use our affordability calculator to find your supported home price.'],
+    ['fixed financing figure', 'Keep your debt-to-income ratio below 43 percent.'],
+    ['fixed financing figure', 'Earnest money is usually 1-2 percent of the price.'],
+    ['unverified program promise', 'The program offers forgivable help toward closing costs.'],
   ];
   for (const [category, claim] of unsafeClaims) {
     assert.deepEqual(volatileClaims(claim), [category], claim);
   }
 
-  const stableStructuralFacts = [
-    'A minimum credit score of 620 is required for a conventional loan.',
-    'FHA allows 3.5 percent down with a 580+ credit score.',
-    'Closing costs are typically 2-5 percent of the purchase price.',
-    'Plan on 1-2 percent of the price in earnest money.',
-    'The program provides up to $75,000 in forgivable assistance.',
-    'Keep your debt-to-income ratio below roughly 43 percent.',
+  const durableEducationalFacts = [
+    'Ask a lender to explain how it evaluates debt-to-income ratio.',
+    'Credit and down-payment requirements vary by loan, lender, borrower, and property.',
+    'The contract states the earnest-money amount and deadlines.',
+    'Check the official program page for current status and written terms.',
   ];
-  assert.deepEqual(volatileClaims(stableStructuralFacts.join('\n')), []);
+  assert.deepEqual(volatileClaims(durableEducationalFacts.join('\n')), []);
 });
 
 test('allows dates and ordinary educational lending language', () => {

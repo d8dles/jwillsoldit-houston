@@ -29,8 +29,13 @@ const guideOrder = [
   'no-zoning-explained',
 ];
 const guidePosition = new Map(guideOrder.map((slug, index) => [slug, index]));
-const guides = guideEntries.sort((a, b) =>
-  (guidePosition.get(a.data.slug) ?? 99) - (guidePosition.get(b.data.slug) ?? 99));
+const guides = guideEntries.sort((a, b) => {
+  const featuredA = a.data.featuredOrder ?? Number.MAX_SAFE_INTEGER;
+  const featuredB = b.data.featuredOrder ?? Number.MAX_SAFE_INTEGER;
+  return featuredA - featuredB
+    || (guidePosition.get(a.data.slug) ?? 99) - (guidePosition.get(b.data.slug) ?? 99)
+    || a.data.title.localeCompare(b.data.title);
+});
 
 const areaOrder = ['the-heights', 'eado', 'katy', 'the-woodlands', 'sugar-land', 'clear-lake'];
 const areaPosition = new Map(areaOrder.map((slug, index) => [slug, index]));
