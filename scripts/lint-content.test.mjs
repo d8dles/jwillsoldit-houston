@@ -30,6 +30,17 @@ test('flags short guides', () => {
   assert.ok(errors.some((error) => error.includes('expected 700–1,200')));
 });
 
+test('requires a contextual area or region link in guide copy', () => {
+  const body = Array.from({ length: 700 }, () => 'word').join(' ');
+  const text = `---\nslug: test\ndisclaimerIds:\n  - general\nsources:\n---\n\n${body}`;
+  const errors = validateContent(text, 'src/content/guides/test.md');
+  assert.ok(errors.some((error) => error.includes('contextual link')));
+
+  const linked = `${text}\n\nRead the [Katy guide](/houston/areas/katy).`;
+  const linkedErrors = validateContent(linked, 'src/content/guides/test.md');
+  assert.ok(!linkedErrors.some((error) => error.includes('contextual link')));
+});
+
 test('allows researched long-form area guides', () => {
   const body = Array.from({ length: 900 }, () => 'word').join(' ');
   const text = `---\nname: Test\n---\n\n${body}`;

@@ -39,7 +39,7 @@ updatedAt: "2026-08-10"
 status: published
 ---
 
-A municipal utility district, usually called a MUD, is a local government that can provide water, wastewater, drainage, and other authorized services within a defined boundary. Houston-area buyers should identify the exact district for an address and review its current tax rate, service charges, debt, and official records. A MUD is not an HOA, and a MUD tax is not the same thing as a PID assessment.
+A municipal utility district, usually called a MUD, is a local government that can provide water, wastewater, drainage, and other authorized services within a defined boundary. Houston-area buyers should identify the exact district for an address and review its current tax rate, service charges, debt, and official records. A MUD is not an HOA, and a MUD tax is not the same thing as a PID assessment. The [Katy](/houston/areas/katy), [Sugar Land](/houston/areas/sugar-land), and [The Woodlands](/houston/areas/the-woodlands) pages show how district questions fit into three different local-government structures.
 
 ## Three letters can describe different things
 

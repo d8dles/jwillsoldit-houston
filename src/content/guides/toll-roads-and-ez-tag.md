@@ -32,7 +32,7 @@ status: "published"
 
 Toll roads are part of normal route planning in Greater Houston. They are not one road, one operator, or one payment system. A route may use a county tollway, a state-operated toll facility, a tolled main lane beside a non-tolled frontage road, or a managed lane within a larger highway corridor.
 
-That distinction matters when you compare homes. A map can make two routes look similar while one depends on toll access every day and the other does not. Start with the exact route, identify the operator, and verify the payment rules before treating the road as part of your routine.
+That distinction matters when you compare homes. A map can make two routes look similar while one depends on toll access every day and the other does not. The route checks on [Katy](/houston/areas/katy), [The Woodlands](/houston/areas/the-woodlands), and [Clear Lake](/houston/areas/clear-lake) identify different corridors where that comparison matters. Start with the exact route, identify the operator, and verify the payment rules before treating the road as part of your routine.
 
 ## Know which road you are looking at
 

@@ -43,7 +43,7 @@ Houston property taxes are based on a property's taxable value and the rates ado
 
 Texas does not have a state property tax. Property taxes are local. A Houston-area address can sit inside several taxing units at the same time: a county, a school district, a city, and one or more special-purpose districts. Each unit can set its own rate within the rules that apply to it.
 
-That is why two homes with similar prices can carry different tax bills. They may be in different school districts, city limits, utility districts, or other jurisdictions. A tax rate shown on a listing is a starting point, not a complete forecast.
+That is why two homes with similar prices can carry different tax bills. They may be in different school districts, city limits, utility districts, or other jurisdictions. Compare the tri-county questions on [Katy](/houston/areas/katy), the district structure on [The Woodlands](/houston/areas/the-woodlands), and the city, MUD, and levee layers on [Sugar Land](/houston/areas/sugar-land). A tax rate shown on a listing is a starting point, not a complete forecast.
 
 Before comparing properties, identify every taxing unit attached to each address. The county appraisal district's property record and the county tax office's records are the practical places to start. For an address near a county line, confirm which county appraisal district holds the account.
 

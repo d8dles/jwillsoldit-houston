@@ -40,7 +40,7 @@ updatedAt: "2026-08-10"
 status: published
 ---
 
-Buying a house in Houston means checking flood risk at the address level. Start with the current FEMA flood map, then review local mapping, the seller's disclosure, property documents, drainage conditions, and written insurance quotes. A flood-zone label matters, but it does not tell the whole story by itself.
+Buying a house in Houston means checking flood risk at the address level. Start with the current FEMA flood map, then review local mapping, the seller's disclosure, property documents, drainage conditions, and written insurance quotes. A flood-zone label matters, but it does not tell the whole story by itself. The [Clear Lake](/houston/areas/clear-lake) and [Sugar Land](/houston/areas/sugar-land) pages apply that process to two areas with different drainage authorities and local systems.
 
 ## A flood-zone label is one piece of the file
 

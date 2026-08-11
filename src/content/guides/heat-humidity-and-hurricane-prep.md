@@ -34,7 +34,7 @@ updatedAt: "2026-07-18"
 status: "published"
 ---
 
-Houston weather belongs in the housing decision. Heat and humidity affect daily routines for long stretches. Tropical weather can bring wind, heavy rain, inland flooding, storm surge near the coast, tornadoes, travel disruption, and power loss. Those risks do not affect every address in the same way.
+Houston weather belongs in the housing decision. Heat and humidity affect daily routines for long stretches. Tropical weather can bring wind, heavy rain, inland flooding, storm surge near the coast, tornadoes, travel disruption, and power loss. Those risks do not affect every address in the same way; compare the coastal and windstorm questions on [Clear Lake](/houston/areas/clear-lake) with the dense-building and outage questions on [EaDo](/houston/areas/eado).
 
 The useful approach is practical. Understand how the home handles heat. Identify the property-specific storm hazards. Know whether the address is in an evacuation zone. Build a household plan around official information before a watch or warning is issued.
 

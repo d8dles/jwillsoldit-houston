@@ -87,6 +87,9 @@ export function validateContent(text, filePath) {
     if (body.includes('!')) {
       errors.push(`${filePath}: guide body contains an exclamation mark`);
     }
+    if (!/\]\(\/houston\/(?:areas|regions)\/[a-z0-9-]+(?:#[^)]+)?\)/.test(body)) {
+      errors.push(`${filePath}: guide body needs a contextual link to a published area or region`);
+    }
 
     const expectedSlug = basename(filePath, '.md');
     const actualSlug = frontmatter.match(/^slug:\s*["']?([^"'\r\n]+)["']?\s*$/m)?.[1];
