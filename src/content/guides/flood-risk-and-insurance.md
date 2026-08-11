@@ -36,6 +36,10 @@ relatedRegions:
 relatedAreas:
   - clear-lake
   - sugar-land
+relatedGuides:
+  - property-taxes
+  - muds-pids-and-utility-districts
+  - heat-humidity-and-hurricane-prep
 updatedAt: "2026-08-10"
 status: published
 ---

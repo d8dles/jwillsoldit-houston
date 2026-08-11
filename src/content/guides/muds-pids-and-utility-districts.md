@@ -35,6 +35,10 @@ relatedAreas:
   - sugar-land
   - the-woodlands
   - clear-lake
+relatedGuides:
+  - property-taxes
+  - flood-risk-and-insurance
+  - hoas-and-deed-restrictions
 updatedAt: "2026-08-10"
 status: published
 ---

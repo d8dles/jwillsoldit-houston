@@ -9,6 +9,49 @@ const guides = (await getCollection('guides', ({ data }) => data.status === 'pub
     const orderB = b.data.featuredOrder ?? Number.MAX_SAFE_INTEGER;
     return orderA - orderB || a.data.title.localeCompare(b.data.title);
   });
+const guideBySlug = new Map(guides.map((guide) => [guide.data.slug, guide]));
+const guideGroups = [
+  {
+    id: 'getting-oriented',
+    label: 'I’m getting oriented',
+    title: 'Start with the map before you start touring.',
+    description: 'Get a feel for Houston’s shape, then pressure-test the trips that will fill your week.',
+    slugs: ['how-houston-is-organized', 'traffic-and-commutes', 'toll-roads-and-ez-tag'],
+  },
+  {
+    id: 'renting',
+    label: 'I’m renting',
+    title: 'Get the lease and move-in details straight.',
+    description: 'Know what to bring, what to set up, and what a rental needs to work for your everyday life.',
+    slugs: ['houston-renter-checklist', 'electricity-choice-and-utilities', 'pet-friendly-places-in-houston'],
+  },
+  {
+    id: 'buying',
+    label: 'I’m buying',
+    title: 'Start with the questions that change the payment.',
+    description: 'Taxes, flood review, restrictions, and utility districts all follow the address—not the listing headline.',
+    slugs: [
+      'first-time-homebuyer',
+      'property-taxes',
+      'flood-risk-and-insurance',
+      'muds-pids-and-utility-districts',
+      'hoas-and-deed-restrictions',
+      'no-zoning-explained',
+    ],
+  },
+  {
+    id: 'daily-life',
+    label: 'I’m picturing daily life',
+    title: 'Check the things that make a place feel like yours.',
+    description: 'Use the real routines—weekends, pets, weather, and getting around—to narrow the map.',
+    slugs: ['houston-entertainment-and-things-to-do', 'heat-humidity-and-hurricane-prep'],
+  },
+].map((group) => ({
+  ...group,
+  guides: group.slugs
+    .map((slug) => guideBySlug.get(slug))
+    .filter((guide): guide is typeof guides[number] => Boolean(guide)),
+}));
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const updatedAt = guides.map((guide) => guide.data.updatedAt).sort().at(-1) ?? '2026-07-18';
 const indexSources = [{
@@ -31,17 +74,43 @@ const indexSources = [{
       </p>
     </header>
 
-    <section class="container guide-grid" aria-label="Houston moving guides">
-      {guides.map((guide) => (
-        <article class="guide-card">
-          <h2><a href={`${base}/guides/${guide.data.slug}`}>{guide.data.title}</a></h2>
-          <p>{guide.data.description}</p>
-          <a class="card-link" href={`${base}/guides/${guide.data.slug}`} aria-label={`Read ${guide.data.title}`}>
-            Read the guide <span aria-hidden="true">→</span>
+    <section class="container intent-section" aria-labelledby="intent-heading">
+      <div class="intent-heading">
+        <p class="mono-label mono-label--red">START HERE</p>
+        <h2 id="intent-heading">What are you trying to figure out?</h2>
+      </div>
+      <nav class="intent-chooser" aria-label="Choose a Houston guide starting point">
+        {guideGroups.map((group) => (
+          <a href={`#${group.id}`}>
+            <span>{group.label}</span>
+            <span aria-hidden="true">→</span>
           </a>
-        </article>
-      ))}
+        ))}
+      </nav>
     </section>
+
+    <div class="guide-groups">
+      {guideGroups.map((group) => (
+        <section id={group.id} class="container guide-group" aria-labelledby={`${group.id}-heading`}>
+          <div class="group-heading">
+            <p class="mono-label mono-label--red">{group.label}</p>
+            <h2 id={`${group.id}-heading`}>{group.title}</h2>
+            <p>{group.description}</p>
+          </div>
+          <div class="guide-grid" aria-label={`${group.label} guides`}>
+            {group.guides.map((guide) => (
+              <article class="guide-card">
+                <h3><a href={`${base}/guides/${guide.data.slug}`}>{guide.data.title}</a></h3>
+                <p>{guide.data.description}</p>
+                <a class="card-link" href={`${base}/guides/${guide.data.slug}`} aria-label={`Read ${guide.data.title}`}>
+                  Read the guide <span aria-hidden="true">→</span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
     <div class="container index-sources">
       <SourcePanel sources={indexSources} updatedAt={updatedAt} />
     </div>
@@ -71,6 +140,75 @@ const indexSources = [{
     font-size: clamp(1.05rem, 2vw, 1.25rem);
   }
 
+  .intent-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 1.2fr);
+    gap: 32px;
+    align-items: start;
+    padding-bottom: var(--space-block);
+  }
+
+  .intent-heading,
+  .group-heading {
+    display: grid;
+    gap: 12px;
+  }
+
+  .intent-heading h2,
+  .group-heading h2 {
+    font-family: var(--display);
+    font-size: var(--fs-h3);
+    line-height: 1.1;
+  }
+
+  .intent-chooser {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    border: 1px solid var(--trace);
+    background: var(--trace);
+  }
+
+  .intent-chooser a {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px;
+    color: var(--ink);
+    background: var(--off-white);
+    font-family: var(--display);
+    line-height: 1.15;
+    text-decoration: none;
+  }
+
+  .intent-chooser a:hover,
+  .intent-chooser a:focus-visible {
+    background: var(--pure);
+    color: var(--red-text);
+  }
+
+  .guide-groups {
+    display: grid;
+    gap: var(--space-section);
+  }
+
+  .guide-group {
+    display: grid;
+    gap: 28px;
+    scroll-margin-top: 24px;
+  }
+
+  .group-heading {
+    max-width: 680px;
+  }
+
+  .group-heading > p:not(.mono-label) {
+    color: var(--mid);
+    max-width: 60ch;
+  }
+
   .guide-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
@@ -88,13 +226,13 @@ const indexSources = [{
     gap: 18px;
   }
 
-  .guide-card h2 {
+  .guide-card h3 {
     font-family: var(--display);
     font-size: var(--fs-h3);
     line-height: 1.15;
   }
 
-  .guide-card h2 a {
+  .guide-card h3 a {
     text-decoration: none;
   }
 
@@ -115,5 +253,17 @@ const indexSources = [{
 
   .index-sources {
     padding-top: var(--space-block);
+  }
+
+  @media (max-width: 700px) {
+    .intent-section {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .intent-chooser {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

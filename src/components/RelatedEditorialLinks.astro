@@ -8,17 +8,18 @@ interface LinkItem {
 interface Props {
   links: LinkItem[];
   heading: string;
+  eyebrow?: string;
 }
 
-const { links, heading } = Astro.props;
+const { links, heading, eyebrow = 'KEEP EXPLORING' } = Astro.props;
 const kindLabels = { area: 'Area', region: 'Region', guide: 'Guide' };
 ---
 
 {links.length > 0 && (
-  <section class="related-links" aria-labelledby="related-links-heading">
+  <section class="related-links" aria-label={heading}>
     <div class="related-heading">
-      <p class="mono-label mono-label--red">KEEP EXPLORING</p>
-      <h2 id="related-links-heading">{heading}</h2>
+      <p class="mono-label mono-label--red">{eyebrow}</p>
+      <h2>{heading}</h2>
     </div>
     <ul class="related-list">
       {links.map((link) => (

@@ -31,6 +31,10 @@ relatedAreas:
   - katy
   - the-woodlands
   - sugar-land
+relatedGuides:
+  - no-zoning-explained
+  - property-taxes
+  - flood-risk-and-insurance
 updatedAt: "2026-07-18"
 status: published
 ---

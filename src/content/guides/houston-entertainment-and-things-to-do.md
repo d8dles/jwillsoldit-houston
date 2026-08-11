@@ -37,6 +37,10 @@ relatedAreas:
   - "eado"
   - "the-heights"
   - "clear-lake"
+relatedGuides:
+  - traffic-and-commutes
+  - pet-friendly-places-in-houston
+  - how-houston-is-organized
 updatedAt: "2026-08-11"
 status: "published"
 ---

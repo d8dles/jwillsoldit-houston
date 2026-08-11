@@ -37,6 +37,10 @@ relatedAreas:
   - the-woodlands
   - sugar-land
   - clear-lake
+relatedGuides:
+  - traffic-and-commutes
+  - toll-roads-and-ez-tag
+  - no-zoning-explained
 updatedAt: "2026-07-18"
 status: "published"
 ---

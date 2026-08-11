@@ -35,6 +35,10 @@ relatedAreas:
   - "the-heights"
   - "katy"
   - "sugar-land"
+relatedGuides:
+  - houston-renter-checklist
+  - houston-entertainment-and-things-to-do
+  - electricity-choice-and-utilities
 updatedAt: "2026-08-11"
 status: "published"
 ---

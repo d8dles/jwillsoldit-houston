@@ -33,6 +33,10 @@ relatedAreas:
   - katy
   - sugar-land
   - the-woodlands
+relatedGuides:
+  - muds-pids-and-utility-districts
+  - flood-risk-and-insurance
+  - first-time-homebuyer
 updatedAt: "2026-08-10"
 status: published
 ---

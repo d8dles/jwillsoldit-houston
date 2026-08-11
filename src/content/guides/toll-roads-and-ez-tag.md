@@ -26,6 +26,10 @@ relatedAreas:
   - katy
   - the-woodlands
   - clear-lake
+relatedGuides:
+  - traffic-and-commutes
+  - how-houston-is-organized
+  - electricity-choice-and-utilities
 updatedAt: "2026-07-18"
 status: "published"
 ---

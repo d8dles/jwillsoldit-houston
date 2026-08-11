@@ -37,6 +37,10 @@ relatedAreas:
   - katy
   - the-woodlands
   - clear-lake
+relatedGuides:
+  - houston-renter-checklist
+  - muds-pids-and-utility-districts
+  - heat-humidity-and-hurricane-prep
 updatedAt: "2026-07-18"
 status: published
 ---
