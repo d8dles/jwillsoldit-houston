@@ -30,7 +30,7 @@ updatedAt: "2026-08-11"
 status: published
 ---
 
-Renting in Houston is easier when you separate the decision into four jobs: qualify for the property, understand the lease, arrange the services the lease assigns to you, and document the home before you unpack. Requirements differ by owner, apartment community, screening provider, utility territory, and property. Ask for the written criteria and current charges for the exact rental instead of assuming one property's rules apply to the next.
+A Houston rental can look simple until the application fees, utility setup, parking, pet charges, and move-in rules start stacking up. Before you apply, I want you to know what the property expects, what the lease actually costs, and what needs to be documented before the first box comes through the door. The details vary from one rental to the next, so use this as your checklist and verify the final terms with the property.
 
 ## Before you pay an application fee
 
@@ -38,13 +38,13 @@ Ask for the property's written rental criteria, every application or administrat
 
 Do not send money from a listing alone. Verify who owns or manages the property, tour the actual home when possible, and use a payment method and portal you can independently confirm. Keep the listing, advertised terms, screening criteria, receipts, and messages together. If you are comparing an apartment near work with a house farther out, start with the exact commute and service setup rather than the marketing label. The tradeoffs between [the Heights](/houston/areas/the-heights) and [Clear Lake](/houston/areas/clear-lake), for example, extend well beyond the floor plan.
 
-## Read the lease as a bill and a rulebook
+## Know what you are agreeing to each month
 
 Before signing, identify the base rent and every recurring or one-time charge. Look for due dates, late-fee language, deposit terms, utility allocation, parking, pets, guests, subletting, maintenance responsibilities, pest control, lawn care, renter-insurance requirements, renewal terms, notice deadlines, and early-termination provisions. Ask how concessions are handled if the lease ends early or rent is late. A discounted first month can obscure the effective monthly cost or a repayment obligation.
 
 Texas Property Code Chapter 92 contains rules governing residential tenancies, including security deposits, repairs, security devices, smoke alarms, and other landlord-tenant duties. The signed lease still matters, and a general checklist cannot interpret it for you. Get unclear promises or exceptions in writing before signing. For a legal-rights question or dispute, use a qualified Texas attorney or tenant-assistance resource rather than relying on a leasing-office conversation or this guide.
 
-## Build the real monthly number
+## Figure out the real monthly cost
 
 Put rent, required fees, parking, pets, insurance, internet, electricity, gas, water, wastewater, trash, and commuting costs on one sheet. Ask which services are individually metered, allocated among residents, included, or billed through a third party. A property may advertise one rent number while mandatory monthly charges appear elsewhere.
 
@@ -52,7 +52,7 @@ Electric service also depends on the exact address. Many Houston-area customers 
 
 Schedule service early enough to avoid a gap on move-in day, but do not activate anything until the lease, address, unit number, and start date are confirmed. Save confirmation numbers and the first billing date.
 
-## Verify maintenance and property security practices
+## Know how maintenance and access work
 
 Ask how routine and urgent maintenance requests are submitted, what number is monitored after hours, who may enter the unit, and how notice is provided. Find the water shutoff if residents are expected to know it. Confirm responsibility for air filters, light bulbs, yard care, pest treatment, appliance upkeep, and any smart-home equipment. Report problems through the documented channel and keep dated copies.
 
@@ -62,7 +62,7 @@ For the property itself, test doors, windows, locks, exterior access, garage or 
 
 A landlord's policy generally does not cover a tenant's belongings. The Texas Department of Insurance explains that renters policies commonly include personal-property coverage, additional living expenses after a covered loss, and personal liability, but limits, deductibles, exclusions, and replacement-cost terms vary. Standard renters coverage also does not ordinarily include flood damage. Ask an insurance professional to quote the exact address and confirm any coverage the lease requires. Make a basic home inventory with photos, serial numbers, and receipts for higher-value items, then store a copy somewhere outside the rental.
 
-## Document move-in like you will need it later
+## Take the photos before the furniture arrives
 
 Before bringing in furniture, photograph or video every room, appliance, wall, floor, window, fixture, and existing defect. Complete the property's condition form by its deadline, send it through a trackable channel, and keep proof. Record the number of keys, remotes, parking credentials, and access devices received. Save meter readings when applicable. Test plumbing, hot water, outlets, appliances, heating and cooling, and included equipment, then report anything that does not work.
 

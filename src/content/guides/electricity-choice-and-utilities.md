@@ -41,15 +41,15 @@ updatedAt: "2026-07-18"
 status: published
 ---
 
-## Electricity choice starts with the service territory
+Houston utilities are not a one-provider setup. Two homes with the same city name or ZIP code can have different electricity choices, water districts, trash service, and setup steps. Start with the exact address.
 
-Many Houston-area addresses are in a competitive retail electricity area. At those addresses, the customer can select a retail electric provider, or REP, and a plan. That does not mean every address in Greater Houston has the same choice structure.
+## Start with the exact address
 
-Municipal utilities and electric cooperatives can operate differently. ERCOT distinguishes competitive retailers from non-opt-in municipal utilities and cooperatives. Confirm the service territory for the address before comparing offers. The [Katy](/houston/areas/katy), [The Woodlands](/houston/areas/the-woodlands), and [Clear Lake](/houston/areas/clear-lake) pages show why a mailing name is not enough to identify the provider.
+Many Houston-area addresses let the customer select a retail electric provider, or REP, and a plan. Municipal utilities and electric cooperatives can work differently, so confirm the service territory before comparing offers. The [Katy](/houston/areas/katy), [The Woodlands](/houston/areas/the-woodlands), and [Clear Lake](/houston/areas/clear-lake) pages show why the mailing name is not enough.
 
-The Public Utility Commission of Texas operates Power to Choose for addresses open to retail competition. Enter the service location rather than relying only on a ZIP code. ZIP codes can cross utility boundaries.
+For addresses open to retail competition, use the Public Utility Commission of Texas's Power to Choose marketplace. Enter the service location rather than relying on a ZIP code, which can cross utility boundaries.
 
-## The seller and the wires company have different roles
+## Your electric company and the company that maintains the lines are different
 
 In a competitive area, the REP sells the retail electricity plan and handles the retail account. The transmission and distribution service provider owns or operates the facilities that transmit or distribute electricity. ERCOT describes these as separate market roles.
 
@@ -57,7 +57,7 @@ Changing REPs does not replace the poles, wires, or local delivery company servi
 
 Keep the contacts straight. Use the bill or service-territory information to identify whom to call for an outage, a damaged line, a meter issue, billing, or plan terms. ERCOT directs residential service questions to the electric utility or REP and does not provide retail service to individual customers.
 
-## Compare the plan documents, not the headline
+## Read the plan, not just the advertised rate
 
 For a competitive offer, open the Electricity Facts Label, Terms of Service, and Your Rights as a Customer disclosure. PUCT rules require standardized disclosures for residential and small commercial customers. These documents show how the offer works.
 
