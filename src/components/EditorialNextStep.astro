@@ -23,10 +23,11 @@ const { context = 'the property and the rest of the move' } = Astro.props;
 
 <style>
   .next-step {
-    max-width: 72ch;
+    max-width: none;
     margin-top: var(--space-block);
-    padding-top: var(--space-block);
-    border-top: 1px solid var(--trace);
+    padding: clamp(28px, 5vw, 56px);
+    background: var(--forest);
+    color: var(--off-white);
   }
 
   h2 {
@@ -34,11 +35,12 @@ const { context = 'the property and the rest of the move' } = Astro.props;
     font-family: var(--display);
     font-size: var(--fs-h3);
     line-height: 1.15;
+    max-width: 18ch;
   }
 
   .next-step > p:not(.mono-label) {
     margin-top: 14px;
-    color: var(--mid);
+    color: var(--mid-on-dark);
     line-height: 1.7;
   }
 
@@ -52,18 +54,19 @@ const { context = 'the property and the rest of the move' } = Astro.props;
   .button {
     min-height: 46px;
     padding: 11px 18px;
-    border: 1px solid var(--forest);
+    border: 1px solid var(--trace-dark);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-family: var(--mono);
     font-size: var(--fs-small);
-    color: var(--forest);
+    color: var(--off-white);
     text-decoration: none;
   }
 
   .button--primary {
-    background: var(--forest);
-    color: var(--off-white);
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--pure);
   }
 </style>
