@@ -35,7 +35,7 @@ const relatedLinks = [
 ---
 
 <Base
-  title={`${data.title} — Houston, Handled.`}
+  title={data.seoTitle ?? `${data.title} — Houston, Handled.`}
   description={data.description}
   pageType="article"
   updatedAt={data.updatedAt}

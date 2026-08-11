@@ -1,7 +1,9 @@
 ---
-title: "Flood risk and insurance around Houston"
+title: "Houston flood zones and insurance: a home buyer's guide"
+seoTitle: "Houston Flood Zones for Home Buyers | JWILLSOLDIT"
 slug: "flood-risk-and-insurance"
-description: "How to read official flood maps, investigate a specific property, and ask an insurer what is and is not covered."
+description: "How Houston home buyers can check FEMA flood zones, investigate a property's flood history, and compare address-specific insurance coverage."
+featuredOrder: 1
 disclaimerIds:
   - general
   - flood
@@ -34,9 +36,11 @@ relatedRegions:
 relatedAreas:
   - clear-lake
   - sugar-land
-updatedAt: "2026-07-18"
+updatedAt: "2026-08-10"
 status: published
 ---
+
+Buying a house in Houston means checking flood risk at the address level. Start with the current FEMA flood map, then review local mapping, the seller's disclosure, property documents, drainage conditions, and written insurance quotes. A flood-zone label matters, but it does not tell the whole story by itself.
 
 ## A flood-zone label is one piece of the file
 

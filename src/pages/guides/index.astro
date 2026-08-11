@@ -4,7 +4,11 @@ import Base from '../../layouts/Base.astro';
 import SourcePanel from '../../components/SourcePanel.astro';
 
 const guides = (await getCollection('guides', ({ data }) => data.status === 'published'))
-  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+  .sort((a, b) => {
+    const orderA = a.data.featuredOrder ?? Number.MAX_SAFE_INTEGER;
+    const orderB = b.data.featuredOrder ?? Number.MAX_SAFE_INTEGER;
+    return orderA - orderB || a.data.title.localeCompare(b.data.title);
+  });
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const updatedAt = guides.map((guide) => guide.data.updatedAt).sort().at(-1) ?? '2026-07-18';
 const indexSources = [{
@@ -30,6 +34,7 @@ const indexSources = [{
     <section class="container guide-grid" aria-label="Houston moving guides">
       {guides.map((guide) => (
         <article class="guide-card">
+          {guide.data.featuredOrder && <p class="mono-label mono-label--red">Start here</p>}
           <h2><a href={`${base}/guides/${guide.data.slug}`}>{guide.data.title}</a></h2>
           <p>{guide.data.description}</p>
           <a class="card-link" href={`${base}/guides/${guide.data.slug}`} aria-label={`Read ${guide.data.title}`}>
