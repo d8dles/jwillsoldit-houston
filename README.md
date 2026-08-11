@@ -29,7 +29,7 @@ Content is organized into three collections:
 - `src/content/guides/` — long-form explainers.
 - `src/content/areas/` — sourced structural area profiles.
 
-Current merged inventory: 9 regions, 11 guides, 6 areas, and 28 routes.
+Current inventory: 9 regions, 12 guides, 6 areas, and 29 routes.
 
 Guide and area frontmatter must include `sources`, `updatedAt`, and `status`. A file marked `status: "draft"` is excluded from static routes and the sitemap. Region sources are also required. Schemas live in `src/content.config.ts`.
 

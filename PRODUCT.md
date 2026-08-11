@@ -29,7 +29,7 @@ Content is maintained in Markdown with source access dates, review dates, draft 
 ## Capabilities and Constraints
 
 - Standalone static Astro application served under `/houston`.
-- Current merged inventory: 9 regions, 11 guides, 6 areas, and 28 routes.
+- Current inventory: 9 regions, 12 guides, 6 areas, and 29 routes.
 - Source, schema, fair-housing language, voice, and content checks are build gates.
 - Customer-facing links must resolve to a working destination when published. Do not add speculative or placeholder links.
 - Volatile program, availability, rate, or eligibility data belongs only when it can be refreshed from a dependable official source. Otherwise, link to the official source without restating a changing number or current-status claim.
