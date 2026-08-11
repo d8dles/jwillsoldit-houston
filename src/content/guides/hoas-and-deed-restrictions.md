@@ -35,6 +35,8 @@ updatedAt: "2026-07-18"
 status: published
 ---
 
+Houston's lack of traditional zoning does not mean a property comes without rules. Some rules come from the city or another local government. Others are written into deed restrictions or association documents tied to the property. Before a buyer counts on adding a garage apartment, changing a fence, operating a business, leasing the home, or even choosing an exterior paint color, I want to know which rules actually apply to that lot.
+
 ## No zoning does not mean no rules
 
 The City of Houston does not have zoning. The city's Planning and Development Department also explains that development is governed by ordinances covering matters such as subdivision, parking, setbacks, access, and other development requirements.
@@ -43,7 +45,7 @@ Private deed restrictions are another layer. They can limit how a specific prope
 
 Outside Houston city limits, municipal rules and enforcement structures can differ. Start with the property's exact jurisdiction and recorded documents rather than applying the Houston shorthand to the whole region. The covenant systems described for [The Woodlands](/houston/areas/the-woodlands), [Sugar Land](/houston/areas/sugar-land), and [Katy](/houston/areas/katy) are three examples of why the governing documents must come from the parcel rather than the area name.
 
-## Deed restrictions and an HOA are related, but not identical
+## The restriction and the HOA are two different questions
 
 A deed restriction is a recorded covenant that applies to land. A property owners association is an organization that may administer or enforce restrictions and manage shared obligations. A property can have recorded restrictions even when no active association is obvious. It can also be subject to mandatory association membership, dues, rules, and architectural review.
 
@@ -51,7 +53,7 @@ Do not rely on a listing field that says "no HOA" as proof that no private restr
 
 For a mandatory association, identify the association's legal name and management contact. TREC maintains a public database of HOA management certificates. TREC also notes that a missing certificate can be checked with the county clerk or the association.
 
-## Read the subdivision information, not a summary
+## Read the current documents, not the listing summary
 
 Texas Property Code Chapter 207 describes subdivision information that can include restrictions, bylaws, rules, and a resale certificate. TREC's mandatory-membership addendum uses that framework for covered transactions.
 

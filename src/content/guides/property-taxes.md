@@ -37,9 +37,9 @@ updatedAt: "2026-08-10"
 status: published
 ---
 
-Houston property taxes are based on a property's taxable value and the rates adopted by the local taxing units attached to that address. There is no single Houston tax rate: counties, school districts, cities, MUDs, and other districts can produce different bills for similarly priced homes. Buyers should verify the full taxing-unit stack instead of copying the seller's bill into a payment estimate.
+Property taxes can change the monthly cost of two similarly priced Houston homes by more than buyers expect. There is no single "Houston tax rate." The bill follows the address and may include a county, school district, city, MUD, and other local districts. That is why I look at the full taxing-unit stack instead of copying the seller's bill into a buyer's payment estimate.
 
-## Start with the stack, not one tax rate
+## Why one advertised tax rate is not enough
 
 Texas does not have a state property tax. Property taxes are local. A Houston-area address can sit inside several taxing units at the same time: a county, a school district, a city, and one or more special-purpose districts. Each unit can set its own rate within the rules that apply to it.
 
@@ -47,7 +47,7 @@ That is why two homes with similar prices can carry different tax bills. They ma
 
 Before comparing properties, identify every taxing unit attached to each address. The county appraisal district's property record and the county tax office's records are the practical places to start. For an address near a county line, confirm which county appraisal district holds the account.
 
-## Appraised value and tax rate are different jobs
+## Value and tax rate come from different places
 
 The county appraisal district determines the property's value for tax purposes. Local governing bodies set their tax rates. The appraisal district does not set the rates, and the taxing units do not perform the appraisal.
 

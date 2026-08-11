@@ -16,6 +16,7 @@ export const REQUIRED_PHASE1 = {
     'no-zoning-explained.md',
     'heat-humidity-and-hurricane-prep.md',
     'first-time-homebuyer.md',
+    'houston-renter-checklist.md',
   ],
   areas: [
     'the-heights.md',
