@@ -1,7 +1,9 @@
 ---
-title: "No Zoning Explained"
+title: "Why Houston has no zoning — and what that means"
+seoTitle: "Why Houston Has No Zoning | JWILLSOLDIT"
 slug: "no-zoning-explained"
-description: "What Houston's lack of conventional zoning does and does not mean for ordinances, plats, deed restrictions, and property-specific review."
+description: "Why Houston has no conventional zoning, which public and private rules still control property, and what buyers should verify for one address."
+featuredOrder: 5
 disclaimerIds:
   - "general"
 sources:
@@ -29,7 +31,7 @@ relatedAreas:
   - eado
   - katy
   - the-woodlands
-updatedAt: "2026-07-18"
+updatedAt: "2026-08-10"
 status: "published"
 ---
 

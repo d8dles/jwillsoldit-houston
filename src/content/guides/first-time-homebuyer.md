@@ -1,7 +1,9 @@
 ---
-title: "A first-time buyer's guide to Houston"
+title: "First-time home buyer guide for Houston"
+seoTitle: "First-Time Home Buyer Guide: Houston | JWILLSOLDIT"
 slug: "first-time-homebuyer"
-description: "Loan types, real Texas assistance programs, what a lender actually checks, and how to verify a Houston property before you buy."
+description: "Houston first-time home buyer programs, loan options, lender requirements, down-payment help, and an address-by-address property checklist."
+featuredOrder: 2
 disclaimerIds:
   - general
 sources:
@@ -52,6 +54,8 @@ relatedAreas: []
 updatedAt: "2026-08-10"
 status: published
 ---
+
+First-time home buyers in Houston can combine the normal purchase process with city, county, or statewide assistance programs when they qualify. Start by checking credit, debt, savings, and lender options; then confirm each program's current rules directly with its administrator before relying on assistance in a budget.
 
 ## Start with what a lender actually checks
 
