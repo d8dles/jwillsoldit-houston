@@ -1,36 +1,37 @@
 <section class="buyer-tools" aria-labelledby="roadmap-heading">
   <h2 id="roadmap-heading">A steady first pass</h2>
+  <p class="roadmap-intro">Open each step for the short version of what it means and what to check next.</p>
   <div class="roadmap">
     <details>
-      <summary><span>1</span> Name the questions you need answered</summary>
+      <summary><span class="step-number">1</span><span class="step-title">Name the questions you need answered</span><span class="step-control" aria-hidden="true"><span class="closed-copy">Open</span><span class="open-copy">Close</span><span class="step-mark">+</span></span></summary>
       <p>Separate what matters to your household from the facts that must be verified for a particular address.</p>
     </details>
     <details>
-      <summary><span>2</span> Ask a licensed lender for current terms</summary>
+      <summary><span class="step-number">2</span><span class="step-title">Ask a licensed lender for current terms</span><span class="step-control" aria-hidden="true"><span class="closed-copy">Open</span><span class="open-copy">Close</span><span class="step-mark">+</span></span></summary>
       <p>Use a current lender review for financing terms and eligibility questions rather than a general estimate.</p>
     </details>
     <details>
-      <summary><span>3</span> Understand representation before touring</summary>
+      <summary><span class="step-number">3</span><span class="step-title">Understand representation before touring</span><span class="step-control" aria-hidden="true"><span class="closed-copy">Open</span><span class="open-copy">Close</span><span class="step-mark">+</span></span></summary>
       <p>A Texas license holder working with a prospective residential buyer generally must enter a written agreement before showing residential property. Review current TREC guidance before a property visit.</p>
     </details>
     <details>
-      <summary><span>4</span> Verify each address on its own record</summary>
+      <summary><span class="step-number">4</span><span class="step-title">Verify each address on its own record</span><span class="step-control" aria-hidden="true"><span class="closed-copy">Open</span><span class="open-copy">Close</span><span class="step-mark">+</span></span></summary>
       <p>Compare taxes, insurance, flood information, restrictions, condition, and recurring costs for the property in front of you.</p>
     </details>
     <details>
-      <summary><span>5</span> Read the offer as a set of terms</summary>
+      <summary><span class="step-number">5</span><span class="step-title">Read the offer as a set of terms</span><span class="step-control" aria-hidden="true"><span class="closed-copy">Open</span><span class="open-copy">Close</span><span class="step-mark">+</span></span></summary>
       <p>Inspection, appraisal, title work, lender review, and timing each answer a different question.</p>
     </details>
     <details>
-      <summary><span>6</span> Keep the lending documents together</summary>
+      <summary><span class="step-number">6</span><span class="step-title">Keep the lending documents together</span><span class="step-control" aria-hidden="true"><span class="closed-copy">Open</span><span class="open-copy">Close</span><span class="step-mark">+</span></span></summary>
       <p>Read the Loan Estimate and closing documents with time to ask questions about the terms shown there.</p>
     </details>
     <details>
-      <summary><span>7</span> Check assistance pages for current status</summary>
+      <summary><span class="step-number">7</span><span class="step-title">Check assistance pages for current status</span><span class="step-control" aria-hidden="true"><span class="closed-copy">Open</span><span class="open-copy">Close</span><span class="step-mark">+</span></span></summary>
       <p>Official program pages are a place to confirm current status, not a promise about a benefit.</p>
     </details>
     <details>
-      <summary><span>8</span> Confirm wire instructions independently</summary>
+      <summary><span class="step-number">8</span><span class="step-title">Confirm wire instructions independently</span><span class="step-control" aria-hidden="true"><span class="closed-copy">Open</span><span class="open-copy">Close</span><span class="step-mark">+</span></span></summary>
       <p>Use a contact method you already know when money or instructions change near closing.</p>
     </details>
   </div>
@@ -72,6 +73,13 @@
     margin-bottom: 18px;
   }
 
+  .roadmap-intro {
+    margin: -8px 0 18px;
+    color: var(--mid);
+    font-size: var(--fs-small);
+    line-height: 1.55;
+  }
+
   .roadmap {
     border-top: 1px solid var(--trace);
   }
@@ -82,7 +90,8 @@
 
   summary {
     min-height: 52px;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
     gap: 12px;
     cursor: pointer;
@@ -91,10 +100,44 @@
     line-height: 1.25;
   }
 
-  summary span {
+  summary .step-number {
     color: var(--red-text);
     font-family: var(--mono);
     font-size: var(--fs-micro);
+  }
+
+  .step-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--mid);
+    font-family: var(--mono);
+    font-size: var(--fs-micro);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .open-copy {
+    display: none;
+  }
+
+  .step-mark {
+    color: var(--red-text);
+    font-size: 16px;
+    line-height: 1;
+    transition: transform 160ms ease;
+  }
+
+  details[open] .closed-copy {
+    display: none;
+  }
+
+  details[open] .open-copy {
+    display: inline;
+  }
+
+  details[open] .step-mark {
+    transform: rotate(45deg);
   }
 
   details p {
@@ -102,6 +145,20 @@
     color: var(--mid);
     font-size: var(--fs-small);
     line-height: 1.6;
+  }
+
+  @media (max-width: 520px) {
+    summary {
+      gap: 9px;
+    }
+
+    .step-control {
+      font-size: 0;
+    }
+
+    .step-mark {
+      font-size: 18px;
+    }
   }
 
   .glossary {
