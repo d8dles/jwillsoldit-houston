@@ -73,21 +73,21 @@ Read for:
 
 A displayed average price is based on stated assumptions. It is not a promise that every monthly bill will match that figure. Compare the plan formula against realistic usage for the property. If past bills are available with permission, use them to understand prior seasonal usage, not to assume the next occupant will use the same amount.
 
-Power to Choose listings are supplied by providers. Confirm plan-specific questions directly with the REP and save the documents in effect when enrolling.
+Providers supply the listings on Power to Choose. If a plan looks promising, ask the REP any remaining questions and save the version of the documents you relied on when enrolling.
 
-## Service setup needs its own checklist
+## Set service up before move-in week
 
-Before move-in, ask the REP or local utility what it needs to start service. Confirm the service address, requested start date, meter status, identification requirements, deposit terms, and any construction or connection work.
+Before move-in, ask the REP or local utility what it needs to start service. Have the service address, requested start date, meter information, identification, and any required deposit ready. If the home is new or service has been disconnected, ask whether construction or connection work is still needed.
 
 For new construction, a house without active service, or a property with a meter problem, retail enrollment may not be the only step. The delivery utility, builder, electrician, or local permitting authority may have work to complete. Ask each party to state its responsibility and expected sequence in writing.
 
-Do not wait until closing day to learn that an address, unit number, or meter identifier is mismatched. Compare the contract address, postal address, appraisal record, and utility service address.
+Make sure the contract address, postal address, appraisal record, unit number, and utility service address agree before closing day. A small mismatch can delay an otherwise routine connection.
 
 ## Water and wastewater follow different boundaries
 
 Water and wastewater service may come from a city, municipal utility district, water control and improvement district, special utility district, water supply corporation, or another utility. The provider may not match the city name used in the mailing address.
 
-PUCT's Water and Sewer CCN Viewer can help identify certificated service areas. TCEQ's Water Districts Map Viewer can help locate water-district boundaries. These are discovery tools. Confirm service availability and account setup with the provider for the exact parcel.
+PUCT's Water and Sewer CCN Viewer can point you toward the certificated service area, and TCEQ's Water Districts Map Viewer can help locate a water district. Use those maps to find the likely provider, then ask that provider whether it serves the exact home and what the account requires.
 
 Ask:
 
@@ -98,15 +98,15 @@ Ask:
 - Who issues water-quality notices and emergency updates?
 - Is the property on a private well, septic system, or another on-site system instead?
 
-The last question changes the review. Wells and septic systems involve property equipment, permits, maintenance, and inspections rather than an ordinary account transfer alone. Property-specific questions should go to the provider, permitting authority, inspector, or other qualified professional responsible for that part of the system.
+If the home uses a well or septic system, this is no longer a simple account transfer. Ask who maintains the equipment, what permits or inspections apply, and which professional should evaluate it.
 
-## Gas and trash also need address-level confirmation
+## Check gas and trash separately
 
 Natural gas availability is not universal, and the presence of gas appliances does not identify the current account status. Ask the seller or utility which company serves the address, then verify the meter, start-service process, and any inspection requirement directly with that company.
 
-Trash and recycling may be provided by a city, utility district, HOA, landlord, or contracted company. Confirm whether the charge appears on a city bill, district bill, association assessment, lease statement, or separate account. Ask about container delivery, collection days, bulk pickup, and any mandatory provider.
+Trash and recycling may come from a city, utility district, HOA, landlord, or contracted company. Find out where the charge appears, who supplies the containers, the collection schedule, bulk-pickup rules, and whether the address must use a particular provider.
 
-Do not assume utilities are included because a property is inside a managed community. Get the current list from the entity responsible for the account.
+A managed community does not automatically include utilities. Ask for a current list showing what is included and what needs a separate account.
 
 ## Keep bills, taxes, and association charges separate
 
@@ -121,11 +121,11 @@ List each amount by source and purpose:
 - Association charges that include a utility or collection service.
 - One-time deposits, connections, transfers, or inspections.
 
-Do not combine them into an unlabeled monthly estimate. Their rules, billing cycles, and ability to change are different.
+Keep each charge on its own line. They follow different billing cycles and can change for different reasons.
 
-## Build one utility sheet per property
+## Keep one utility sheet for each property
 
-Use a simple address-level record:
+For each serious property, write down:
 
 1. Electric service territory and whether retail choice applies.
 2. REP and plan documents, if a REP is selected.
@@ -139,8 +139,6 @@ Use a simple address-level record:
 
 Keep a copy of every enrollment confirmation and record the date. Provider offerings, rates, rules, and contact details can change.
 
-## Before you set up service
+## Before move-in
 
-Start with the exact service address. Confirm which electricity structure applies, identify the delivery utility, and read the full plan documents before enrolling. Then verify water, wastewater, gas, and trash one provider at a time.
-
-The useful question is not, "Who handles utilities in this neighborhood?" It is, "Which entity serves this meter and parcel, what documents control the account, and what steps must be complete before service starts?" That keeps a routine setup from becoming a closing-week surprise.
+Start with the service address and work through electricity, water, wastewater, gas, and trash one at a time. For each one, know who serves the home, what the account requires, and when service can begin. Ten minutes of checking now can save a closing-week scramble.

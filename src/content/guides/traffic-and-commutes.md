@@ -63,7 +63,7 @@ Run the same origin and destination on multiple ordinary workdays. Check the out
 
 Before an actual drive, check TranStar for local incidents and closures. DriveTexas provides state highway condition and construction information. Consumer navigation can help with turn-by-turn routing, but official road sources are the place to confirm an agency-reported closure or highway condition.
 
-## Construction is part of the route review
+## Check what construction changes, not just where it is
 
 Houston road work changes access as well as traffic flow. A project can alter ramps, frontage-road movements, lane assignments, or the way a driver reaches a cross street. Proposed work and active construction should not be described as if they are complete.
 
@@ -71,7 +71,7 @@ When a candidate route passes a major project, find the responsible agency’s c
 
 The same caution applies to a new road shown on a marketing map. Confirm that the segment is open and usable for the trip you are evaluating. A future connection is not a current commute option.
 
-## Test the trip in person when it matters
+## If the commute matters, drive it
 
 Online tools are a screening method. A repeated real-world drive can reveal the parts that a summary misses: the approach to a garage, a difficult left turn, a queue at a ramp, a railroad crossing, or the walk from parking to the destination.
 
@@ -87,6 +87,4 @@ Other practical adjustments can matter too: a flexible start time, a hybrid sche
 
 ## Before you call the commute workable
 
-Define each fixed destination and normal travel window. Trace the primary corridor, the interchanges, and the surface-street approaches. Identify an alternate route and any point both routes share. Compare historical patterns on Houston TranStar, then check current incidents and construction through TranStar and DriveTexas.
-
-Test the trip in person when it will shape daily life. Check transit directly with METRO if it could work for the route. Keep every conclusion qualitative and current. A commute estimate is a snapshot. A sound housing decision comes from understanding the whole routine and verifying it again before you act.
+Test the complete routine: the time window, primary route, shared bottlenecks, backup route, parking, and the last part of the trip. Use TranStar and DriveTexas for current conditions, and drive it yourself if the commute will shape daily life. An estimate is a snapshot; the routine is what you are choosing.

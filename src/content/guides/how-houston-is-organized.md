@@ -61,13 +61,13 @@ These corridors are more useful than compass direction alone. Two addresses can 
 
 Write down your fixed anchors before comparing areas. That list might include an office, a medical campus, an airport, a relative’s home, or a recurring appointment. Trace each candidate address to those anchors. A location that works well for one anchor may create a complicated cross-town trip to another.
 
-## City limits and county lines are separate layers
+## Now check the lines underneath the map
 
 “Houston” can mean the City of Houston, a Houston mailing address, or the larger region. Those are not the same thing. The City’s official map service displays city limits, the extraterritorial jurisdiction, county boundaries, management districts, municipal utility districts, and other administrative layers separately.
 
-That distinction matters whenever a claim depends on jurisdiction. Do not infer city services, development rules, school attendance, taxes, or utility arrangements from the postal city printed on a listing. Use the exact address in the relevant official lookup. County and municipal boundaries can cut across the broad community names people use in conversation.
+The postal city on a listing does not automatically tell you the city services, development rules, school attendance, taxes, or utility arrangements for the home. Those answers come from the exact address and the appropriate official lookup. County and municipal boundaries often cut across the community names people use in conversation.
 
-The same rule applies when an area spans more than one county or includes incorporated and unincorporated sections. A general area guide can orient you, but property-specific verification has to start with the address.
+A broad area guide can help you get oriented. The address is what confirms the city, county, and other details that affect the decision.
 
 ## Keep both passenger airports in the picture
 
@@ -75,7 +75,7 @@ Houston’s two main passenger airports sit on different sides of the region. Ge
 
 Do not treat “near an airport” as a single Houston category. A home oriented toward IAH may have a very different road pattern from one oriented toward Hobby. If airport access is recurring, test the specific airport and terminal area you expect to use. Also check whether your normal route relies on a toll facility.
 
-## Use official maps for the exact address
+## Use the broad map to orient yourself, then check the address
 
 Use the schematic map to get your bearings around the rings, corridors, airports, and broad regions. It does not show survey-accurate boundaries. Once a location makes your short list, switch to official tools.
 
@@ -83,8 +83,6 @@ The City of Houston Map Viewer can clarify whether an address is in the city, th
 
 This sequence keeps broad geography in its proper role. Use it to narrow the field. Use the exact address to verify the facts that affect a housing decision.
 
-## A quick way to place any address
+## A quick way to place a home on the map
 
-Start with the destinations you cannot move. Identify the main corridor for each one. Note where the address sits relative to I-610, Beltway 8, and SH 99. Confirm the city, county, and other jurisdictional layers with official address tools. Check IAH and Hobby separately if air travel matters.
-
-Then repeat the exercise for every serious option. Houston is not one place, and a broad label cannot answer an address-level question. The useful answer comes from matching one location to your actual weekly map.
+Start with the destinations you cannot move, find the corridor connecting them, and note where the home sits relative to I-610, Beltway 8, and SH 99. Then check the city, county, and other jurisdictional layers. Keep IAH and Hobby separate if air travel matters. Houston is too spread out for one neighborhood label to answer the question; what matters is how the address fits your actual week.

@@ -68,7 +68,7 @@ Check the exact address through the current official evacuation map. Identify th
 
 Do not evacuate based on rumor, and do not stay because a social-media post says conditions look manageable. Follow instructions from the emergency-management authority responsible for the address. Leaving after dangerous wind or roadway conditions begin can create a different risk.
 
-## Review the property before storm season
+## Know what the property will need before storm season
 
 Ask which wind, water, and outage preparations apply to the property. Review roof and exterior condition within a professional inspection’s scope. Identify loose outdoor items that would need to be secured. Learn how doors, windows, gates, garage access, elevators, and building entry function if power is interrupted.
 
@@ -76,7 +76,7 @@ In a condominium or apartment, ask management for the building’s communication
 
 Review insurance with a licensed insurance professional. Home, renters, flood, wind, and vehicle coverage are not interchangeable. Ask about exclusions, deductibles, waiting periods, documentation, and the exact address. Do not wait for an active storm to learn what a policy does not cover.
 
-## Build the household plan before a forecast forces the issue
+## Make the plan while the weather is quiet
 
 Ready Harris organizes preparation around a supply kit, a household plan, reliable information, and community involvement. Use its current emergency checklist instead of copying an old list from memory.
 
@@ -96,6 +96,6 @@ Preparedness is a maintenance task. Recheck alerts, contacts, insurance, evacuat
 
 ## Before the weather turns
 
-Evaluate the home in ordinary heat and under a realistic outage plan. Verify cooling-system condition and responsibilities. Check the exact address for evacuation, flood, wind, and insurance considerations through the responsible official sources and qualified professionals.
+Before the weather turns, know how the home handles heat, who is responsible for the cooling system, which weather risks apply to the address, and where you would go during an outage or evacuation. Houston weather is much easier to live with when those answers are already in place.
 
 Then build the household plan before the next forecast. Houston weather is manageable when the questions are specific, the sources are current, and everyone knows what to do.

@@ -60,7 +60,7 @@ Maps can change. Harris County Flood Control District's Model and Map Management
 
 ## Look at the structure, lot, and route
 
-An address-level map search is the beginning. The next questions are physical:
+Then look at the property itself:
 
 - Where does the structure sit relative to the mapped area?
 - What are the elevations of the lowest floor, adjacent grade, street, and nearby drainage features?
@@ -76,7 +76,7 @@ Request the seller's disclosure and ask direct questions about prior water entry
 
 A statement that a property has not flooded is not a guarantee about the future. It can also mean different things unless the speaker defines the event, time period, source, and whether water entered the structure or remained in the yard or street.
 
-If prior flooding or repairs are material to the decision, an inspector, engineer, insurance professional, or other qualified professional can evaluate the part within that person's scope. The purpose is to document what is known, what was changed, and what remains uncertain.
+If the home has flooded or had major drainage work, bring in the right expert for that issue. You want to know what happened, what was repaired, and what is still uncertain.
 
 ## Home, flood, and wind are separate coverage questions
 
@@ -102,7 +102,7 @@ The reverse is also true. A lender not requiring flood insurance does not establ
 
 Keep the lender's requirement, the insurer's underwriting, and the flood-risk review as separate items. Each comes from a different source and answers a different question.
 
-## Build a repeatable property file
+## Use the same checklist for every home
 
 Use the same checklist for each address:
 
@@ -121,4 +121,4 @@ Date every item. Maps, insurance products, and property conditions can change. I
 
 Compare documented conditions, not labels alone. Use the effective FEMA map, the appropriate county tools, property records, physical documents, seller disclosures, and address-specific insurance quotes. Keep mapped risk, observed history, lender requirements, and policy coverage as separate lines.
 
-The useful question is not, "Is this property in or out?" It is, "What do the current maps, property records, site details, and insurance terms show for this exact address, and what remains unknown?" That is the level of detail a Houston-area flood review requires.
+Before deciding, put the current map, property history, site observations, and insurance quote side by side. You are looking for what they show together, where they disagree, and what still needs an answer.

@@ -53,7 +53,7 @@ Houston’s smaller performance spaces are spread farther out. Midtown includes 
 
 [Explore Houston arts and culture](https://www.visithoustontexas.com/things-to-do/arts-and-culture/)
 
-## For museums, the zoo, and an easy cultural day
+## Museums, the zoo, and an easy cultural day
 
 The Museum District places many museums near Hermann Park, the Houston Zoo, and METRORail. The Museum of Fine Arts, Houston, Houston Museum of Natural Science, Children’s Museum Houston, Holocaust Museum Houston, and several smaller institutions all maintain their own hours, ticket rules, free-admission periods, and special-event calendars. Verify those details with the institution before going; schedules and eligible admission offers change.
 
@@ -61,7 +61,7 @@ This is one of the easier parts of Houston to combine into a full day without dr
 
 [Check Miller Outdoor Theatre](https://www.houstontx.gov/events/miller.html)
 
-## For sports and large events
+## Sports and event nights
 
 Houston’s major venues sit in different event zones. Daikin Park, Toyota Center, and Shell Energy Stadium are in and around Downtown and EaDo. NRG Park is south of central Houston near the Medical Center corridor and hosts Texans games, the Houston Livestock Show and Rodeo, conventions, concerts, and other large events.
 
@@ -69,7 +69,7 @@ The event itself is only half the outing. Parking reservations, road closures, r
 
 [See NRG Park](https://www.nrgpark.com/) · [See Shell Energy Stadium](https://www.houstondynamofc.com/shell-energy-stadium/about)
 
-## For free events and time outside
+## Free events and time outside
 
 Discovery Green and Avenida Houston host changing calendars of fitness classes, markets, movies, festivals, public art, and live performances in Downtown. Buffalo Bayou Park adds trails, skyline views, public art, and occasional programmed events. Hermann Park and Miller Outdoor Theatre make it possible to pair an outdoor afternoon with a performance.
 

@@ -63,7 +63,7 @@ Special-purpose districts may issue debt to fund authorized infrastructure. That
 
 That still matters to a property comparison. Review the district's current tax rate, outstanding obligations, adopted budget, and official financial reports. Ask whether the current rate includes separate components for debt service and operations, and whether the district has published plans for additional bonds or capital work.
 
-Do not convert a bond authorization into a prediction that taxes will rise or fall. Authorization, issuance, repayment, assessed values, and adopted annual rates are different facts. The district's current documents and representatives are the sources for property-specific questions.
+Authorized debt does not tell you by itself what next year's tax rate will be. Authorization, issuance, repayment, assessed values, and adopted annual rates are different facts. Use the district's current documents and representatives for questions about the property you are considering.
 
 ## A PID assessment is not the same as a MUD tax
 
@@ -77,9 +77,9 @@ Ask for the current assessment information, the latest annual service and assess
 
 District boundaries do not always match a ZIP code, city name, school attendance area, or subdivision sign. Two nearby homes can sit in different districts. A property may also be inside more than one special-purpose district.
 
-Use address-level records. TCEQ provides a Water Districts Map Viewer, and the Texas Comptroller provides a Special Purpose District Public Information Database. The Comptroller states that its database contains self-reported information, is updated continuously, and may not include every district. It also says submissions have not been independently verified.
+Start with the address. TCEQ provides a Water Districts Map Viewer, and the Texas Comptroller provides a Special Purpose District Public Information Database. The Comptroller says its information is self-reported, updated continuously, and may not include every district.
 
-That makes the database a discovery tool. Confirm the result against the county appraisal record, the district's official website and documents, the title commitment, and the current seller disclosure or contract addenda.
+Use the database to find the district, then compare it with the county appraisal record, the district's official documents, the title commitment, and the current seller disclosure or contract addenda.
 
 ## Read service and finance records together
 
@@ -110,6 +110,6 @@ Names and figures should match across the documents. If they do not, stop and as
 
 ## What I would verify for one address
 
-Do not treat the presence of a district as a conclusion by itself. Identify the exact boundary, services, taxes, assessments, charges, and current documents for the address. Then compare those items with the same categories for the other properties you are considering.
+A district is not automatically good or bad. What matters is what it provides, what it costs, and how those numbers compare with the other homes you are considering. For each address, write down the boundary, services, taxes, assessments, other charges, and the date of the documents you reviewed.
 
 Ask one question first: "Which entity is responsible for what, and how does this parcel pay for it?" Once that answer is documented, you can compare the district structure instead of staring at a line of unexplained initials.

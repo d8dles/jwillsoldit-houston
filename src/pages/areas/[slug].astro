@@ -34,7 +34,7 @@ const relatedLinks = resolveEditorialLinks({ kind: 'guide', slugs: data.relatedG
 
 <Base
   title={`${data.name} — Houston, Handled.`}
-  description={`A structural guide to ${data.name}: jurisdiction, housing character, connections, schools, and practical details to verify.`}
+  description={`A practical guide to ${data.name}, including the housing, connections, schools, and address details worth checking.`}
 >
   <main class="container area-page" data-track-view="houston_area_view" data-track-slug={data.slug}>
     <header class="page-header">
@@ -56,7 +56,7 @@ const relatedLinks = resolveEditorialLinks({ kind: 'guide', slugs: data.relatedG
 
     <RelatedEditorialLinks
       links={relatedLinks}
-      heading="Read the decisions that travel with this area."
+      heading="Keep going with the details that matter here."
     />
 
     <section class="block">
@@ -106,7 +106,7 @@ const relatedLinks = resolveEditorialLinks({ kind: 'guide', slugs: data.relatedG
     )}
 
     <section class="block">
-      <h2>Things to understand</h2>
+      <h2>What to check before you decide</h2>
       <ul class="understand-list">
         {data.thingsToUnderstand.map((item) => <li>{item}</li>)}
       </ul>

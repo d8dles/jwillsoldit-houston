@@ -14,7 +14,7 @@ export interface Disclaimer {
 export const DISCLAIMERS: Record<DisclaimerId, Disclaimer> = {
   general: {
     label: 'About this guide',
-    text: 'Houston, Handled. is provided for general informational purposes. Information may change and should be independently verified. JWILLSOLDIT does not rank communities or recommend housing based on protected characteristics. Users are encouraged to evaluate locations based on their individual housing, transportation, financial and lifestyle needs.',
+    text: 'Houston, Handled. is provided for general informational purposes. Information may change and should be independently verified. JWILLSOLDIT does not rank communities or recommend housing based on protected characteristics. Use these guides to compare the housing, transportation, financial, and day-to-day details that matter to you.',
   },
   schools: {
     label: 'Schools',

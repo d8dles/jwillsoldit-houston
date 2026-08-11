@@ -43,10 +43,10 @@ thingsNearby:
       - name: "MKT Railroad Depot and Park"
         officialUrl: "https://www.cityofkaty.com/government/city-departments/parks-recreation"
 thingsToUnderstand:
-  - "The incorporated City of Katy is smaller than the broader area that uses Katy postal addresses; confirm the city-limit line before relying on City services, taxes, or regulations."
-  - "City parcels can be in Harris, Fort Bend, or Waller County, so appraisal, taxation, elections, records, and some public services depend on the property's county."
-  - "Historic-core blocks, established neighborhoods, newer subdivisions, and infill can have different lot dimensions, setbacks, deed restrictions, and HOA obligations."
-  - "School assignment, drainage and flood context, and roadway conditions should be checked for the specific address using current official maps and records."
+  - "The City of Katy is much smaller than the area that uses Katy mailing addresses. Check the city-limit map before counting on City services, taxes, or regulations."
+  - "Katy city parcels can be in Harris, Fort Bend, or Waller County. The county changes where you find appraisal, tax, election, and other public records."
+  - "The historic core, established neighborhoods, newer subdivisions, and infill can come with different lot dimensions, setbacks, deed restrictions, and HOA obligations."
+  - "Use the address to check current school assignments, drainage and flood information, and the routes you expect to drive."
 sources:
   - label: "City of Katy - About and tri-county context"
     url: "https://www.cityofkaty.com/about"
@@ -100,9 +100,9 @@ updatedAt: "2026-08-11"
 status: "published"
 ---
 
-When someone says “Katy,” first ask which Katy. The incorporated City of Katy is a defined municipality crossing Harris, Fort Bend, and Waller counties. The much larger area using Katy postal addresses includes unincorporated subdivisions, master-planned communities, utility districts, and other jurisdictions well beyond the city limits. A postal city is not proof that the City of Katy supplies the utilities, sets the development rules, collects the city taxes, or provides the public services for a property.
+When someone says “Katy,” first ask which Katy. The incorporated city crosses Harris, Fort Bend, and Waller counties, while the much larger area using Katy mailing addresses includes subdivisions, master-planned communities, and utility districts well beyond the city limits. The word Katy on the address does not tell you who provides the utilities, sets the rules, or collects the local taxes.
 
-## Confirm the city and county before comparing homes
+## Start with the city limit and county
 
 Start with the City’s resident and city-limit maps, then confirm the county in the applicable appraisal-district record. A parcel inside the incorporated city may be in Harris, Fort Bend, or Waller County. That county determines which appraisal district maintains the property account and which county offices hold deeds, plats, court records, election information, and tax records. Two houses both advertised as Katy can therefore involve different local governments before HOA or utility-district questions are considered.
 
@@ -116,36 +116,36 @@ That variety changes the review. For an older property, compare the survey and l
 
 Inside the City of Katy, permit and building services enforce City zoning regulations, construction codes, and ordinances. The City states that permits are required for a range of work that can include additions, pools, accessory buildings, garages, driveways, patios, irrigation, water heaters, and changes involving walls. Outside the city, a different county, utility district, HOA, or permitting authority may control part of the process. If future work matters, take a specific project description to the responsible offices before assuming the parcel supports it.
 
-## Utilities reveal which government you are dealing with
+## Utilities can change from one Katy address to the next
 
 The City of Katy expressly warns that a Katy mailing address does not establish City residency. For addresses within its service area, City Public Works is responsible for functions that include water distribution, wastewater collection and treatment, drainage, streets, and public rights-of-way. An address outside the city may instead receive water, wastewater, drainage, trash, or other services through a municipal utility district, water control and improvement district, private provider, county arrangement, or another entity.
 
 Ask for current providers and recent bills. Confirm the wastewater system, drainage responsibility, trash arrangement, and electricity territory. If a MUD, PID, WCID, or similar district appears in the tax record or title documents, review its boundaries, tax rate, debt, fees, facilities, and meeting records. The word “Katy” answers none of those questions.
 
-## Property taxes require the whole taxing-unit list
+## Do not compare homes using one advertised tax rate
 
 Use HCAD, Fort Bend CAD, or Waller CAD according to the parcel’s county. Confirm the account number, legal description, land and improvement values, exemptions currently shown, and taxing units attached to the account. Then review the current tax statements rather than estimating from a seller’s monthly escrow amount or a generalized area rate.
 
 An incorporated City of Katy parcel can have a different collection of taxing units from an unincorporated Katy-address property. School district, county, city, emergency-service, utility-district, drainage, and other levies depend on the actual boundaries. A seller’s exemptions do not automatically continue for the next owner, and a recently completed house or improvement may not be fully reflected in an older bill. Separate the property’s present record from the future owner’s eligibility and lender escrow estimate.
 
-## Treat drainage and flood review as an address question
+## Check drainage and flood history for the home
 
 Katy’s flat terrain and continued development make drainage review part of the property analysis, not a neighborhood-wide conclusion. Check the current FEMA map, but do not stop at the mapped flood zone. Review seller disclosures, available claims or loss information, elevation information where relevant, drainage easements, detention facilities, street and lot grading, nearby channels or ditches, and an insurance quote for the exact structure.
 
 Inside the city, Public Works maintains City drainage infrastructure and streets. Outside the city, responsibility may involve a county, drainage district, MUD, HOA, or another entity. Ask who owns and maintains the visible and underground facilities serving the property. A statement that a subdivision “did fine” in a past storm does not establish the history or future condition of one house.
 
-## School assignments can change while the address stays put
+## Confirm the current school assignment
 
 Katy ISD directs users to its Find My School and district-map tools for address-based assignments. The district also publishes attendance-boundary modification work as it responds to enrollment and new campuses. Verify the elementary, junior-high, and high-school assignment for the precise address and the school year that matters. Do not rely on a listing, a subdivision brochure, a nearby campus, or an assignment remembered from a prior year.
 
 The school district boundary and the City of Katy boundary are different systems. A property can be outside the incorporated city and still be within Katy ISD, or use a Katy mailing address without that fact alone proving a particular campus assignment. Keep municipality, county, school district, and postal address as separate fields in your notes.
 
-## Test the commute from the parcel, not from “Katy”
+## Test the commute from the actual home
 
 Interstate 10 is the principal east-west route toward the Energy Corridor and central Houston. SH 99/Grand Parkway, frontage roads, local arterials, rail crossings, construction, and the property’s position north or south of I-10 can materially change a trip. A route beginning in the historic city center is not the same as one beginning several miles away in the broader Katy postal area.
 
 Test recurring trips from the driveway at the weekday times you expect to travel. Check the return trip separately and account for school periods, toll use, weather, and planned road work. An off-peak map estimate is an orientation tool, not a commute promise.
 
-## A practical Katy address check
+## What I’d check for a Katy address
 
-Before relying on the name in the listing, document the incorporated city, county, appraisal district, school assignments, utility and drainage providers, taxing units, HOA and deed restrictions, district taxes and fees, survey and easements, permit history, flood and insurance information, inspection findings, and the routes you will actually use. Katy contains many different housing and government arrangements under one familiar label. The address tells you which version you are buying.
+For a Katy home, I want the city and county, school assignments, utilities, drainage provider, taxing units, HOA and deed restrictions, survey, permit history, flood and insurance information, inspection findings, and daily routes in one place. Katy contains several different housing and government arrangements under one familiar name. The address tells us which one comes with the home.
