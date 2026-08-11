@@ -53,6 +53,7 @@ const guides = defineCollection({
     title: z.string(), slug: z.string(), description: z.string().max(160),
     seoTitle: z.string().max(60).optional(),
     featuredOrder: z.number().int().positive().optional(),
+    relatedGuides: z.array(z.string()).default([]),
     relatedRegions: z.array(z.string()).default([]),
     relatedAreas: z.array(z.string()).default([]),
     disclaimerIds: z.array(z.enum(['general', 'schools', 'flood', 'travel-times', 'development', 'market'])),

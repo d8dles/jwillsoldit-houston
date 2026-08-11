@@ -30,6 +30,10 @@ relatedRegions:
 relatedAreas:
   - clear-lake
   - eado
+relatedGuides:
+  - flood-risk-and-insurance
+  - electricity-choice-and-utilities
+  - traffic-and-commutes
 updatedAt: "2026-07-18"
 status: "published"
 ---

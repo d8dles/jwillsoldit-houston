@@ -16,6 +16,20 @@ test('resolves curated published relation slugs into internal page links', () =>
   ]);
 });
 
+test('resolves a guide relation into an internal read-next link', () => {
+  const links = resolveEditorialLinks({
+    kind: 'guide',
+    slugs: ['property-taxes'],
+    entries: [
+      { data: { slug: 'property-taxes', title: 'Houston property taxes', status: 'published' } },
+    ],
+  });
+
+  assert.deepEqual(links, [
+    { kind: 'guide', label: 'Houston property taxes', href: '/houston/guides/property-taxes' },
+  ]);
+});
+
 test('fails the build contract when a relation points at a missing or draft page', () => {
   assert.throws(
     () => resolveEditorialLinks({

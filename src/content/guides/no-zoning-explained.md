@@ -31,6 +31,10 @@ relatedAreas:
   - eado
   - katy
   - the-woodlands
+relatedGuides:
+  - hoas-and-deed-restrictions
+  - property-taxes
+  - how-houston-is-organized
 updatedAt: "2026-08-10"
 status: "published"
 ---

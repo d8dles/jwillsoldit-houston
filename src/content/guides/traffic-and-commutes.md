@@ -31,6 +31,10 @@ relatedAreas:
   - katy
   - sugar-land
   - clear-lake
+relatedGuides:
+  - toll-roads-and-ez-tag
+  - how-houston-is-organized
+  - houston-entertainment-and-things-to-do
 updatedAt: "2026-07-18"
 status: "published"
 ---

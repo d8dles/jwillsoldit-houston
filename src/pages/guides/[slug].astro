@@ -25,11 +25,17 @@ const { guide } = Astro.props;
 const entry = guide;
 const { data } = guide;
 const { Content } = await render(guide);
-const [areas, regions] = await Promise.all([
+const [areas, regions, guides] = await Promise.all([
   getCollection('areas', ({ data }) => data.status === 'published'),
   getCollection('regions'),
+  getCollection('guides', ({ data }) => data.status === 'published'),
 ]);
-const relatedLinks = [
+const relatedGuideLinks = resolveEditorialLinks({
+  kind: 'guide',
+  slugs: data.relatedGuides.filter((slug) => slug !== data.slug),
+  entries: guides,
+});
+const relatedLocationLinks = [
   ...resolveEditorialLinks({ kind: 'region', slugs: data.relatedRegions, entries: regions }),
   ...resolveEditorialLinks({ kind: 'area', slugs: data.relatedAreas, entries: areas }),
 ];
@@ -60,7 +66,14 @@ const relatedLinks = [
     </article>
 
     <RelatedEditorialLinks
-      links={relatedLinks}
+      links={relatedGuideLinks}
+      eyebrow="READ NEXT"
+      heading="Keep going with the next question."
+    />
+
+    <RelatedEditorialLinks
+      links={relatedLocationLinks}
+      eyebrow="ON THE MAP"
       heading="See where this matters around Houston."
     />
 

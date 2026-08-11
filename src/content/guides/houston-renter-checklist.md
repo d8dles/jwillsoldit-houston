@@ -26,6 +26,10 @@ relatedRegions:
 relatedAreas:
   - "the-heights"
   - "clear-lake"
+relatedGuides:
+  - electricity-choice-and-utilities
+  - pet-friendly-places-in-houston
+  - first-time-homebuyer
 updatedAt: "2026-08-11"
 status: published
 ---
