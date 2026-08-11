@@ -52,7 +52,7 @@ Keep the license plate, vehicle description, mailing address, and payment method
 
 Avoid placing multiple active toll tags in one vehicle. TxDOT warns that more than one tag can interfere with reading or create duplicate charges. Follow the issuing agency’s installation instructions rather than moving a sticker between windshields.
 
-## A tag belongs with its registered vehicle
+## Keep each tag with the vehicle on the account
 
 Electronic sticker tags are installed for a particular vehicle. TxDOT advises customers not to move a tag between vehicles because removal can damage it. A replacement vehicle should be added through the account process, with a new tag requested when required.
 
@@ -66,9 +66,9 @@ Do not estimate toll expense from one sign or one trip. Charges can depend on th
 
 For a housing comparison, map the complete outbound and return trips. Count every tolled segment that the routine uses. Then test a non-tolled alternative. The alternative may use frontage roads or another corridor, but it may also add turns, crossings, or exposure to different congestion points.
 
-Keep the comparison factual. One option has a recurring toll charge under current rules. Another avoids that charge but follows a different route. Neither statement predicts a permanent travel time.
+One option has a recurring toll charge under current rules. Another avoids that charge but follows a different route. Compare both without treating either travel time as permanent.
 
-## Toll access does not guarantee a fixed commute
+## A toll road is another option, not a guaranteed arrival time
 
 A toll road can provide another route through the network. It cannot remove incidents, construction, weather, or demand. The existence of a tolled option is not a guaranteed arrival time.
 
@@ -76,14 +76,10 @@ Check current conditions through the responsible road agency and Houston TranSta
 
 Some corridors include managed or special-purpose lanes with separate eligibility and operating rules. Do not enter based on the appearance of an open lane. Read the posted signs and verify the current agency instructions for occupancy, tag, and payment requirements.
 
-## Questions to answer before relying on a toll road
+## Before you rely on the toll route
 
-Identify the facility and operator. Confirm whether the exact lane is tolled. Check which tag is accepted, whether the account is active, and whether the plate and payment method are current. Review the current rate for the full route in both directions. Map a practical non-tolled alternative. If the trip involves a rental, trailer, motorcycle, or newly purchased vehicle, verify the special handling before travel.
+Identify the road and operator, check whether the exact lane is tolled, and make sure the tag, plate, account, and payment method are current. Price the full trip in both directions and map a practical non-tolled alternative. If the trip involves a rental, trailer, motorcycle, or newly purchased vehicle, check the special rules before you drive.
 
 These checks take less time than correcting an account problem later. They also keep a toll-road claim tied to a current source instead of a remembered rule.
 
-## Before you count on the toll route
-
-Treat toll access as one route characteristic, not a verdict on a location. Trace the actual commute and identify every toll facility it uses. Confirm the operator, accepted tag, current charge, and non-tolled alternative from official sources.
-
-Then decide whether that recurring option fits the household’s transportation plan. Recheck the details before closing or signing a lease. The road will stay in the map, but its rates, account rules, construction, and daily conditions can change.
+Then decide whether the recurring cost fits the rest of the housing decision. Recheck rates, account terms, and road conditions before signing a lease or closing on a property.

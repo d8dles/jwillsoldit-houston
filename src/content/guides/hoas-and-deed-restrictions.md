@@ -45,7 +45,7 @@ Private deed restrictions are another layer. They can limit how a specific prope
 
 Outside Houston city limits, municipal rules and enforcement structures can differ. Start with the property's exact jurisdiction and recorded documents rather than applying the Houston shorthand to the whole region. The covenant systems described for [The Woodlands](/houston/areas/the-woodlands), [Sugar Land](/houston/areas/sugar-land), and [Katy](/houston/areas/katy) are three examples of why the governing documents must come from the parcel rather than the area name.
 
-## The restriction and the HOA are two different questions
+## A restriction can exist with or without an HOA
 
 A deed restriction is a recorded covenant that applies to land. A property owners association is an organization that may administer or enforce restrictions and manage shared obligations. A property can have recorded restrictions even when no active association is obvious. It can also be subject to mandatory association membership, dues, rules, and architectural review.
 
@@ -91,13 +91,13 @@ Keep the sources separate. A city permit does not establish association approval
 
 For an address outside Houston, confirm the municipality or county with jurisdiction. A postal city name does not always identify the government that regulates the parcel.
 
-## Enforcement is not one-size-fits-all
+## Find out who can enforce the rule and how
 
 An association may enforce its governing documents under the documents and applicable law. Individual owners may also have enforcement rights. Inside Houston, the City Attorney has limited statutory authority to enforce certain recorded residential deed restrictions. The city's page lists categories such as land use, setbacks, lot or structure dimensions, orientation, and certain fences.
 
 City involvement does not turn every private rule into a city ordinance. It also does not mean the city will resolve every association dispute. Ask the association, title company, city department, or attorney which enforcement path applies to the specific issue.
 
-## A clean document checklist
+## Documents I would ask for
 
 For each property, collect:
 
@@ -114,6 +114,4 @@ Check that the legal property description and association name match across the 
 
 ## Before you sign
 
-Treat the recorded documents as part of the property, not as paperwork to skim after the decision. Verify the restrictions, association membership, recurring dues, other charges, approval process, property-specific violations, and current association records.
-
-The useful question is, "What rules and obligations attach to this exact lot, and do the current documents match how I expect to own and use it?" Get that answer from the recorded instruments and current association information, then take legal questions to the appropriate professional.
+The recorded documents come with the property, so read them before the decision is made. Know the restrictions, whether membership is mandatory, the recurring dues and other charges, the approval process, any open violations, and whether the current rules fit the way you expect to use the home. Take questions about legal meaning or enforceability to the appropriate professional.

@@ -65,7 +65,7 @@ A restriction may address use, setbacks, structure type, lot size, orientation, 
 
 Houston has statutory authority to enforce certain recorded restrictions within the scope described by state and city law. That does not make the City the private attorney for an owner, buyer, seller, civic club, or association. The City’s attorneys expressly state that they cannot give private legal advice or interpret a restriction for an individual.
 
-If a restriction matters to a purchase or project, obtain the recorded documents and have the relevant title, survey, and legal questions reviewed by qualified professionals. Verify whether amendments, renewals, releases, or other recorded instruments affect the version you found.
+If a restriction matters to the purchase or project, get the recorded documents. Then send the title, survey, or legal question to the professional who handles that piece. Check for amendments, renewals, releases, or other recorded documents that may change the version you found.
 
 ## An HOA and a deed restriction are not the same question
 
@@ -83,16 +83,16 @@ These protections do not require an existing lot or structure to change merely b
 
 Use the City’s current map and program records to check the subject address. A broad area name cannot tell you whether a particular block is included.
 
-## Build a property-specific verification file
+## Pull the documents for the actual property
 
 For a serious property, collect the jurisdiction map, recorded plat, survey, title commitment, deed restrictions and amendments, association documents when applicable, permit history relevant to the planned use, and current City or county lookup results. Write down the intended change or use in concrete terms.
 
-Then direct each question to the responsible source. Planning staff can explain municipal process and mapped program status. The permitting department can address its review requirements. A title company can provide recorded exceptions within its role. A surveyor can identify physical and recorded matters shown through the survey. A private attorney can interpret legal documents and advise on enforceability.
+Different questions go to different people. Planning staff can explain the municipal process and mapped program status. The permitting department handles its review requirements. A title company can provide recorded exceptions within its role. A surveyor can identify matters shown on the survey. A private attorney can interpret legal documents and advise on enforceability.
 
 This is not a one-time citywide answer. It is a parcel-level check tied to a proposed use.
 
 ## What to check at the property level
 
-Treat “no zoning” as the beginning of due diligence, not the end. Confirm whether the address is inside Houston, in its extraterritorial jurisdiction, in another municipality, or unincorporated. Review the public development rules and the private recorded restrictions separately.
+“No zoning” is the beginning of the property questions, not the end. Find out whether the address is inside Houston, in its extraterritorial jurisdiction, in another municipality, or unincorporated. Then look at the public development rules and private recorded restrictions separately.
 
 If future construction, subdivision, rental use, parking, a home business, or another specific plan matters, verify that plan before relying on the property. Houston’s framework can be flexible, but flexibility is not the absence of rules.

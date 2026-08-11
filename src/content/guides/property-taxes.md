@@ -53,7 +53,7 @@ The county appraisal district determines the property's value for tax purposes. 
 
 The basic calculation is taxable value multiplied by the applicable rate for each taxing unit. Taxable value is not always the same as market value or appraised value. An approved exemption or another limitation may change the value used by a particular taxing unit.
 
-Treat each part as a separate question:
+For each home, write down:
 
 - What value is on the appraisal record?
 - Which exemptions or limitations are shown?
@@ -75,7 +75,7 @@ For a purchase, ask for the latest appraisal record and the latest tax bill. Rea
 
 An exemption can remove part of a property's value from taxation or otherwise change the taxable amount. A residence homestead exemption is not automatically transferred from the seller to the buyer. Eligibility and application questions belong with the county appraisal district.
 
-Do not assume the seller's exemptions will remain on the account after closing. Also do not assume that the current bill represents the future bill under new ownership. Ask the appraisal district which exemptions are recorded now, what a new owner may apply for, and which documents and dates apply to that application.
+The seller's exemptions usually do not carry forward automatically, so the current bill may not reflect a future bill under new ownership. Ask the appraisal district which exemptions are recorded now, what a new owner may apply for, and which documents and dates apply.
 
 If an online estimate applies the seller's exemptions to a buyer's projected bill, label that estimate as incomplete. A cleaner comparison shows the current official record and separately notes any buyer-specific exemption question that still needs verification.
 
@@ -87,7 +87,7 @@ A protest is about appraisal matters, exemptions, or another appraisal district 
 
 If a property is already under contract or recently closed, ask the appraisal district who can file, what authorization is required, and which tax year is involved. For legal or tax questions about a specific protest, use the appropriate licensed professional.
 
-## Build a property-specific estimate
+## Build the estimate for this property
 
 For a useful comparison, collect the same items for every address:
 
@@ -107,4 +107,4 @@ Avoid treating a listing's tax figure, a mortgage calculator, or a seller's mont
 
 Compare the full jurisdiction stack for the exact address. Pull the appraisal record and tax bill, then verify the taxing units, current rates, exemptions, and any unresolved appraisal matter with the county offices. Ask the lender how those verified inputs will be reflected in escrow.
 
-The useful question is not simply, "What is the tax rate?" It is, "Which values, rates, exemptions, and districts will apply to this property under my ownership?" That produces a clearer comparison without pretending a future bill is already known.
+The rate alone will not tell you the payment. You need the value, exemptions, and every district attached to the property. Keep the current record separate from any estimate so you can compare homes without pretending a future bill is already known.

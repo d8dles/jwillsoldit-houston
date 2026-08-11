@@ -34,7 +34,7 @@ A Houston rental can look simple until the application fees, utility setup, park
 
 ## Before you pay an application fee
 
-Ask for the property's written rental criteria, every application or administrative charge, the deposit structure, and whether any payment is refundable. Confirm the required identification, income or employment documentation, rental history, and screening process before submitting personal information. If roommates will apply, ask whether each adult needs a separate application and how combined income is evaluated. Pet policies, deposits, monthly charges, breed or size rules, parking costs, and storage charges can materially change the monthly total.
+Start with the property's written rental criteria and every charge due before move-in. Find out which payments are refundable, which documents the application requires, how rental history is reviewed, and whether each adult needs a separate application. Pet charges and rules, parking, and storage can materially change the monthly total.
 
 Do not send money from a listing alone. Verify who owns or manages the property, tour the actual home when possible, and use a payment method and portal you can independently confirm. Keep the listing, advertised terms, screening criteria, receipts, and messages together. If you are comparing an apartment near work with a house farther out, start with the exact commute and service setup rather than the marketing label. The tradeoffs between [the Heights](/houston/areas/the-heights) and [Clear Lake](/houston/areas/clear-lake), for example, extend well beyond the floor plan.
 
@@ -54,7 +54,7 @@ Schedule service early enough to avoid a gap on move-in day, but do not activate
 
 ## Know how maintenance and access work
 
-Ask how routine and urgent maintenance requests are submitted, what number is monitored after hours, who may enter the unit, and how notice is provided. Find the water shutoff if residents are expected to know it. Confirm responsibility for air filters, light bulbs, yard care, pest treatment, appliance upkeep, and any smart-home equipment. Report problems through the documented channel and keep dated copies.
+Know how to request routine and urgent maintenance, which number is monitored after hours, and how the property handles entry notices. Find the water shutoff if residents are expected to know it. Ask who handles filters, yard care, pest treatment, appliances, and any smart-home equipment. Use the documented request channel and keep dated copies.
 
 For the property itself, test doors, windows, locks, exterior access, garage or gate controls, smoke alarms, and any carbon-monoxide alarms present. Check exterior and parking-area lighting during the hours you expect to use them. Ask how keys, codes, packages, visitors, and lost access devices are handled. These checks describe the home's condition and management practices; they are not a promise that a property or neighborhood is safe. Use official public records and your own visits for questions important to you, and avoid relying on anyone's subjective neighborhood characterization.
 
@@ -68,4 +68,4 @@ Before bringing in furniture, photograph or video every room, appliance, wall, f
 
 Keep the signed lease, addenda, condition report, photos, receipts, maintenance requests, insurance policy, and notices in one folder. Calendar the renewal and move-out notice deadlines immediately. When moving out, follow the lease's notice and return instructions, document the final condition, return every access device, and provide a forwarding address in writing.
 
-Renting can be the right next move without being the final one. If buying may come after this lease, use the [first-time home buyer guide](/houston/guides/first-time-homebuyer) to understand credit, lender preparation, assistance-program verification, and address-level due diligence before a future search begins.
+Renting can be the right move now even if buying is part of the longer plan. When that starts to feel realistic, the [first-time home buyer guide](/houston/guides/first-time-homebuyer) will help you organize the financing and property questions before you start touring.
