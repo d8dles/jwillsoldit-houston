@@ -150,7 +150,7 @@ The Woodlands is a separate trip from central Houston; check the route before bo
 Start Downtown for major productions; Midtown and nearby neighborhoods add smaller stages and comedy rooms.
 
 - [Hobby Center events](https://www.thehobbycenter.org/events/)
-- [Alley Theatre calendar](https://www.alleytheatre.org/plays/)
+- [Alley Theatre shows and tickets](https://www.alleytheatre.org/get-tickets/)
 - [Houston Ballet calendar](https://www.houstonballet.org/seasontickets/calendar/)
 - [Houston Grand Opera calendar](https://www.houstongrandopera.org/on-stage)
 - [Houston Symphony concerts](https://houstonsymphony.org/performance-calendar/)
