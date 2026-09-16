@@ -34,6 +34,10 @@ const GUIDE_DISCLAIMERS = {
   'toll-roads-and-ez-tag.md': ['general', 'travel-times'],
 };
 
+const LONG_FORM_GUIDE_LIMITS = {
+  'houston-entertainment-and-things-to-do.md': { min: 3000, max: 5500 },
+};
+
 export function wordCount(markdown) {
   const plain = markdown
     .replace(/https?:\/\/\S+/g, ' ')
@@ -82,8 +86,11 @@ export function validateContent(text, filePath) {
   }
 
   if (filePath.includes('/guides/')) {
-    if (count < 700 || count > 1200) {
-      errors.push(`${filePath}: guide is ${count} words; expected 700–1,200`);
+    const limits = LONG_FORM_GUIDE_LIMITS[basename(filePath)] ?? { min: 700, max: 1200 };
+    if (count < limits.min || count > limits.max) {
+      errors.push(
+        `${filePath}: guide is ${count} words; expected ${limits.min.toLocaleString('en-US')}–${limits.max.toLocaleString('en-US')}`
+      );
     }
     if (body.includes('!')) {
       errors.push(`${filePath}: guide body contains an exclamation mark`);

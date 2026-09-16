@@ -30,6 +30,26 @@ test('flags short guides', () => {
   assert.ok(errors.some((error) => error.includes('expected 700–1,200')));
 });
 
+test('allows the researched long-form Houston entertainment guide', () => {
+  const body = Array.from({ length: 4000 }, () => 'word').join(' ');
+  const text = `---\nslug: houston-entertainment-and-things-to-do\ndisclaimerIds:\n  - general\nsources:\n---\n\n${body}\n\nRead the [EaDo guide](/houston/areas/eado).`;
+  const errors = validateContent(
+    text,
+    'src/content/guides/houston-entertainment-and-things-to-do.md'
+  );
+  assert.ok(!errors.some((error) => error.includes('guide is')));
+});
+
+test('keeps an upper bound on the long-form Houston entertainment guide', () => {
+  const body = Array.from({ length: 5501 }, () => 'word').join(' ');
+  const text = `---\nslug: houston-entertainment-and-things-to-do\ndisclaimerIds:\n  - general\nsources:\n---\n\n${body}\n\nRead the [EaDo guide](/houston/areas/eado).`;
+  const errors = validateContent(
+    text,
+    'src/content/guides/houston-entertainment-and-things-to-do.md'
+  );
+  assert.ok(errors.some((error) => error.includes('expected 3,000–5,500')));
+});
+
 test('requires a contextual area or region link in guide copy', () => {
   const body = Array.from({ length: 700 }, () => 'word').join(' ');
   const text = `---\nslug: test\ndisclaimerIds:\n  - general\nsources:\n---\n\n${body}`;

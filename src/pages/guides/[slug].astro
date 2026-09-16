@@ -152,6 +152,31 @@ const relatedLocationLinks = [
     text-underline-offset: 3px;
   }
 
+  .article-body :global(table) {
+    display: block;
+    width: 100%;
+    margin: 1.5em 0;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: var(--fs-small);
+  }
+
+  .article-body :global(th),
+  .article-body :global(td) {
+    min-width: 10rem;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--trace);
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .article-body :global(th) {
+    color: var(--ink);
+    background: var(--off-white);
+    font-weight: 650;
+  }
+
   .disclaimers {
     margin-top: var(--space-block);
     display: grid;
